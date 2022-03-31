@@ -11,6 +11,7 @@ LIBRARIES=(
     python-magic
     pyyaml
     html2text
+    lxml
 )
 
 CHANNELS=(

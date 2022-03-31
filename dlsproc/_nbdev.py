@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"get_namespaces": "10_xml.ipynb"}
 
-modules = []
+modules = ["xml.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 
