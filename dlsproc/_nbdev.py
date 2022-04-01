@@ -2,7 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_namespaces": "10_xml.ipynb"}
+index = {"get_namespaces": "10_xml.ipynb",
+         "re_tag": "10_xml.ipynb",
+         "split_namespace_tag": "10_xml.ipynb",
+         "to_be_skipped": "10_xml.ipynb",
+         "get_entries": "10_xml.ipynb",
+         "datetime_format": "10_xml.ipynb",
+         "entry_to_series": "10_xml.ipynb"}
 
 modules = ["xml.py"]
 

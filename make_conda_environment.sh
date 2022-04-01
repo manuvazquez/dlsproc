@@ -12,6 +12,7 @@ LIBRARIES=(
     pyyaml
     html2text
     lxml
+    pandas
 )
 
 CHANNELS=(
