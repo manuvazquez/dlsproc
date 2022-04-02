@@ -6,8 +6,8 @@ title: xml
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Functions to parse XML files"
-description: "Functions to parse XML files"
+summary: "Functionality to parse XML files"
+description: "Functionality to parse XML files"
 nb_path: "10_xml.ipynb"
 ---
 <!--
@@ -92,7 +92,7 @@ nb_path: "10_xml.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xml_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;sample.xml&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xml_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_20220104_030016_1.atom&#39;</span>
 <span class="k">assert</span> <span class="n">xml_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">xml_file</span>
 </pre></div>
@@ -109,7 +109,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/home/manu/dlsproc/samples/sample.xml&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/dlsproc/samples/PlataformasAgregadasSinMenores_20220104_030016_1.atom&#39;)</pre>
 </div>
 
 </div>
@@ -168,7 +168,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -313,7 +313,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -440,7 +440,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -491,10 +491,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f380384c100&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f380384c680&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f380384e0c0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f380384df00&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727790fc0&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727791cc0&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727791c40&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd7277913c0&gt;]</pre>
 </div>
 
 </div>
@@ -628,7 +628,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f380384c100&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727790fc0&gt;</pre>
 </div>
 
 </div>
@@ -655,7 +655,49 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function to parse an entry into a <code>pd.Series</code></p>
+<p>Everything is stored as a string in an <em>XML</em> file. One can exploit code like the one below to handle conversions.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeric_field</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+<span class="n">numeric_field</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">numeric_field</span><span class="p">)</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <strong>recursive</strong> function to parse a node of the <em>XML</em> tree</p>
 
 </div>
 </div>
@@ -671,7 +713,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -698,7 +740,7 @@ nb_path: "10_xml.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span> <span class="o">=</span> <span class="n">entry_to_series</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span> <span class="o">=</span> <span class="n">entry_to_dict</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 <span class="n">element_series</span>
 </pre></div>
 
@@ -714,12 +756,119 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>id                      https://contrataciondelestado.es/sindicacion/P...
-link                                                                 None
-summary                 Id licitación: C. 2-2021; Órgano de Contrataci...
-title                   L&#39;objecte del contracte és la renovació de tot...
-updated                                  2022-01-03 01:11:41.826000+01:00
-ContractFolderStatus                                       \n            
+<pre>{&#39;id&#39;: &#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8799346&#39;,
+ &#39;summary&#39;: &#39;Id licitación: C. 2-2021; Órgano de Contratación: Ajuntament de Sant Ramon; Importe: 135553.26; Estado: ADJUDICADA&#39;,
+ &#39;title&#39;: &#34;L&#39;objecte del contracte és la renovació de totes les llumeneres que formen la il·luminació existent de tots els carrers i vials del casc urbà de la localitat de Sant Ramon i dels nuclis agregats de La Manresana, Portell, Viver i Gospí&#34;,
+ &#39;updated&#39;: Timestamp(&#39;2022-01-03 01:11:41.826000+0100&#39;, tz=&#39;pytz.FixedOffset(60)&#39;),
+ &#39;ContractFolderStatus - ContractFolderID&#39;: &#39;C. 2-2021&#39;,
+ &#39;ContractFolderStatus - ContractFolderStatusCode&#39;: &#39;ADJ&#39;,
+ &#39;ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID&#39;: &#39;https://contractaciopublica.gencat.cat/ecofin_pscp/AppJava/cap.pscp?reqCode=viewDetail&amp;idCap=2763318&#39;,
+ &#39;ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name&#39;: &#39;Ajuntament de Sant Ramon&#39;,
+ &#39;ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name&#39;: &#39;Entitats municipals de Catalunya&#39;,
+ &#39;ContractFolderStatus - ProcurementProject - Name&#39;: &#34;L&#39;objecte del contracte és la renovació de totes les llumeneres que formen la il·luminació existent de tots els carrers i vials del casc urbà de la localitat de Sant Ramon i dels nuclis agregats de La Manresana, Portell, Viver i Gospí&#34;,
+ &#39;ContractFolderStatus - ProcurementProject - TypeCode&#39;: 1,
+ &#39;ContractFolderStatus - ProcurementProject - BudgetAmount - EstimatedOverallContractAmount&#39;: &#39;135553.26&#39;,
+ &#39;ContractFolderStatus - ProcurementProject - BudgetAmount - TaxExclusiveAmount&#39;: &#39;135553.26&#39;,
+ &#39;ContractFolderStatus - ProcurementProject - RequiredCommodityClassification - ItemClassificationCode&#39;: 34928530,
+ &#39;ContractFolderStatus - ProcurementProject - RealizedLocation - CountrySubentityCode&#39;: &#39;ES513&#39;,
+ &#39;ContractFolderStatus - ProcurementProject - PlannedPeriod - DurationMeasure&#39;: 3,
+ &#39;ContractFolderStatus - TenderResult - ResultCode&#39;: 8,
+ &#39;ContractFolderStatus - TenderResult - ReceivedTenderQuantity&#39;: 11,
+ &#39;ContractFolderStatus - TenderResult - WinningParty - PartyIdentification - ID&#39;: &#39;A28526275&#39;,
+ &#39;ContractFolderStatus - TenderResult - WinningParty - PartyName - Name&#39;: &#39;AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , SA ( ACISA)&#39;,
+ &#39;ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount&#39;: &#39;90078.51&#39;,
+ &#39;ContractFolderStatus - TenderingProcess - ProcedureCode&#39;: 9,
+ &#39;ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate&#39;: &#39;2021-12-17&#39;,
+ &#39;ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime&#39;: &#39;14:00:00&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode&#39;: &#39;DOC_CAN_ADJ&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName&#39;: &#39;Perfil del contratante&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate&#39;: &#39;2022-01-03&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function that just wraps the result of <a href="/dlsproc/xml.html#entry_to_dict"><code>entry_to_dict</code></a> into a <code>pd.Series</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only the first 8 fields are printed (enough to show <em>nested</em> elements)</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span> <span class="o">=</span> <span class="n">entry_to_series</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="n">element_series</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>id                                                                           https://contrataciondelestado.es/sindicacion/P...
+summary                                                                      Id licitación: C. 2-2021; Órgano de Contrataci...
+title                                                                        L&#39;objecte del contracte és la renovació de tot...
+updated                                                                                       2022-01-03 01:11:41.826000+01:00
+ContractFolderStatus - ContractFolderID                                                                              C. 2-2021
+ContractFolderStatus - ContractFolderStatusCode                                                                            ADJ
+ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID           https://contractaciopublica.gencat.cat/ecofin_...
+ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name                             Ajuntament de Sant Ramon
 dtype: object</pre>
 </div>
 
@@ -778,52 +927,128 @@ dtype: object</pre>
     <tr style="text-align: right;">
       <th></th>
       <th>id</th>
-      <th>link</th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th>ContractFolderStatus</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - TenderResult - WinningParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount</th>
+      <th>ContractFolderStatus - TenderingProcess - ProcedureCode</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime</th>
+      <th>ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode</th>
+      <th>ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName</th>
+      <th>ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate</th>
+      <th>ContractFolderStatus - LegalDocumentReference - ID</th>
+      <th>ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>None</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
       <td>2022-01-03 01:11:41.826000+01:00</td>
-      <td>\n</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , ...</td>
+      <td>90078.51</td>
+      <td>9</td>
+      <td>2021-12-17</td>
+      <td>14:00:00</td>
+      <td>DOC_CAN_ADJ</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>None</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
       <td>2022-01-03 01:00:11.194000+01:00</td>
-      <td>\n</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2022-01-22</td>
+      <td>23:30:00</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>None</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
       <td>2022-01-03 01:00:10.399000+01:00</td>
-      <td>\n</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>None</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
       <td>2022-01-03 00:11:40.740000+01:00</td>
-      <td>\n</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9</td>
+      <td>2022-01-02</td>
+      <td>23:59:00</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2021-12-13</td>
+      <td>Plec Clausules.pdf</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
     </tr>
   </tbody>
 </table>
+<p>4 rows × 29 columns</p>
 </div></div>
 
 </div>
@@ -863,12 +1088,35 @@ dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>id                                                    object
-link                                                  object
-summary                                               object
-title                                                 object
-updated                 datetime64[ns, pytz.FixedOffset(60)]
-ContractFolderStatus                                  object
+<pre>id                                                                                                                                                         object
+summary                                                                                                                                                    object
+title                                                                                                                                                      object
+updated                                                                                                                      datetime64[ns, pytz.FixedOffset(60)]
+ContractFolderStatus - ContractFolderID                                                                                                                    object
+ContractFolderStatus - ContractFolderStatusCode                                                                                                            object
+ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID                                                                                         object
+ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name                                                                                  object
+ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name                                                                     object
+ContractFolderStatus - ProcurementProject - Name                                                                                                           object
+ContractFolderStatus - ProcurementProject - TypeCode                                                                                                       object
+ContractFolderStatus - ProcurementProject - BudgetAmount - EstimatedOverallContractAmount                                                                  object
+ContractFolderStatus - ProcurementProject - BudgetAmount - TaxExclusiveAmount                                                                              object
+ContractFolderStatus - ProcurementProject - RequiredCommodityClassification - ItemClassificationCode                                                       object
+ContractFolderStatus - ProcurementProject - RealizedLocation - CountrySubentityCode                                                                        object
+ContractFolderStatus - ProcurementProject - PlannedPeriod - DurationMeasure                                                                                object
+ContractFolderStatus - TenderResult - ResultCode                                                                                                           object
+ContractFolderStatus - TenderResult - ReceivedTenderQuantity                                                                                               object
+ContractFolderStatus - TenderResult - WinningParty - PartyIdentification - ID                                                                              object
+ContractFolderStatus - TenderResult - WinningParty - PartyName - Name                                                                                      object
+ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount                                                     object
+ContractFolderStatus - TenderingProcess - ProcedureCode                                                                                                    object
+ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate                                                                         object
+ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime                                                                         object
+ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode                                                                                                    object
+ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName                                                                object
+ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate                                  object
+ContractFolderStatus - LegalDocumentReference - ID                                                                                                         object
+ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI                                                                       object
 dtype: object</pre>
 </div>
 
