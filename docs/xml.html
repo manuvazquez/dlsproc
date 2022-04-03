@@ -168,7 +168,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -313,7 +313,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -440,7 +440,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -491,10 +491,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727790fc0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727791cc0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727791c40&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd7277913c0&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5640&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5680&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb4fc0&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb56c0&gt;]</pre>
 </div>
 
 </div>
@@ -628,7 +628,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fd727790fc0&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5640&gt;</pre>
 </div>
 
 </div>
@@ -641,21 +641,7 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Format of the dates to be parsed by <a href="/dlsproc/xml.html#entry_to_series"><code>entry_to_series</code></a></p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Everything is stored as a string in an <em>XML</em> file. One can exploit code like the one below to handle conversions.</p>
+<p>Everything is stored as a string in an <em>XML</em> file. The approach below is used to handle conversions.</p>
 
 </div>
 </div>
@@ -697,6 +683,60 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>When two a <em>tag</em> is nested inside other <em>tag</em> the string below is used to assemble the name of the resulting <em>column</em> from those of the original tags</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For instance, a <em>tag</em> <code>&lt;month&gt;</code> inside a <em>tag</em> <code>&lt;date&gt;</code> will yield a <em>column</em></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sa">f</span><span class="s1">&#39;month</span><span class="si">{</span><span class="n">nested_tags_separator</span><span class="si">}</span><span class="s1">date&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;month - date&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A <strong>recursive</strong> function to parse a node of the <em>XML</em> tree</p>
 
 </div>
@@ -713,7 +753,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L172" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -759,7 +799,7 @@ nb_path: "10_xml.ipynb"
 <pre>{&#39;id&#39;: &#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8799346&#39;,
  &#39;summary&#39;: &#39;Id licitación: C. 2-2021; Órgano de Contratación: Ajuntament de Sant Ramon; Importe: 135553.26; Estado: ADJUDICADA&#39;,
  &#39;title&#39;: &#34;L&#39;objecte del contracte és la renovació de totes les llumeneres que formen la il·luminació existent de tots els carrers i vials del casc urbà de la localitat de Sant Ramon i dels nuclis agregats de La Manresana, Portell, Viver i Gospí&#34;,
- &#39;updated&#39;: Timestamp(&#39;2022-01-03 01:11:41.826000+0100&#39;, tz=&#39;pytz.FixedOffset(60)&#39;),
+ &#39;updated&#39;: &#39;2022-01-03T01:11:41.826+01:00&#39;,
  &#39;ContractFolderStatus - ContractFolderID&#39;: &#39;C. 2-2021&#39;,
  &#39;ContractFolderStatus - ContractFolderStatusCode&#39;: &#39;ADJ&#39;,
  &#39;ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID&#39;: &#39;https://contractaciopublica.gencat.cat/ecofin_pscp/AppJava/cap.pscp?reqCode=viewDetail&amp;idCap=2763318&#39;,
@@ -795,7 +835,7 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function that just wraps the result of <a href="/dlsproc/xml.html#entry_to_dict"><code>entry_to_dict</code></a> into a <code>pd.Series</code></p>
+<p>A function that just wraps the result of <a href="/dlsproc/foo.html#entry_to_dict"><code>entry_to_dict</code></a> into a <code>pd.Series</code></p>
 
 </div>
 </div>
@@ -811,7 +851,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -864,7 +904,7 @@ nb_path: "10_xml.ipynb"
 <pre>id                                                                           https://contrataciondelestado.es/sindicacion/P...
 summary                                                                      Id licitación: C. 2-2021; Órgano de Contrataci...
 title                                                                        L&#39;objecte del contracte és la renovació de tot...
-updated                                                                                       2022-01-03 01:11:41.826000+01:00
+updated                                                                                          2022-01-03T01:11:41.826+01:00
 ContractFolderStatus - ContractFolderID                                                                              C. 2-2021
 ContractFolderStatus - ContractFolderStatusCode                                                                            ADJ
 ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID           https://contractaciopublica.gencat.cat/ecofin_...
@@ -955,7 +995,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>2022-01-03T01:11:41.826+01:00</td>
       <td>C. 2-2021</td>
       <td>ADJ</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -979,7 +1019,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
-      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>2022-01-03T01:00:11.194+01:00</td>
       <td>8128_3/2021</td>
       <td>PUB</td>
       <td>NaN</td>
@@ -1003,7 +1043,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
-      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>2022-01-03T01:00:10.399+01:00</td>
       <td>1000_0005-CP01-2021-000063</td>
       <td>EV</td>
       <td>NaN</td>
@@ -1027,7 +1067,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>2022-01-03T00:11:40.740+01:00</td>
       <td>1379/2020 4738</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -1088,6 +1128,680 @@ dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>id                                                                                                                           object
+summary                                                                                                                      object
+title                                                                                                                        object
+updated                                                                                                                      object
+ContractFolderStatus - ContractFolderID                                                                                      object
+ContractFolderStatus - ContractFolderStatusCode                                                                              object
+ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID                                                           object
+ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name                                                    object
+ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name                                       object
+ContractFolderStatus - ProcurementProject - Name                                                                             object
+ContractFolderStatus - ProcurementProject - TypeCode                                                                         object
+ContractFolderStatus - ProcurementProject - BudgetAmount - EstimatedOverallContractAmount                                    object
+ContractFolderStatus - ProcurementProject - BudgetAmount - TaxExclusiveAmount                                                object
+ContractFolderStatus - ProcurementProject - RequiredCommodityClassification - ItemClassificationCode                         object
+ContractFolderStatus - ProcurementProject - RealizedLocation - CountrySubentityCode                                          object
+ContractFolderStatus - ProcurementProject - PlannedPeriod - DurationMeasure                                                  object
+ContractFolderStatus - TenderResult - ResultCode                                                                             object
+ContractFolderStatus - TenderResult - ReceivedTenderQuantity                                                                 object
+ContractFolderStatus - TenderResult - WinningParty - PartyIdentification - ID                                                object
+ContractFolderStatus - TenderResult - WinningParty - PartyName - Name                                                        object
+ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount                       object
+ContractFolderStatus - TenderingProcess - ProcedureCode                                                                      object
+ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate                                           object
+ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime                                           object
+ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode                                                                      object
+ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName                                  object
+ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate    object
+ContractFolderStatus - LegalDocumentReference - ID                                                                           object
+ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI                                         object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function below follows the above strategy to turn an <em>XML</em> file into a <em>Pandas</em> <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L230" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">to_df</span><span class="p">(</span><span class="n">xml_file</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
+      <th>ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03T01:11:41.826+01:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03T01:00:11.194+01:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03T01:00:10.399+01:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-03T00:11:40.740+01:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-03T00:11:40.696+01:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1005_391-2021; Órgano de Contra...</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>2021-12-31T01:00:14.946+01:00</td>
+      <td>1005_391-2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Dirección General de Cultura-Institución Prínc...</td>
+      <td>Departamento de Cultura, Deporte y Juventud</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8165_3/2021; Órgano de Contrata...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>2021-12-31T01:00:14.393+01:00</td>
+      <td>8165_3/2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Mancomunidad de Servicios Sociales de Base de ...</td>
+      <td>MANCOMUNIDAD DE SERVICIOS DE HUARTE Y DE ESTER...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_3/2021; Órgano de Contrata...</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>2021-12-31T01:00:13.594+01:00</td>
+      <td>8113_3/2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Subdirector de Gestión y Recursos</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-01</td>
+      <td>2022-12-31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_01 2021; Órgano de Contrat...</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>2021-12-31T01:00:12.604+01:00</td>
+      <td>8113_01 2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Agencia Navarra de Autonomía y Desarrollo de l...</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 0001264/2021; Órgano de contrat...</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>2021-12-31T00:14:15.739+01:00</td>
+      <td>0001264/2021</td>
+      <td>RES</td>
+      <td>NaN</td>
+      <td>Agencia Pública Empresarial Sanitaria Bajo Gua...</td>
+      <td>Junta de Andalucía</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 38 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function to tidy up some things in the new <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L243" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span> <span class="o">=</span> <span class="n">post_process</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">post_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
+      <th>ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-17 14:00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-22 23:30:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 39 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>id                                                                                                                                                         object
 summary                                                                                                                                                    object
 title                                                                                                                                                      object
@@ -1117,6 +1831,16 @@ ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - Publicati
 ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate                                  object
 ContractFolderStatus - LegalDocumentReference - ID                                                                                                         object
 ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI                                                                       object
+ContractFolderStatus - TechnicalDocumentReference - ID                                                                                                     object
+ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI                                                                   object
+ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate                                                                                      object
+ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate                                                                                        object
+ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID                                                                          object
+ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name                                                object
+ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate                                                                    object
+ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime                                                                    object
+ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID                                                                     object
+ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod                                                                           datetime64[ns]
 dtype: object</pre>
 </div>
 

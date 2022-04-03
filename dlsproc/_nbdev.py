@@ -2,15 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"main": "00_core.ipynb",
+index = {"process_atom": "00_core.ipynb",
+         "cli_process_atom": "00_core.ipynb",
          "get_namespaces": "10_xml.ipynb",
          "re_tag": "10_xml.ipynb",
          "split_namespace_tag": "10_xml.ipynb",
          "to_be_skipped": "10_xml.ipynb",
          "get_entries": "10_xml.ipynb",
-         "datetime_format": "10_xml.ipynb",
+         "nested_tags_separator": "10_xml.ipynb",
          "entry_to_dict": "10_xml.ipynb",
-         "entry_to_series": "10_xml.ipynb"}
+         "entry_to_series": "10_xml.ipynb",
+         "to_df": "10_xml.ipynb",
+         "post_process": "10_xml.ipynb"}
 
 modules = ["core.py",
            "xml.py"]
