@@ -168,7 +168,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -313,7 +313,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -440,7 +440,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -491,10 +491,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5640&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5680&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb4fc0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb56c0&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f653a8e9f00&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f653a8e9e80&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f653a8e8100&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f653a8e9f80&gt;]</pre>
 </div>
 
 </div>
@@ -628,7 +628,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f12fbcb5640&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f653a8e9f00&gt;</pre>
 </div>
 
 </div>
@@ -753,7 +753,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L172" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -835,7 +835,7 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function that just wraps the result of <a href="/dlsproc/foo.html#entry_to_dict"><code>entry_to_dict</code></a> into a <code>pd.Series</code></p>
+<p>A function that just wraps the result of <a href="/dlsproc/xml.html#entry_to_dict"><code>entry_to_dict</code></a> into a <code>pd.Series</code></p>
 
 </div>
 </div>
@@ -851,7 +851,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -1101,7 +1101,7 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The types of the columns</p>
+<p>The types of the columns (every type is <code>object</code> since there are missing values everywhere)</p>
 
 </div>
 </div>
@@ -1186,8 +1186,21 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L230" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
+<p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>input_file: str or Path</p>
+<p>Input file.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: pd.DataFrame</p>
+<p>A Pandas DataFrame with XML data.</p>
+</li>
+</ul>
 
 </div>
 
@@ -1564,8 +1577,21 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L243" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
+<p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>input_df: pd.DataFrame</p>
+<p>Input DataFrame as ready by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: pd.DataFrame</p>
+<p>Post-processed DataFrame.</p>
+</li>
+</ul>
 
 </div>
 
@@ -1780,6 +1806,13 @@ dtype: object</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After post-processing some <code>object</code>s have been parsed as dates.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1787,7 +1820,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span><span class="o">.</span><span class="n">dtypes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1802,45 +1835,303 @@ dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>id                                                                                                                                                         object
-summary                                                                                                                                                    object
-title                                                                                                                                                      object
-updated                                                                                                                      datetime64[ns, pytz.FixedOffset(60)]
-ContractFolderStatus - ContractFolderID                                                                                                                    object
-ContractFolderStatus - ContractFolderStatusCode                                                                                                            object
-ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID                                                                                         object
-ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name                                                                                  object
-ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name                                                                     object
-ContractFolderStatus - ProcurementProject - Name                                                                                                           object
-ContractFolderStatus - ProcurementProject - TypeCode                                                                                                       object
-ContractFolderStatus - ProcurementProject - BudgetAmount - EstimatedOverallContractAmount                                                                  object
-ContractFolderStatus - ProcurementProject - BudgetAmount - TaxExclusiveAmount                                                                              object
-ContractFolderStatus - ProcurementProject - RequiredCommodityClassification - ItemClassificationCode                                                       object
-ContractFolderStatus - ProcurementProject - RealizedLocation - CountrySubentityCode                                                                        object
-ContractFolderStatus - ProcurementProject - PlannedPeriod - DurationMeasure                                                                                object
-ContractFolderStatus - TenderResult - ResultCode                                                                                                           object
-ContractFolderStatus - TenderResult - ReceivedTenderQuantity                                                                                               object
-ContractFolderStatus - TenderResult - WinningParty - PartyIdentification - ID                                                                              object
-ContractFolderStatus - TenderResult - WinningParty - PartyName - Name                                                                                      object
-ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount                                                     object
-ContractFolderStatus - TenderingProcess - ProcedureCode                                                                                                    object
-ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate                                                                         object
-ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime                                                                         object
-ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode                                                                                                    object
-ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName                                                                object
-ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate                                  object
-ContractFolderStatus - LegalDocumentReference - ID                                                                                                         object
-ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI                                                                       object
-ContractFolderStatus - TechnicalDocumentReference - ID                                                                                                     object
-ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI                                                                   object
-ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate                                                                                      object
-ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate                                                                                        object
-ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID                                                                          object
-ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name                                                object
-ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate                                                                    object
-ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime                                                                    object
-ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID                                                                     object
-ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod                                                                           datetime64[ns]
+<pre>id                                                                       object
+summary                                                                  object
+title                                                                    object
+updated                                    datetime64[ns, pytz.FixedOffset(60)]
+ContractFolderStatus - ContractFolderID                                  object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A convenience function combining <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a> and <a href="/dlsproc/xml.html#post_process"><code>post_process</code></a></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+</blockquote>
+<p>Reads, parses and tidies up an XML file into a <code>pd.DataFrame</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>input_file: str or Path</p>
+<p>Input file.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: pd.DataFrame</p>
+<p>A Pandas DataFrame with XML data.</p>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tidy_df</span> <span class="o">=</span> <span class="n">to_curated_df</span><span class="p">(</span><span class="n">xml_file</span><span class="p">)</span>
+<span class="n">tidy_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
+      <th>ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-17 14:00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-22 23:30:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 39 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some (post-)processing took place</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tidy_df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>id                                                                       object
+summary                                                                  object
+title                                                                    object
+updated                                    datetime64[ns, pytz.FixedOffset(60)]
+ContractFolderStatus - ContractFolderID                                  object
 dtype: object</pre>
 </div>
 

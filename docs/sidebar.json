@@ -2,6 +2,7 @@
   "dlsproc": {
     "Overview": "/",
     "core": "core.html",
-    "xml": "xml.html"
+    "xml": "xml.html",
+    "bundle": "bundle.html"
   }
 }

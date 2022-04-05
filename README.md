@@ -12,7 +12,7 @@ The software can be exploited as a library or as a *standalone* script.
 
 Fill me in please! Don't forget code examples:
 
-```python
+```
 1+1
 ```
 

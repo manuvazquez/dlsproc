@@ -13,10 +13,13 @@ index = {"process_atom": "00_core.ipynb",
          "entry_to_dict": "10_xml.ipynb",
          "entry_to_series": "10_xml.ipynb",
          "to_df": "10_xml.ipynb",
-         "post_process": "10_xml.ipynb"}
+         "post_process": "10_xml.ipynb",
+         "to_curated_df": "10_xml.ipynb",
+         "read_zip": "20_bundle.ipynb"}
 
 modules = ["core.py",
-           "xml.py"]
+           "xml.py",
+           "bundle.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 
