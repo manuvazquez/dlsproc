@@ -10,12 +10,14 @@ index = {"process_atom": "00_core.ipynb",
          "to_be_skipped": "10_xml.ipynb",
          "get_entries": "10_xml.ipynb",
          "nested_tags_separator": "10_xml.ipynb",
+         "assemble_name": "10_xml.ipynb",
          "entry_to_dict": "10_xml.ipynb",
          "entry_to_series": "10_xml.ipynb",
          "to_df": "10_xml.ipynb",
          "post_process": "10_xml.ipynb",
          "to_curated_df": "10_xml.ipynb",
-         "read_zip": "20_bundle.ipynb"}
+         "read_zip": "20_bundle.ipynb",
+         "read_zips_directory": "20_bundle.ipynb"}
 
 modules = ["core.py",
            "xml.py",

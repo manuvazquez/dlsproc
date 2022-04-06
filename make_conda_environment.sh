@@ -13,6 +13,7 @@ LIBRARIES=(
     html2text
     lxml
     pandas
+    pyarrow
 )
 
 CHANNELS=(
