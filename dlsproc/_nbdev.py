@@ -16,6 +16,7 @@ index = {"process_atom": "00_core.ipynb",
          "to_df": "10_xml.ipynb",
          "post_process": "10_xml.ipynb",
          "to_curated_df": "10_xml.ipynb",
+         "columns_depth": "10_xml.ipynb",
          "read_zip": "20_bundle.ipynb",
          "read_zips_directory": "20_bundle.ipynb"}
 

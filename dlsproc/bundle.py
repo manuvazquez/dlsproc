@@ -94,12 +94,17 @@ def read_zips_directory(input_directory: str | pathlib.Path, concatenate: bool =
 
     res = []
 
+    filenames = []
+
     for f in input_directory.glob('*.zip'):
 
         res.append(read_zip(f, concatenate))
 
+        filenames.append(f.name)
+
     if concatenate:
 
-        res = pd.concat(res)
+        # CAVEAT: the `names` of the index in the first zip file are used (and extended)
+        res = pd.concat(res, keys=filenames, names=['zip'] + res[0].index.names)
 
     return res
