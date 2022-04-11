@@ -490,7 +490,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -541,10 +541,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f4ae5cbec80&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f4ae5cbbc00&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f4ae5cbec40&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f4ae5cbecc0&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1800&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1b40&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a0440&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a0280&gt;]</pre>
 </div>
 
 </div>
@@ -678,7 +678,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f4ae5cbec80&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1800&gt;</pre>
 </div>
 
 </div>
@@ -871,6 +871,46 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><code>NaN</code>s are ignored</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;foo&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Parsing">Parsing<a class="anchor-link" href="#Parsing"> </a></h2>
 </div>
 </div>
@@ -893,7 +933,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L70" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L72" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1003,7 +1043,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -1314,7 +1354,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flat_series_to_multiindexed_series" class="doc_header"><code>flat_series_to_multiindexed_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L120" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_series_to_multiindexed_series</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
+<h4 id="flat_series_to_multiindexed_series" class="doc_header"><code>flat_series_to_multiindexed_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_series_to_multiindexed_series</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
 </blockquote>
 
 </div>
@@ -1375,7 +1415,7 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can concatenate together the <code>pd.Series</code> for the different <em>entries</em> into a <code>pd.DataFrame</code></p>
+<p>We can concatenate together the <code>pd.Series</code> for the different <em>entries</em> into a (hierarchical) <code>pd.DataFrame</code></p>
 
 </div>
 </div>
@@ -1387,8 +1427,8 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">[:</span><span class="mi">4</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">hi_df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">[:</span><span class="mi">4</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">hierarchical_df</span>
 </pre></div>
 
     </div>
@@ -1636,7 +1676,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1725,7 +1765,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1814,7 +1854,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2307,7 +2347,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -2682,6 +2722,1389 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Hierarchical-indexing">Hierarchical indexing<a class="anchor-link" href="#Hierarchical-indexing"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can concatenate together the <code>pd.Series</code> for the different <em>entries</em> into a <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">[:</span><span class="mi">4</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="17" halign="left">ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th colspan="2" halign="left">TenderResult</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th colspan="3" halign="left">ValidNoticeInfo</th>
+      <th colspan="2" halign="left">LegalDocumentReference</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>WinningParty</th>
+      <th>AwardedTenderedProject</th>
+      <th>ProcedureCode</th>
+      <th colspan="2" halign="left">TenderSubmissionDeadlinePeriod</th>
+      <th>NoticeTypeCode</th>
+      <th colspan="2" halign="left">AdditionalPublicationStatus</th>
+      <th>ID</th>
+      <th>Attachment</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>PartyName</th>
+      <th>LegalMonetaryTotal</th>
+      <th>NaN</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th>NaN</th>
+      <th>PublicationMediaName</th>
+      <th>AdditionalPublicationDocumentReference</th>
+      <th>NaN</th>
+      <th>ExternalReference</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>Name</th>
+      <th>TaxExclusiveAmount</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>IssueDate</th>
+      <th>NaN</th>
+      <th>URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03T01:11:41.826+01:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , ...</td>
+      <td>90078.51</td>
+      <td>9</td>
+      <td>2021-12-17</td>
+      <td>14:00:00</td>
+      <td>DOC_CAN_ADJ</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03T01:00:11.194+01:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2022-01-22</td>
+      <td>23:30:00</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03T01:00:10.399+01:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2022-01-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-03T00:11:40.740+01:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9</td>
+      <td>2022-01-02</td>
+      <td>23:59:00</td>
+      <td>DOC_CN</td>
+      <td>Perfil del contratante</td>
+      <td>2021-12-13</td>
+      <td>Plec Clausules.pdf</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+    </tr>
+  </tbody>
+</table>
+<p>4 rows × 29 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, there is a problem if the <code>pd.Series</code>'s to be concatenated have different number of levels</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="mi">15</span><span class="p">]))</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">nlevels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="mi">16</span><span class="p">]))</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">nlevels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">17</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Oooooooooops&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Oooooooooops
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function below just converts the <code>pd.DataFrame</code> <em>column-wise</em></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="flat_df_to_multiindexed_df" class="doc_header"><code>flat_df_to_multiindexed_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_df_to_multiindexed_df</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+</blockquote>
+<p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>input_df: <code>pd.DataFrame</code></p>
+<p>Input dataframe.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: pd.DataFrame</p>
+<p>A column-hierarchical version of the input dataframe.</p>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span> <span class="o">=</span> <span class="n">flat_df_to_multiindexed_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">hierarchical_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="17" halign="left">ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th>LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="2" halign="left">TenderingProcess</th>
+      <th>TenderResult</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>Attachment</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th colspan="2" halign="left">PlannedPeriod</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>AwardedTenderedProject</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>ExternalReference</th>
+      <th>NaN</th>
+      <th>ExternalReference</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>PartyIdentification</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th>ProcurementProjectLotID</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>URI</th>
+      <th>NaN</th>
+      <th>URI</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>ID</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03T01:11:41.826+01:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03T01:00:11.194+01:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03T01:00:10.399+01:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-03T00:11:40.740+01:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-03T00:11:40.696+01:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 38 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Cross-sections</em> of the above <code>pd.DataFrame</code> can be extracted</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 1 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At deeper levels (notice in the above table <em>ContractFolderID</em> is nested inside <em>ContractFolderStatus</em>)</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C. 2-2021</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8128_3/2021</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1000_0005-CP01-2021-000063</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1379/2020 4738</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-44</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>1005_391-2021</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>8165_3/2021</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>8113_3/2021</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>8113_01 2021</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>0001264/2021</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 1 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The latter encompasses most of the data</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hierarchical_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th colspan="5" halign="left">ProcurementProject</th>
+      <th>...</th>
+      <th>LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="2" halign="left">TenderingProcess</th>
+      <th>TenderResult</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>TypeCode</th>
+      <th colspan="2" halign="left">BudgetAmount</th>
+      <th>RequiredCommodityClassification</th>
+      <th>...</th>
+      <th>Attachment</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th colspan="2" halign="left">PlannedPeriod</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>AwardedTenderedProject</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>EstimatedOverallContractAmount</th>
+      <th>TaxExclusiveAmount</th>
+      <th>ItemClassificationCode</th>
+      <th>...</th>
+      <th>ExternalReference</th>
+      <th>NaN</th>
+      <th>ExternalReference</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>PartyIdentification</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th>ProcurementProjectLotID</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>URI</th>
+      <th>NaN</th>
+      <th>URI</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>ID</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>1</td>
+      <td>135553.26</td>
+      <td>135553.26</td>
+      <td>34928530</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>3</td>
+      <td>81022.72</td>
+      <td>81022.72</td>
+      <td>45000000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2</td>
+      <td>239797.5</td>
+      <td>47959.5</td>
+      <td>92400000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>3</td>
+      <td>214781.46</td>
+      <td>178984.55</td>
+      <td>45316100</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>1</td>
+      <td>129247.06</td>
+      <td>107642.2</td>
+      <td>9331000</td>
+      <td>...</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>1005_391-2021</td>
+      <td>PUB</td>
+      <td>NaN</td>
+      <td>Dirección General de Cultura-Institución Prínc...</td>
+      <td>Departamento de Cultura, Deporte y Juventud</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>2</td>
+      <td>104025.9</td>
+      <td>34675.3</td>
+      <td>92511000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>8165_3/2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Mancomunidad de Servicios Sociales de Base de ...</td>
+      <td>MANCOMUNIDAD DE SERVICIOS DE HUARTE Y DE ESTER...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>2</td>
+      <td>72000</td>
+      <td>14400</td>
+      <td>85000000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>8113_3/2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Subdirector de Gestión y Recursos</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>2</td>
+      <td>20305.6</td>
+      <td>4061.12</td>
+      <td>90920000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-01-01</td>
+      <td>2022-12-31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>8113_01 2021</td>
+      <td>EV</td>
+      <td>NaN</td>
+      <td>Agencia Navarra de Autonomía y Desarrollo de l...</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>2</td>
+      <td>11855331.61</td>
+      <td>10777574.19</td>
+      <td>32500000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>0001264/2021</td>
+      <td>RES</td>
+      <td>NaN</td>
+      <td>Agencia Pública Empresarial Sanitaria Bajo Gua...</td>
+      <td>Junta de Andalucía</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>2</td>
+      <td>91979.14</td>
+      <td>19162.32</td>
+      <td>33100000</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 34 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Post-processing">Post-processing<a class="anchor-link" href="#Post-processing"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A function to tidy up some things in the new <code>pd.DataFrame</code></p>
 
 </div>
@@ -2698,7 +4121,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L157" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L192" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
 <p><strong>Parameters</strong></p>
@@ -2990,13 +4413,18 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L216" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L248" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>hierarchical</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Reads, parses and tidies up an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><p>input_file: str or Path</p>
 <p>Input file.</p>
+</li>
+<li><p>hierarchical: bool</p>
+<ul>
+<li>If <code>True</code> multi-indexed columns are returned.</li>
+</ul>
 </li>
 </ul>
 <p><strong>Returns</strong></p>
@@ -3266,13 +4694,7 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Hierarchical-indexing">Hierarchical indexing<a class="anchor-link" href="#Hierarchical-indexing"> </a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can concatenate together the <code>pd.Series</code> for the different <em>entries</em> into a <code>pd.DataFrame</code></p>
+<p>A <code>pd.DataFrame</code> with a multindex column can also be requested</p>
 
 </div>
 </div>
@@ -3284,8 +4706,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">flat_series_to_multiindexed_series</span><span class="p">(</span><span class="n">entry_to_series</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">[:</span><span class="mi">4</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">hi_df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">to_curated_df</span><span class="p">(</span><span class="n">xml_file</span><span class="p">,</span> <span class="n">hierarchical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -3333,10 +4754,12 @@ dtype: object</pre>
       <th colspan="3" halign="left">LocatedContractingParty</th>
       <th>ProcurementProject</th>
       <th>...</th>
-      <th colspan="2" halign="left">TenderResult</th>
-      <th colspan="3" halign="left">TenderingProcess</th>
-      <th colspan="3" halign="left">ValidNoticeInfo</th>
-      <th colspan="2" halign="left">LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="2" halign="left">TenderingProcess</th>
+      <th>TenderResult</th>
+      <th>TenderingProcess</th>
     </tr>
     <tr>
       <th></th>
@@ -3351,14 +4774,14 @@ dtype: object</pre>
       <th>ParentLocatedParty</th>
       <th>Name</th>
       <th>...</th>
-      <th>WinningParty</th>
-      <th>AwardedTenderedProject</th>
-      <th>ProcedureCode</th>
-      <th colspan="2" halign="left">TenderSubmissionDeadlinePeriod</th>
-      <th>NoticeTypeCode</th>
-      <th colspan="2" halign="left">AdditionalPublicationStatus</th>
       <th>ID</th>
       <th>Attachment</th>
+      <th colspan="2" halign="left">PlannedPeriod</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>AwardedTenderedProject</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
     </tr>
     <tr>
       <th></th>
@@ -3373,16 +4796,16 @@ dtype: object</pre>
       <th>PartyName</th>
       <th>NaN</th>
       <th>...</th>
-      <th>PartyName</th>
-      <th>LegalMonetaryTotal</th>
-      <th>NaN</th>
-      <th>EndDate</th>
-      <th>EndTime</th>
-      <th>NaN</th>
-      <th>PublicationMediaName</th>
-      <th>AdditionalPublicationDocumentReference</th>
       <th>NaN</th>
       <th>ExternalReference</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>PartyIdentification</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th>ProcurementProjectLotID</th>
+      <th>NaN</th>
     </tr>
     <tr>
       <th></th>
@@ -3397,16 +4820,40 @@ dtype: object</pre>
       <th>Name</th>
       <th>NaN</th>
       <th>...</th>
-      <th>Name</th>
-      <th>TaxExclusiveAmount</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>IssueDate</th>
       <th>NaN</th>
       <th>URI</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>ID</th>
+      <th>PartyName</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>...</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>Name</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
+      <th>NaN</th>
     </tr>
   </thead>
   <tbody>
@@ -3415,7 +4862,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>2022-01-03T01:11:41.826+01:00</td>
+      <td>2022-01-03 01:11:41.826000+01:00</td>
       <td>C. 2-2021</td>
       <td>ADJ</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -3423,71 +4870,71 @@ dtype: object</pre>
       <td>Entitats municipals de Catalunya</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
       <td>...</td>
-      <td>AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , ...</td>
-      <td>90078.51</td>
-      <td>9</td>
-      <td>2021-12-17</td>
-      <td>14:00:00</td>
-      <td>DOC_CAN_ADJ</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-12-17 14:00:00</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
-      <td>2022-01-03T01:00:11.194+01:00</td>
+      <td>2022-01-03 01:00:11.194000+01:00</td>
       <td>8128_3/2021</td>
       <td>PUB</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
       <td>Pleno del Ayuntamiento</td>
       <td>AYUNTAMIENTO DE MONREAL</td>
       <td>Obras de restauración hidromorfológica del río...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2022-01-22</td>
-      <td>23:30:00</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-22 23:30:00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
-      <td>2022-01-03T01:00:10.399+01:00</td>
+      <td>2022-01-03 01:00:10.399000+01:00</td>
       <td>1000_0005-CP01-2021-000063</td>
       <td>EV</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
       <td>El Director General de Comunicación y Relacion...</td>
       <td>Departamento de Presidencia, Igualdad, Función...</td>
       <td>Contrato del servicio de realización de labore...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
     </tr>
     <tr>
       <th>3</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>2022-01-03T00:11:40.740+01:00</td>
+      <td>2022-01-03 00:11:40.740000+01:00</td>
       <td>1379/2020 4738</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -3495,433 +4942,188 @@ dtype: object</pre>
       <td>Entitats municipals de Catalunya</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>9</td>
-      <td>2022-01-02</td>
-      <td>23:59:00</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2021-12-13</td>
-      <td>Plec Clausules.pdf</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-02 23:59:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-    </tr>
-  </tbody>
-</table>
-<p>4 rows × 29 columns</p>
-</div></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Cross-sections</em> of the above <code>pd.DataFrame</code> can be extracted</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>At deeper levels (notice in the above table <em>ContractFolderID</em> is nested inside <em>ContractFolderStatus</em>)</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderID&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>ContractFolderStatus</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>C. 2-2021</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>8128_3/2021</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1000_0005-CP01-2021-000063</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1379/2020 4738</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The latter encompasses most of the data</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hi_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>ContractFolderID</th>
-      <th>ContractFolderStatusCode</th>
-      <th colspan="3" halign="left">LocatedContractingParty</th>
-      <th colspan="5" halign="left">ProcurementProject</th>
-      <th>...</th>
-      <th colspan="2" halign="left">TenderResult</th>
-      <th colspan="3" halign="left">TenderingProcess</th>
-      <th colspan="3" halign="left">ValidNoticeInfo</th>
-      <th colspan="2" halign="left">LegalDocumentReference</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>BuyerProfileURIID</th>
-      <th>Party</th>
-      <th>ParentLocatedParty</th>
-      <th>Name</th>
-      <th>TypeCode</th>
-      <th colspan="2" halign="left">BudgetAmount</th>
-      <th>RequiredCommodityClassification</th>
-      <th>...</th>
-      <th>WinningParty</th>
-      <th>AwardedTenderedProject</th>
-      <th>ProcedureCode</th>
-      <th colspan="2" halign="left">TenderSubmissionDeadlinePeriod</th>
-      <th>NoticeTypeCode</th>
-      <th colspan="2" halign="left">AdditionalPublicationStatus</th>
-      <th>ID</th>
-      <th>Attachment</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>PartyName</th>
-      <th>PartyName</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>EstimatedOverallContractAmount</th>
-      <th>TaxExclusiveAmount</th>
-      <th>ItemClassificationCode</th>
-      <th>...</th>
-      <th>PartyName</th>
-      <th>LegalMonetaryTotal</th>
-      <th>NaN</th>
-      <th>EndDate</th>
-      <th>EndTime</th>
-      <th>NaN</th>
-      <th>PublicationMediaName</th>
-      <th>AdditionalPublicationDocumentReference</th>
-      <th>NaN</th>
-      <th>ExternalReference</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>Name</th>
-      <th>Name</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>...</th>
-      <th>Name</th>
-      <th>TaxExclusiveAmount</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>NaN</th>
-      <th>IssueDate</th>
-      <th>NaN</th>
-      <th>URI</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>C. 2-2021</td>
-      <td>ADJ</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Sant Ramon</td>
+      <td>Ajuntament de Valls</td>
       <td>Entitats municipals de Catalunya</td>
-      <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>1</td>
-      <td>135553.26</td>
-      <td>135553.26</td>
-      <td>34928530</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
       <td>...</td>
-      <td>AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , ...</td>
-      <td>90078.51</td>
-      <td>9</td>
-      <td>2021-12-17</td>
-      <td>14:00:00</td>
-      <td>DOC_CAN_ADJ</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-02 23:59:00</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>8128_3/2021</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1005_391-2021; Órgano de Contra...</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>2021-12-31 01:00:14.946000+01:00</td>
+      <td>1005_391-2021</td>
       <td>PUB</td>
-      <td>NaN</td>
-      <td>Pleno del Ayuntamiento</td>
-      <td>AYUNTAMIENTO DE MONREAL</td>
-      <td>Obras de restauración hidromorfológica del río...</td>
-      <td>3</td>
-      <td>81022.72</td>
-      <td>81022.72</td>
-      <td>45000000</td>
+      <td>&lt;NA&gt;</td>
+      <td>Dirección General de Cultura-Institución Prínc...</td>
+      <td>Departamento de Cultura, Deporte y Juventud</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2022-01-22</td>
-      <td>23:30:00</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-14 23:59:00</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>1000_0005-CP01-2021-000063</td>
+      <th>113</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8165_3/2021; Órgano de Contrata...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>2021-12-31 01:00:14.393000+01:00</td>
+      <td>8165_3/2021</td>
       <td>EV</td>
-      <td>NaN</td>
-      <td>El Director General de Comunicación y Relacion...</td>
-      <td>Departamento de Presidencia, Igualdad, Función...</td>
-      <td>Contrato del servicio de realización de labore...</td>
-      <td>2</td>
-      <td>239797.5</td>
-      <td>47959.5</td>
-      <td>92400000</td>
+      <td>&lt;NA&gt;</td>
+      <td>Mancomunidad de Servicios Sociales de Base de ...</td>
+      <td>MANCOMUNIDAD DE SERVICIOS DE HUARTE Y DE ESTER...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>1379/2020 4738</td>
+      <th>114</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_3/2021; Órgano de Contrata...</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>2021-12-31 01:00:13.594000+01:00</td>
+      <td>8113_3/2021</td>
       <td>EV</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Canet de Mar</td>
-      <td>Entitats municipals de Catalunya</td>
-      <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>3</td>
-      <td>214781.46</td>
-      <td>178984.55</td>
-      <td>45316100</td>
+      <td>&lt;NA&gt;</td>
+      <td>Subdirector de Gestión y Recursos</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>9</td>
-      <td>2022-01-02</td>
-      <td>23:59:00</td>
-      <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2021-12-13</td>
-      <td>Plec Clausules.pdf</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-01</td>
+      <td>2022-12-31</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_01 2021; Órgano de Contrat...</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>2021-12-31 01:00:12.604000+01:00</td>
+      <td>8113_01 2021</td>
+      <td>EV</td>
+      <td>&lt;NA&gt;</td>
+      <td>Agencia Navarra de Autonomía y Desarrollo de l...</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 0001264/2021; Órgano de contrat...</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>2021-12-31 00:14:15.739000+01:00</td>
+      <td>0001264/2021</td>
+      <td>RES</td>
+      <td>&lt;NA&gt;</td>
+      <td>Agencia Pública Empresarial Sanitaria Bajo Gua...</td>
+      <td>Junta de Andalucía</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-11-11 15:00:00</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 25 columns</p>
+<p>117 rows × 39 columns</p>
 </div></div>
 
 </div>
@@ -3956,7 +5158,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L237" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L279" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>

@@ -2,7 +2,7 @@
 
 __all__ = ['get_namespaces', 're_tag', 'split_namespace_tag', 'to_be_skipped', 'get_entries', 'nested_tags_separator',
            'assemble_name', 'entry_to_dict', 'entry_to_series', 'flat_series_to_multiindexed_series', 'to_df',
-           'post_process', 'to_curated_df', 'columns_depth']
+           'flat_df_to_multiindexed_df', 'post_process', 'to_curated_df', 'columns_depth']
 
 # Cell
 import pathlib
@@ -30,6 +30,7 @@ re_tag = re.compile('\{(.*)\}(.*)')
 
 # Cell
 def split_namespace_tag(namespace_tag: str) -> str:
+
     return re_tag.match(namespace_tag).groups()
 
 # Cell
@@ -40,7 +41,6 @@ to_be_skipped
 def get_entries(root: etree.Element) -> list[etree.Element]:
 
     return [e for e in root if split_namespace_tag(e.tag)[1] == 'entry']
-    # return [e for e in etree.parse(xml_file).getroot() if split_namespace_tag(e.tag)[1] == 'entry']
 
 # Cell
 nested_tags_separator = ' - '
@@ -63,6 +63,8 @@ def assemble_name(tags: list) -> str:
         A suitable name.
 
     """
+
+    tags = [t for t in tags if not pd.isna(t)]
 
     return nested_tags_separator.join(tags)
 
@@ -154,6 +156,39 @@ def to_df(input_file: str | pathlib.Path) -> pd.DataFrame:
     return pd.concat([entry_to_series(e) for e in entries], axis=1).T
 
 # Cell
+def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Reads and parses an XML file into a `pd.DataFrame`.
+
+    **Parameters**
+
+    - input_df: `pd.DataFrame`
+
+        Input dataframe.
+
+    **Returns**
+
+    - out: pd.DataFrame
+
+        A column-hierarchical version of the input dataframe.
+
+    """
+
+    # every column name is turned into a `tuple`, and from the collection of all of them a `pd.MultiIndex` is built
+    index_hierarchical = pd.MultiIndex.from_tuples([tuple(c.split(nested_tags_separator)) for c in input_df.columns])
+
+    # an empty `pd.DataFrame`
+    res = pd.DataFrame(None, columns=index_hierarchical)
+
+    # every column in the *output* `pd.DataFrame`...
+    for c in res.columns:
+
+        # ...is filled in looking up the data in the input `pd.DataFrame` by means of the appropriate "merged" column name
+        res[c] = input_df[assemble_name(c)]
+
+    return res
+
+# Cell
 def post_process(input_df: pd.DataFrame) -> pd.DataFrame:
     """
     Tidy up the `pd.DataFrame` returned by `to_df`.
@@ -178,16 +213,13 @@ def post_process(input_df: pd.DataFrame) -> pd.DataFrame:
 
     # ------------ ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod ------------
 
-    # new_column = f'ContractFolderStatus{nested_tags_separator}TenderingProcess{nested_tags_separator}TenderSubmissionDeadlinePeriod'
     new_column = assemble_name(['ContractFolderStatus', 'TenderingProcess', 'TenderSubmissionDeadlinePeriod'])
 
     # we don't want to inadvertently overwrite an existing column
     assert new_column not in res
     res[new_column] = pd.to_datetime(
-        # input_df[f'ContractFolderStatus{nested_tags_separator}TenderingProcess{nested_tags_separator}TenderSubmissionDeadlinePeriod{nested_tags_separator}EndDate']
         input_df[assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndDate'])]
         + 'T' +
-        # input_df[f'ContractFolderStatus{nested_tags_separator}TenderingProcess{nested_tags_separator}TenderSubmissionDeadlinePeriod{nested_tags_separator}EndTime'],
         input_df[assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndTime'])],
         format='%Y-%m-%dT%H:%M:%S'
     )
@@ -213,7 +245,7 @@ def post_process(input_df: pd.DataFrame) -> pd.DataFrame:
     return res
 
 # Cell
-def to_curated_df(input_file: str | pathlib.Path) -> pd.DataFrame:
+def to_curated_df(input_file: str | pathlib.Path, hierarchical: bool = False) -> pd.DataFrame:
     """
     Reads, parses and tidies up an XML file into a `pd.DataFrame`.
 
@@ -223,6 +255,10 @@ def to_curated_df(input_file: str | pathlib.Path) -> pd.DataFrame:
 
         Input file.
 
+    - hierarchical: bool
+
+        - If `True` multi-indexed columns are returned.
+
     **Returns**
 
     - out: pd.DataFrame
@@ -231,7 +267,13 @@ def to_curated_df(input_file: str | pathlib.Path) -> pd.DataFrame:
 
     """
 
-    return post_process(to_df(input_file))
+    res = post_process(to_df(input_file))
+
+    if hierarchical:
+
+        res = flat_df_to_multiindexed_df(res)
+
+    return res
 
 # Cell
 def columns_depth(df: pd.DataFrame) -> pd.Series:
