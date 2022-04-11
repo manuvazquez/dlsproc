@@ -80,6 +80,12 @@ nb_path: "20_bundle.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Zip-file">Zip file<a class="anchor-link" href="#Zip-file"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A (sample) file in that directory</p>
 
 </div>
@@ -348,7 +354,8 @@ nb_path: "20_bundle.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">read_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">concatenate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs_concatenated_zip</span> <span class="o">=</span> <span class="n">read_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">concatenate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dfs_concatenated_zip</span>
 </pre></div>
 
     </div>
@@ -709,6 +716,43 @@ nb_path: "20_bundle.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs_concatenated_zip</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>id                                       string
+summary                                  string
+title                                    string
+updated    datetime64[ns, pytz.FixedOffset(60)]
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Filenames can also be requested</p>
@@ -748,6 +792,12 @@ nb_path: "20_bundle.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Directory">Directory<a class="anchor-link" href="#Directory"> </a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A convenience function to read a bunch of zip files inside a directory</p>
@@ -1052,6 +1102,43 @@ nb_path: "20_bundle.ipynb"
 </table>
 <p>5 rows × 40 columns</p>
 </div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zips_df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>id                                       string
+summary                                  string
+title                                    string
+updated    datetime64[ns, pytz.FixedOffset(60)]
+dtype: object</pre>
+</div>
 
 </div>
 

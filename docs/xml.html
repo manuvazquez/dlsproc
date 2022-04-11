@@ -218,7 +218,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -363,7 +363,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -490,7 +490,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -541,10 +541,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1800&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1b40&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a0440&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a0280&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fa5923a8600&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fa5923a8380&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fa598b7b180&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fa5923a88c0&gt;]</pre>
 </div>
 
 </div>
@@ -678,7 +678,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f33df1a1800&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7fa5923a8600&gt;</pre>
 </div>
 
 </div>
@@ -803,7 +803,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="assemble_name" class="doc_header"><code>assemble_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>assemble_name</code>(<strong><code>tags</code></strong>:<code>list</code>)</p>
+<h4 id="assemble_name" class="doc_header"><code>assemble_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>assemble_name</code>(<strong><code>tags</code></strong>:<code>list</code>)</p>
 </blockquote>
 <p>Assemble the name of field/column in the DataFrame from a path of nested tags.</p>
 <p><strong>Parameters</strong></p>
@@ -933,7 +933,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L72" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1043,7 +1043,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -1354,7 +1354,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flat_series_to_multiindexed_series" class="doc_header"><code>flat_series_to_multiindexed_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_series_to_multiindexed_series</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
+<h4 id="flat_series_to_multiindexed_series" class="doc_header"><code>flat_series_to_multiindexed_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_series_to_multiindexed_series</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
 </blockquote>
 
 </div>
@@ -2347,7 +2347,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -3099,7 +3099,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flat_df_to_multiindexed_df" class="doc_header"><code>flat_df_to_multiindexed_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_df_to_multiindexed_df</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="flat_df_to_multiindexed_df" class="doc_header"><code>flat_df_to_multiindexed_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flat_df_to_multiindexed_df</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -4121,7 +4121,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L192" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
 <p><strong>Parameters</strong></p>
@@ -4222,7 +4222,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>2022-01-03 00:11:41.826000+00:00</td>
       <td>C. 2-2021</td>
       <td>ADJ</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4239,14 +4239,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2021-12-17 14:00:00</td>
+      <td>2021-12-17 14:00:00+00:00</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
-      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>2022-01-03 00:00:11.194000+00:00</td>
       <td>8128_3/2021</td>
       <td>PUB</td>
       <td>&lt;NA&gt;</td>
@@ -4263,14 +4263,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-22 23:30:00</td>
+      <td>2022-01-22 23:30:00+00:00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
-      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>2022-01-03 00:00:10.399000+00:00</td>
       <td>1000_0005-CP01-2021-000063</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -4294,7 +4294,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>2022-01-02 23:11:40.740000+00:00</td>
       <td>1379/2020 4738</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4311,14 +4311,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
     <tr>
       <th>4</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 2021-44; Órgano de Contratación...</td>
       <td>Subministre i la instal·lació fotovoltaica en ...</td>
-      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2022-01-02 23:11:40.696000+00:00</td>
       <td>2021-44</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4335,7 +4335,7 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
   </tbody>
 </table>
@@ -4379,11 +4379,11 @@ dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>id                                                                       string
-summary                                                                  string
-title                                                                    string
-updated                                    datetime64[ns, pytz.FixedOffset(60)]
-ContractFolderStatus - ContractFolderID                                  string
+<pre>id                                                      string
+summary                                                 string
+title                                                   string
+updated                                    datetime64[ns, UTC]
+ContractFolderStatus - ContractFolderID                 string
 dtype: object</pre>
 </div>
 
@@ -4413,7 +4413,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L248" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>hierarchical</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L249" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>hierarchical</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Reads, parses and tidies up an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -4519,7 +4519,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>2022-01-03 00:11:41.826000+00:00</td>
       <td>C. 2-2021</td>
       <td>ADJ</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4536,14 +4536,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2021-12-17 14:00:00</td>
+      <td>2021-12-17 14:00:00+00:00</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
-      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>2022-01-03 00:00:11.194000+00:00</td>
       <td>8128_3/2021</td>
       <td>PUB</td>
       <td>&lt;NA&gt;</td>
@@ -4560,14 +4560,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-22 23:30:00</td>
+      <td>2022-01-22 23:30:00+00:00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
-      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>2022-01-03 00:00:10.399000+00:00</td>
       <td>1000_0005-CP01-2021-000063</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -4591,7 +4591,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>2022-01-02 23:11:40.740000+00:00</td>
       <td>1379/2020 4738</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4608,14 +4608,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
     <tr>
       <th>4</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 2021-44; Órgano de Contratación...</td>
       <td>Subministre i la instal·lació fotovoltaica en ...</td>
-      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2022-01-02 23:11:40.696000+00:00</td>
       <td>2021-44</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4632,7 +4632,7 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
   </tbody>
 </table>
@@ -4676,11 +4676,11 @@ dtype: object</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>id                                                                       string
-summary                                                                  string
-title                                                                    string
-updated                                    datetime64[ns, pytz.FixedOffset(60)]
-ContractFolderStatus - ContractFolderID                                  string
+<pre>id                                                      string
+summary                                                 string
+title                                                   string
+updated                                    datetime64[ns, UTC]
+ContractFolderStatus - ContractFolderID                 string
 dtype: object</pre>
 </div>
 
@@ -4862,7 +4862,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
       <td>L'objecte del contracte és la renovació de tot...</td>
-      <td>2022-01-03 01:11:41.826000+01:00</td>
+      <td>2022-01-03 00:11:41.826000+00:00</td>
       <td>C. 2-2021</td>
       <td>ADJ</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4879,14 +4879,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2021-12-17 14:00:00</td>
+      <td>2021-12-17 14:00:00+00:00</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
       <td>Obras de restauración hidromorfológica del río...</td>
-      <td>2022-01-03 01:00:11.194000+01:00</td>
+      <td>2022-01-03 00:00:11.194000+00:00</td>
       <td>8128_3/2021</td>
       <td>PUB</td>
       <td>&lt;NA&gt;</td>
@@ -4903,14 +4903,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-22 23:30:00</td>
+      <td>2022-01-22 23:30:00+00:00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
       <td>Contrato del servicio de realización de labore...</td>
-      <td>2022-01-03 01:00:10.399000+01:00</td>
+      <td>2022-01-03 00:00:10.399000+00:00</td>
       <td>1000_0005-CP01-2021-000063</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -4934,7 +4934,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
       <td>Obres de renovació de l'enllumenat públic a la...</td>
-      <td>2022-01-03 00:11:40.740000+01:00</td>
+      <td>2022-01-02 23:11:40.740000+00:00</td>
       <td>1379/2020 4738</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4951,14 +4951,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
     <tr>
       <th>4</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 2021-44; Órgano de Contratación...</td>
       <td>Subministre i la instal·lació fotovoltaica en ...</td>
-      <td>2022-01-03 00:11:40.696000+01:00</td>
+      <td>2022-01-02 23:11:40.696000+00:00</td>
       <td>2021-44</td>
       <td>EV</td>
       <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
@@ -4975,7 +4975,7 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-02 23:59:00</td>
+      <td>2022-01-02 23:59:00+00:00</td>
     </tr>
     <tr>
       <th>...</th>
@@ -5006,7 +5006,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 1005_391-2021; Órgano de Contra...</td>
       <td>Apoyo a la gestión del patrimonio filmográfico...</td>
-      <td>2021-12-31 01:00:14.946000+01:00</td>
+      <td>2021-12-31 00:00:14.946000+00:00</td>
       <td>1005_391-2021</td>
       <td>PUB</td>
       <td>&lt;NA&gt;</td>
@@ -5023,14 +5023,14 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2022-01-14 23:59:00</td>
+      <td>2022-01-14 23:59:00+00:00</td>
     </tr>
     <tr>
       <th>113</th>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8165_3/2021; Órgano de Contrata...</td>
       <td>Asistencia técnica para la prestación del serv...</td>
-      <td>2021-12-31 01:00:14.393000+01:00</td>
+      <td>2021-12-31 00:00:14.393000+00:00</td>
       <td>8165_3/2021</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -5054,7 +5054,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8113_3/2021; Órgano de Contrata...</td>
       <td>Contrato de servicios de desinfección, desinse...</td>
-      <td>2021-12-31 01:00:13.594000+01:00</td>
+      <td>2021-12-31 00:00:13.594000+00:00</td>
       <td>8113_3/2021</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -5078,7 +5078,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 8113_01 2021; Órgano de Contrat...</td>
       <td>Contrato del Servicio de Teleasistencia para l...</td>
-      <td>2021-12-31 01:00:12.604000+01:00</td>
+      <td>2021-12-31 00:00:12.604000+00:00</td>
       <td>8113_01 2021</td>
       <td>EV</td>
       <td>&lt;NA&gt;</td>
@@ -5102,7 +5102,7 @@ dtype: object</pre>
       <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Id licitación: 0001264/2021; Órgano de contrat...</td>
       <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
-      <td>2021-12-31 00:14:15.739000+01:00</td>
+      <td>2021-12-30 23:14:15.739000+00:00</td>
       <td>0001264/2021</td>
       <td>RES</td>
       <td>&lt;NA&gt;</td>
@@ -5119,7 +5119,7 @@ dtype: object</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
-      <td>2021-11-11 15:00:00</td>
+      <td>2021-11-11 15:00:00+00:00</td>
     </tr>
   </tbody>
 </table>
@@ -5158,7 +5158,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L279" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L280" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>

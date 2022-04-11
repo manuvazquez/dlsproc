@@ -9,6 +9,7 @@ import pathlib
 import re
 import datetime
 
+import numpy as np
 import pandas as pd
 from lxml import etree
 
@@ -221,14 +222,14 @@ def post_process(input_df: pd.DataFrame) -> pd.DataFrame:
         input_df[assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndDate'])]
         + 'T' +
         input_df[assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndTime'])],
-        format='%Y-%m-%dT%H:%M:%S'
+        format='%Y-%m-%dT%H:%M:%S', utc=True
     )
 
     processed_columns.append(new_column)
 
     # -------------------------------------------- updated ---------------------------------------------
 
-    res['updated'] = pd.to_datetime(input_df['updated'], format='%Y-%m-%dT%H:%M:%S.%f%z')
+    res['updated'] = pd.to_datetime(input_df['updated'], format='%Y-%m-%dT%H:%M:%S.%f%z', utc=True)
 
     processed_columns.append('updated')
 
