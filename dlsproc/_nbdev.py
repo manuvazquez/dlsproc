@@ -24,7 +24,8 @@ index = {"process_atom": "00_core.ipynb",
 
 modules = ["core.py",
            "xml.py",
-           "bundle.py"]
+           "bundle.py",
+           "hier.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 

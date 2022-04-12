@@ -3,6 +3,7 @@
     "Overview": "/",
     "core": "core.html",
     "xml": "xml.html",
-    "bundle": "bundle.html"
+    "bundle": "bundle.html",
+    "hier": "hierarchical.html"
   }
 }
