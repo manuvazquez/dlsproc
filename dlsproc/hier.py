@@ -59,15 +59,16 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
 # Cell
 def pad_col_levels(df: pd.DataFrame, levels: tuple | list) -> tuple:
 
-    if any([np.nan in c for c in df.columns]):
-        nan_marker = np.nan
-    elif any(['nan' in c for c in df.columns]):
-        nan_marker = 'nan'
-    else:
-        raise Exception('marker of empty levels could not be guessed')
+    # if any([np.nan in c for c in df.columns]):
+    #     nan_marker = np.nan
+    # elif any(['nan' in c for c in df.columns]):
+    #     nan_marker = 'nan'
+    # else:
+    #     raise Exception('marker of empty levels could not be guessed')
 
+    return tuple(list(levels) + [np.nan] * (df.columns.nlevels - len(levels)))
     # return tuple(list(levels) + ['nan'] * (df.columns.nlevels - len(levels)))
-    return tuple(list(levels) + [nan_marker] * (df.columns.nlevels - len(levels)))
+    # return tuple(list(levels) + [nan_marker] * (df.columns.nlevels - len(levels)))
 
 # Cell
 def columns_containing(df: pd.DataFrame, substring: str):

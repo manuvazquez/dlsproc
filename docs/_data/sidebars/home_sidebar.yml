@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: hier
       url: hierarchical.html
+    - output: web,pdf
+      title: io
+      url: io.html
     output: web
     title: dlsproc
   output: web

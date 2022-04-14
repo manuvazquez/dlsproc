@@ -4,6 +4,7 @@
     "core": "core.html",
     "xml": "xml.html",
     "bundle": "bundle.html",
-    "hier": "hierarchical.html"
+    "hier": "hierarchical.html",
+    "io": "io.html"
   }
 }
