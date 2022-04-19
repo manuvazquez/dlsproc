@@ -7,6 +7,7 @@ import pathlib
 import zipfile
 
 import pandas as pd
+from IPython.display import display
 
 import dlsproc.xml
 
@@ -55,6 +56,8 @@ def read_zip(
 
                 # ...and processed
                 dfs.append(dlsproc.xml.to_curated_df(f))
+
+                # print(dfs[-1]['ContractFolderStatus - ProcurementProject - BudgetAmount - TotalAmount'].dtype) # <----------------
 
 
     if concatenate:
