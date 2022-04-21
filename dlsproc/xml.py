@@ -65,7 +65,10 @@ def assemble_name(tags: list) -> str:
 
     """
 
-    tags = [t for t in tags if not pd.isna(t)]
+    # tags = [t for t in tags if not pd.isna(t)]
+
+    tags = filter(pd.notna, tags)
+    tags = filter(lambda x: x!='', tags)
 
     return nested_tags_separator.join(tags)
 

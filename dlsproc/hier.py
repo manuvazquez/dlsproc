@@ -42,8 +42,18 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
 
     """
 
+    # every field becomes a `tuple`
+    fields = [tuple(c.split(dlsproc.xml.nested_tags_separator)) for c in input_df.columns]
+
+    # the number of levels in the multindex for the columns
+    n_levels = len(max(fields, key=len))
+
+    # every tuple is padded with empty string until it has `n_levels`
+    fields = [e + ('',)*(n_levels-len(e)) for e in fields]
+
     # every column name is turned into a `tuple`, and from the collection of all of them a `pd.MultiIndex` is built
-    index_hierarchical = pd.MultiIndex.from_tuples([tuple(c.split(dlsproc.xml.nested_tags_separator)) for c in input_df.columns])
+    # index_hierarchical = pd.MultiIndex.from_tuples([tuple(c.split(dlsproc.xml.nested_tags_separator)) for c in input_df.columns])
+    index_hierarchical = pd.MultiIndex.from_tuples(fields)
 
     # an empty `pd.DataFrame`
     res = pd.DataFrame(None, columns=index_hierarchical)
@@ -66,7 +76,8 @@ def pad_col_levels(df: pd.DataFrame, levels: tuple | list) -> tuple:
     # else:
     #     raise Exception('marker of empty levels could not be guessed')
 
-    return tuple(list(levels) + [np.nan] * (df.columns.nlevels - len(levels)))
+    return tuple(list(levels) + [''] * (df.columns.nlevels - len(levels)))
+    # return tuple(list(levels) + [np.nan] * (df.columns.nlevels - len(levels)))
     # return tuple(list(levels) + ['nan'] * (df.columns.nlevels - len(levels)))
     # return tuple(list(levels) + [nan_marker] * (df.columns.nlevels - len(levels)))
 
