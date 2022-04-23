@@ -25,10 +25,9 @@ index = {"process_atom": "00_core.ipynb",
          "flat_df_to_multiindexed_df": "30_hierarchical.ipynb",
          "pad_col_levels": "30_hierarchical.ipynb",
          "columns_containing": "30_hierarchical.ipynb",
-         "save_df": "40_io.ipynb",
-         "load_df": "40_io.ipynb",
-         "exists": "40_io.ipynb",
-         "actual_name": "40_io.ipynb"}
+         "File": "40_io.ipynb",
+         "write": "40_io.ipynb",
+         "read": "40_io.ipynb"}
 
 modules = ["core.py",
            "xml.py",
