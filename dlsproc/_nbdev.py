@@ -27,13 +27,16 @@ index = {"process_atom": "00_core.ipynb",
          "columns_containing": "30_hierarchical.ipynb",
          "File": "40_io.ipynb",
          "write": "40_io.ipynb",
-         "read": "40_io.ipynb"}
+         "read": "40_io.ipynb",
+         "domain_discriminative_column_path": "50_parse.ipynb",
+         "domain_into_new_column": "50_parse.ipynb"}
 
 modules = ["core.py",
            "xml.py",
            "bundle.py",
            "hier.py",
-           "io.py"]
+           "io.py",
+           "parse.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 

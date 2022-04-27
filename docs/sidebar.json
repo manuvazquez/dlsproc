@@ -5,6 +5,7 @@
     "xml": "xml.html",
     "bundle": "bundle.html",
     "hier": "hierarchical.html",
-    "io": "io.html"
+    "io": "io.html",
+    "parse": "parse.html"
   }
 }
