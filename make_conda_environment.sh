@@ -14,6 +14,7 @@ LIBRARIES=(
     lxml
     pandas
     pyarrow
+    openpyxl
 )
 
 CHANNELS=(

@@ -453,8 +453,8 @@ nb_path: "50_parse.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain_discriminative_column</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">hier</span><span class="o">.</span><span class="n">pad_col_levels</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">domain_discriminative_column_path</span><span class="p">)</span>
-<span class="n">domain_discriminative_column</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain_discriminative_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">hier</span><span class="o">.</span><span class="n">pad_col_levels</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">domain_discriminative_columns_paths</span><span class="p">]</span>
+<span class="n">domain_discriminative_columns</span>
 </pre></div>
 
     </div>
@@ -469,50 +469,18 @@ nb_path: "50_parse.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&#39;ContractFolderStatus&#39;,
- &#39;LocatedContractingParty&#39;,
- &#39;BuyerProfileURIID&#39;,
- &#39;&#39;,
- &#39;&#39;,
- &#39;&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain_discriminative_column</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&#39;ContractFolderStatus&#39;,
- &#39;LocatedContractingParty&#39;,
- &#39;BuyerProfileURIID&#39;,
- &#39;&#39;,
- &#39;&#39;,
- &#39;&#39;)</pre>
+<pre>[(&#39;ContractFolderStatus&#39;,
+  &#39;LocatedContractingParty&#39;,
+  &#39;BuyerProfileURIID&#39;,
+  &#39;&#39;,
+  &#39;&#39;,
+  &#39;&#39;),
+ (&#39;ContractFolderStatus&#39;,
+  &#39;LegalDocumentReference&#39;,
+  &#39;Attachment&#39;,
+  &#39;ExternalReference&#39;,
+  &#39;URI&#39;,
+  &#39;&#39;)]</pre>
 </div>
 
 </div>
@@ -525,7 +493,7 @@ nb_path: "50_parse.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unique values of the latter</p>
+<p>Unique values of the <em>first</em> one</p>
 
 </div>
 </div>
@@ -537,7 +505,7 @@ nb_path: "50_parse.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_values</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">domain_discriminative_column</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_values</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">domain_discriminative_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">unique_values</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
@@ -615,7 +583,7 @@ nb_path: "50_parse.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A one-liner returning a <code>pd.Series</code></p>
+<p>A one-liner returning a <code>pd.DataFrame</code> of columns with <em>parsed</em> domains</p>
 
 </div>
 </div>
@@ -627,8 +595,150 @@ nb_path: "50_parse.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">domain_discriminative_column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">netloc</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
-<span class="n">domain</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domains</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">domain_discriminative_columns</span><span class="p">]</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">netloc</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+<span class="n">domains</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>LocatedContractingParty</th>
+      <th>LegalDocumentReference</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+      <th>Attachment</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>ExternalReference</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>URI</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>contractaciopublica.gencat.cat</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>contractaciopublica.gencat.cat</td>
+      <td>contractaciopublica.gencat.cat</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>contractaciopublica.gencat.cat</td>
+      <td>contractaciopublica.gencat.cat</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 2 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How many <em>non-nulls</em> are in every column?</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domains</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -643,18 +753,9 @@ nb_path: "50_parse.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0      contractaciopublica.gencat.cat
-1                                &lt;NA&gt;
-2                                &lt;NA&gt;
-3      contractaciopublica.gencat.cat
-4      contractaciopublica.gencat.cat
-                    ...              
-112                              &lt;NA&gt;
-113                              &lt;NA&gt;
-114                              &lt;NA&gt;
-115                              &lt;NA&gt;
-116                              &lt;NA&gt;
-Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), Length: 117, dtype: object</pre>
+<pre>ContractFolderStatus  LocatedContractingParty  BuyerProfileURIID                              42
+                      LegalDocumentReference   Attachment         ExternalReference  URI      70
+dtype: int64</pre>
 </div>
 
 </div>
@@ -667,7 +768,47 @@ Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function extending a <code>pd.DataFrame</code> with</p>
+<p>What about the combination?</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domains</span><span class="p">[</span><span class="n">domain_discriminative_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">combine_first</span><span class="p">(</span><span class="n">domains</span><span class="p">[</span><span class="n">domain_discriminative_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>77</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function returning a <code>pd.Series</code> with domains</p>
 
 </div>
 </div>
@@ -683,7 +824,7 @@ Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="domain_into_new_column" class="doc_header"><code>domain_into_new_column</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/parse.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>domain_into_new_column</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="domain" class="doc_header"><code>domain</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/parse.py#L21" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>domain</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -717,24 +858,7 @@ Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain_into_new_column</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">domain</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -760,7 +884,7 @@ Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), 
 114                              &lt;NA&gt;
 115                              &lt;NA&gt;
 116                              &lt;NA&gt;
-Name: domain, Length: 117, dtype: object</pre>
+Name: (ContractFolderStatus, LocatedContractingParty, BuyerProfileURIID, , , ), Length: 117, dtype: object</pre>
 </div>
 
 </div>

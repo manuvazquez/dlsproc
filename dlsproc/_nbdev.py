@@ -11,6 +11,7 @@ index = {"process_atom": "00_core.ipynb",
          "get_entries": "10_xml.ipynb",
          "nested_tags_separator": "10_xml.ipynb",
          "assemble_name": "10_xml.ipynb",
+         "unique_name": "10_xml.ipynb",
          "entry_to_dict": "10_xml.ipynb",
          "entry_to_series": "10_xml.ipynb",
          "to_df": "10_xml.ipynb",
@@ -28,8 +29,8 @@ index = {"process_atom": "00_core.ipynb",
          "File": "40_io.ipynb",
          "write": "40_io.ipynb",
          "read": "40_io.ipynb",
-         "domain_discriminative_column_path": "50_parse.ipynb",
-         "domain_into_new_column": "50_parse.ipynb"}
+         "domain_discriminative_columns_paths": "50_parse.ipynb",
+         "domain": "50_parse.ipynb"}
 
 modules = ["core.py",
            "xml.py",

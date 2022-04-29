@@ -57,9 +57,6 @@ def read_zip(
                 # ...and processed
                 dfs.append(dlsproc.xml.to_curated_df(f))
 
-                # print(dfs[-1]['ContractFolderStatus - ProcurementProject - BudgetAmount - TotalAmount'].dtype) # <----------------
-
-
     if concatenate:
 
         dfs = pd.concat(dfs, keys=filenames, names=['file name', 'entry'])
