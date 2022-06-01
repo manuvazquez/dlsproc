@@ -224,7 +224,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -352,7 +352,7 @@ nb_path: "10_xml.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>a function</li>
+<li>a convenience function exploiting the latter</li>
 </ul>
 
 </div>
@@ -369,7 +369,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -480,7 +480,13 @@ nb_path: "10_xml.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function to get list of <code>etree.Element</code> with all the <em>entries</em> (allegedly, <em>procurement contracts</em>)</p>
+<h3 id="Regular-entries">Regular entries<a class="anchor-link" href="#Regular-entries"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function to get a list of <code>etree.Element</code> with all the <em>entries</em> (allegedly, <em>procurement contracts</em>)</p>
 
 </div>
 </div>
@@ -496,7 +502,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -547,10 +553,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f853e73c600&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f853e73c640&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f853e73c300&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f853e73c680&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f7d559e86c0&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f7d559e8700&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f7d559e8640&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f7d559e8740&gt;]</pre>
 </div>
 
 </div>
@@ -684,7 +690,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f853e73c600&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f7d559e86c0&gt;</pre>
 </div>
 
 </div>
@@ -737,6 +743,165 @@ nb_path: "10_xml.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deleted-entries">Deleted entries<a class="anchor-link" href="#Deleted-entries"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It makes sense to treat separately since they information provided for them is completely different.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_deleted_entries" class="doc_header"><code>get_deleted_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_deleted_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_entries</span> <span class="o">=</span> <span class="n">get_deleted_entries</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">deleted_entries</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f7d559fbf40&gt;,
+ &lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f7d559f9140&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_element</span> <span class="o">=</span> <span class="n">deleted_entries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">split_namespace_tag</span><span class="p">(</span><span class="n">deleted_element</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&#39;http://purl.org/atompub/tombstones/1.0&#39;, &#39;deleted-entry&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These are <em>all-attributes</em> elements</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_element</span><span class="o">.</span><span class="n">attrib</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;ref&#39;: &#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968384&#39;, &#39;when&#39;: &#39;2022-01-03T00:11:41.879+01:00&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Nested-tags">Nested tags<a class="anchor-link" href="#Nested-tags"> </a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When two a <em>tag</em> is nested inside other <em>tag</em> the string below is used to assemble the name of the resulting <em>column</em> from those of the original tags</p>
@@ -809,7 +974,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="assemble_name" class="doc_header"><code>assemble_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>assemble_name</code>(<strong><code>tags</code></strong>:<code>list</code>)</p>
+<h4 id="assemble_name" class="doc_header"><code>assemble_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>assemble_name</code>(<strong><code>tags</code></strong>:<code>list</code>)</p>
 </blockquote>
 <p>Assemble the name of field/column in the DataFrame from a path of nested tags.</p>
 <p><strong>Parameters</strong></p>
@@ -973,7 +1138,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="unique_name" class="doc_header"><code>unique_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>unique_name</code>(<strong><code>name</code></strong>:<code>str</code>, <strong><code>existing</code></strong>:<code>Iterable</code>[<code>str</code>])</p>
+<h4 id="unique_name" class="doc_header"><code>unique_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>unique_name</code>(<strong><code>name</code></strong>:<code>str</code>, <strong><code>existing</code></strong>:<code>Iterable</code>[<code>str</code>])</p>
 </blockquote>
 
 </div>
@@ -1091,6 +1256,191 @@ nb_path: "10_xml.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>A function to handle <em>multi-valued</em> fields</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="set_or_append" class="doc_header"><code>set_or_append</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_or_append</code>(<strong><code>d</code></strong>:<code>dict</code>, <strong><code>key</code></strong>:<code>str</code>, <strong><code>value</code></strong>:<code>str | dict</code>[<code>str</code>, <code>dict</code>])</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A sample dictionary</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A value for <em>foo</em> is added</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_or_append</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sample_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;foo&#39;: 1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another value for the <em>same</em> key is added</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_or_append</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sample_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;foo&#39;: [1, 2]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A different key is added</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_or_append</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span> <span class="s1">&#39;blah&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sample_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;foo&#39;: [1, 2], &#39;blah&#39;: 3}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A <strong>recursive</strong> function to parse a node of the <em>XML</em> tree</p>
 
 </div>
@@ -1107,7 +1457,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L107" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1174,9 +1524,54 @@ nb_path: "10_xml.ipynb"
  &#39;ContractFolderStatus - TenderingProcess - ProcedureCode&#39;: 9,
  &#39;ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndDate&#39;: &#39;2021-12-17&#39;,
  &#39;ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod - EndTime&#39;: &#39;14:00:00&#39;,
- &#39;ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode&#39;: &#39;DOC_CAN_ADJ&#39;,
- &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName&#39;: &#39;Perfil del contratante&#39;,
- &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate&#39;: &#39;2022-01-03&#39;}</pre>
+ &#39;ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode&#39;: [&#39;DOC_CN&#39;,
+  &#39;DOC_CAN_ADJ&#39;],
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName&#39;: [&#39;Perfil del contratante&#39;,
+  &#39;Perfil del contratante&#39;],
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate&#39;: [&#39;2021-11-30&#39;,
+  &#39;2022-01-03&#39;]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An example of <em>multi-valued</em> field</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span><span class="p">[</span><span class="n">assemble_name</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ValidNoticeInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;AdditionalPublicationStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;AdditionalPublicationDocumentReference&#39;</span><span class="p">,</span> <span class="s1">&#39;IssueDate&#39;</span><span class="p">]</span>
+<span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;2021-11-30&#39;, &#39;2022-01-03&#39;]</pre>
 </div>
 
 </div>
@@ -1217,7 +1612,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L143" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -1380,9 +1775,9 @@ dtype: object</pre>
       <td>9</td>
       <td>2021-12-17</td>
       <td>14:00:00</td>
-      <td>DOC_CAN_ADJ</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
+      <td>[DOC_CN, DOC_CAN_ADJ]</td>
+      <td>[Perfil del contratante, Perfil del contratante]</td>
+      <td>[2021-11-30, 2022-01-03]</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1429,8 +1824,8 @@ dtype: object</pre>
       <td>NaN</td>
       <td>NaN</td>
       <td>DOC_CN</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
+      <td>[DOUE, Perfil del contratante]</td>
+      <td>[2021-12-01, 2022-01-03]</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1558,7 +1953,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L166" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -1933,6 +2328,209 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><code>list</code>s of values are possible. A function to check whether a <code>pd.Series</code> (a <em>column</em> in a <code>pd.DataFrame</code>) has <code>list</code>s.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="is_multivalued" class="doc_header"><code>is_multivalued</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L191" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>is_multivalued</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
+</blockquote>
+<p>Returns <code>True</code> is the given <code>pd.Series</code> has a <code>list</code> at any index.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>s: pandas series</p>
+<p>Input</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: bool</p>
+<p><code>True</code> if the input contains some <code>list</code>.</p>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multivalued_column</span> <span class="o">=</span> <span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ValidNoticeInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;NoticeTypeCode&#39;</span><span class="p">])</span>
+<span class="n">is_multivalued</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">multivalued_column</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">multivalued_column</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    [DOC_CN, DOC_CAN_ADJ]
+1                   DOC_CN
+2                   DOC_CN
+3                   DOC_CN
+4                   DOC_CN
+Name: ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function exploiting the above function to return (only) the columns that are multivalued.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="multivalued_columns" class="doc_header"><code>multivalued_columns</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L211" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>multivalued_columns</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multivalued_columns</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;ContractFolderStatus - ProcurementProject - RequiredCommodityClassification - ItemClassificationCode&#39;,
+ &#39;ContractFolderStatus - TenderResult - ResultCode&#39;,
+ &#39;ContractFolderStatus - TenderResult - ReceivedTenderQuantity&#39;,
+ &#39;ContractFolderStatus - TenderResult - WinningParty - PartyIdentification - ID&#39;,
+ &#39;ContractFolderStatus - TenderResult - WinningParty - PartyName - Name&#39;,
+ &#39;ContractFolderStatus - TenderResult - AwardedTenderedProject - LegalMonetaryTotal - TaxExclusiveAmount&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - PublicationMediaName&#39;,
+ &#39;ContractFolderStatus - ValidNoticeInfo - AdditionalPublicationStatus - AdditionalPublicationDocumentReference - IssueDate&#39;,
+ &#39;ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Post-processing">Post-processing<a class="anchor-link" href="#Post-processing"> </a></h3>
 </div>
 </div>
@@ -2053,7 +2651,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L222" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
 <p><strong>Parameters</strong></p>
@@ -2329,6 +2927,30 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Multivalued</em> columns are still <em>multivalued</em></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">multivalued_columns</span><span class="p">(</span><span class="n">post_df</span><span class="p">)</span> <span class="o">==</span> <span class="n">multivalued_columns</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A convenience function combining <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a> and <a href="/dlsproc/xml.html#post_process"><code>post_process</code></a></p>
 
 </div>
@@ -2345,7 +2967,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L258" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L307" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads, parses and tidies up an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -2643,7 +3265,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L279" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L328" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -2827,15 +3449,15 @@ Name: 0, dtype: int64</pre>
       <td>L'objecte del contracte és la renovació de tot...</td>
       <td>...</td>
       <td>11</td>
-      <td>A28526275 II</td>
-      <td>AERONAVAL DE CONSTRUCCIONES I INSTALACIONES , ...</td>
+      <td>[A28526275, A28526275 II]</td>
+      <td>[AERONAVAL DE CONSTRUCCIONES I INSTALACIONES ,...</td>
       <td>90078.51</td>
       <td>9</td>
       <td>2021-12-17</td>
       <td>14:00:00</td>
-      <td>DOC_CAN_ADJ</td>
-      <td>Perfil del contratante</td>
-      <td>2022-01-03</td>
+      <td>[DOC_CN, DOC_CAN_ADJ]</td>
+      <td>[Perfil del contratante, Perfil del contratante]</td>
+      <td>[2021-11-30, 2022-01-03]</td>
     </tr>
   </tbody>
 </table>
