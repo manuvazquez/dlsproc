@@ -67,7 +67,11 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
     return res
 
 # Cell
-def pad_col_levels(df: pd.DataFrame, levels: tuple | list) -> tuple:
+def pad_col_levels(df: pd.DataFrame, levels: tuple | list, denan: bool = False) -> tuple:
+
+    # if "de-NaN" was requested...
+    if denan:
+        levels = [e for e in levels if pd.notna(e)]
 
     # if any([np.nan in c for c in df.columns]):
     #     nan_marker = np.nan

@@ -15,6 +15,7 @@ LIBRARIES=(
     pandas
     pyarrow
     openpyxl
+	ruamel.yaml
 )
 
 CHANNELS=(
