@@ -7,6 +7,7 @@ __all__ = ['File', 'homogenize_multivalued', 'cast_list_to_floats_or_strs', 'cas
 import pathlib
 
 import pandas as pd
+import numpy as np
 
 import dlsproc.xml
 

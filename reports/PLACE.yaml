@@ -128,10 +128,10 @@ Presupuesto base con impuestos:
   - .nan
 Clasificación CPV:
   - ContractFolderStatus
-  - ProcurementProjectLot
   - ProcurementProject
   - RequiredCommodityClassification
   - ItemClassificationCode
+  - .nan
   - .nan
   - .nan
 Código de Subentidad Nacional:
@@ -158,7 +158,23 @@ Población:
   - CityName
   - .nan
   - .nan
-Plazo de Ejecución:
+Plazo de Ejecución (Comienzo):
+  - ContractFolderStatus
+  - ProcurementProject
+  - PlannedPeriod
+  - StartDate
+  - .nan
+  - .nan
+  - .nan
+Plazo de Ejecución (Fin):
+  - ContractFolderStatus
+  - ProcurementProject
+  - PlannedPeriod
+  - EndDate
+  - .nan
+  - .nan
+  - .nan
+Plazo de Ejecución (Duración):
   - ContractFolderStatus
   - ProcurementProject
   - PlannedPeriod
@@ -198,6 +214,14 @@ Importe con impuestos:
   - TotalAmount
   - .nan
   - .nan
+Clasificación CPV (Lote):
+  - ContractFolderStatus
+  - ProcurementProjectLot
+  - ProcurementProject
+  - RequiredCommodityClassification
+  - ItemClassificationCode
+  - .nan
+  - .nan
 Tipo de Procedimiento:
   - ContractFolderStatus
   - TenderingProcess
@@ -206,7 +230,31 @@ Tipo de Procedimiento:
   - .nan
   - .nan
   - .nan
-Fecha:
+Presentación de Oferta (Fecha):
+  - ContractFolderStatus
+  - TenderingProcess
+  - TenderSubmissionDeadlinePeriod
+  - EndDate
+  - .nan
+  - .nan
+  - .nan
+Presentación de Oferta (Hora):
+  - ContractFolderStatus
+  - TenderingProcess
+  - TenderSubmissionDeadlinePeriod
+  - EndTime
+  - .nan
+  - .nan
+  - .nan
+Presentación de Oferta (Observaciones):
+  - ContractFolderStatus
+  - TenderingProcess
+  - TenderSubmissionDeadlinePeriod
+  - Description
+  - .nan
+  - .nan
+  - .nan
+Presentación de Solicitudes (Fecha):
   - ContractFolderStatus
   - TenderingProcess
   - ParticipationRequestReceptionPeriod
@@ -214,7 +262,7 @@ Fecha:
   - .nan
   - .nan
   - .nan
-Hora:
+Presentación de Solicitudes (Hora):
   - ContractFolderStatus
   - TenderingProcess
   - ParticipationRequestReceptionPeriod
@@ -222,7 +270,7 @@ Hora:
   - .nan
   - .nan
   - .nan
-Observaciones:
+Presentación de Solicitudes (Observaciones):
   - ContractFolderStatus
   - TenderingProcess
   - ParticipationRequestReceptionPeriod
@@ -321,12 +369,28 @@ Importe total ofertado (con impuestos):
 Pliego de cláusulas administrativas:
   - ContractFolderStatus
   - LegalDocumentReference
+  - ID
+  - .nan
+  - .nan
+  - .nan
+  - .nan
+Pliego de cláusulas administrativas (URI):
+  - ContractFolderStatus
+  - LegalDocumentReference
   - Attachment
   - ExternalReference
   - URI
   - .nan
   - .nan
 Pliego de Prescripciones técnicas:
+  - ContractFolderStatus
+  - TechnicalDocumentReference
+  - ID
+  - .nan
+  - .nan
+  - .nan
+  - .nan
+Pliego de Prescripciones técnicas (URI):
   - ContractFolderStatus
   - TechnicalDocumentReference
   - Attachment
@@ -337,8 +401,24 @@ Pliego de Prescripciones técnicas:
 Anexos a los pliegos:
   - ContractFolderStatus
   - AdditionalDocumentReference
+  - ID
+  - .nan
+  - .nan
+  - .nan
+  - .nan
+Anexos a los pliegos (URI):
+  - ContractFolderStatus
+  - AdditionalDocumentReference
   - Attachment
   - ExternalReference
   - URI
+  - .nan
+  - .nan
+Presentación de Oferta:
+  - ContractFolderStatus
+  - TenderingProcess
+  - TenderSubmissionDeadlinePeriod
+  - .nan
+  - .nan
   - .nan
   - .nan

@@ -1,3 +1,4 @@
 *.parquet
 *.pickle
 *.feather
+*.xlsx
