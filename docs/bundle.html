@@ -794,6 +794,139 @@ dtype: object</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Deleted-entries">Deleted entries<a class="anchor-link" href="#Deleted-entries"> </a></h4>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="read_deleted_zip" class="doc_header"><code>read_deleted_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/bundle.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>read_deleted_zip</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+</blockquote>
+<p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p>input_file: str or Path</p>
+<p>Input file.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><p>out: pd.Series</p>
+<p>A Pandas Series with XML data.</p>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">read_deleted_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>file name                                            entry                                                                              
+PlataformasAgregadasSinMenores_20220105_030012.atom  https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 01:12:01.376000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-04 00:11:57.567000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968345   2022-01-04 00:11:57.516000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968324   2022-01-04 00:11:57.471000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968344   2022-01-04 00:11:57.426000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968337   2022-01-04 00:11:57.375000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968321   2022-01-04 00:11:57.323000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968335   2022-01-04 00:11:57.275000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968343   2022-01-04 00:11:57.232000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968333   2022-01-04 00:11:57.183000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968360   2022-01-04 00:11:57.141000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968327   2022-01-04 00:11:57.089000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968318   2022-01-04 00:11:57.038000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968361   2022-01-04 00:11:56.991000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968332   2022-01-04 00:11:56.949000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968331   2022-01-04 00:11:56.897000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968329   2022-01-04 00:11:56.850000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968338   2022-01-04 00:11:56.805000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968317   2022-01-04 00:11:56.751000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968358   2022-01-04 00:11:56.706000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968346   2022-01-04 00:11:56.661000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968319   2022-01-04 00:11:56.620000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968325   2022-01-04 00:11:56.579000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921   2022-01-04 00:11:56.535000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074   2022-01-04 00:11:56.497000+01:00
+PlataformasAgregadasSinMenores_20220106_030013.atom  https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968294   2022-01-05 00:12:13.328000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968301   2022-01-05 00:12:13.283000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968299   2022-01-05 00:12:13.236000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968291   2022-01-05 00:12:13.191000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968286   2022-01-05 00:12:13.147000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968282   2022-01-05 00:12:13.107000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968303   2022-01-05 00:12:13.058000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968269   2022-01-05 00:12:13.013000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968272   2022-01-05 00:12:12.957000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968284   2022-01-05 00:12:12.911000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968280   2022-01-05 00:12:12.865000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968285   2022-01-05 00:12:12.819000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968267   2022-01-05 00:12:12.775000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968268   2022-01-05 00:12:12.731000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968302   2022-01-05 00:12:12.680000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968290   2022-01-05 00:12:12.635000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968271   2022-01-05 00:12:12.172000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968289   2022-01-05 00:12:12.129000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968305   2022-01-05 00:12:12.076000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968279   2022-01-05 00:12:12.039000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968287   2022-01-05 00:12:11.998000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968288   2022-01-05 00:12:11.957000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968266   2022-01-05 00:12:11.916000+01:00
+                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8892704   2022-01-04 14:13:12.670000+01:00
+Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Directory">Directory<a class="anchor-link" href="#Directory"> </a></h3>
 </div>
 </div>
@@ -816,7 +949,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="read_zips_directory" class="doc_header"><code>read_zips_directory</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/bundle.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>read_zips_directory</code>(<strong><code>input_directory</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>concatenate</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="read_zips_directory" class="doc_header"><code>read_zips_directory</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/bundle.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>read_zips_directory</code>(<strong><code>input_directory</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>concatenate</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
