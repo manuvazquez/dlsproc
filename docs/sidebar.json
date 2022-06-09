@@ -4,6 +4,7 @@
     "core": "core.html",
     "structure": "structure.html",
     "xml": "xml.html",
+    "postprocess": "postprocess.html",
     "bundle": "bundle.html",
     "hier": "hierarchical.html",
     "io": "io.html",

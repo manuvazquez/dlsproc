@@ -19,6 +19,9 @@ entries:
       title: xml
       url: xml.html
     - output: web,pdf
+      title: postprocess
+      url: postprocess.html
+    - output: web,pdf
       title: bundle
       url: bundle.html
     - output: web,pdf
