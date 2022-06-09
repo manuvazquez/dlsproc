@@ -224,7 +224,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
+<h4 id="get_namespaces" class="doc_header"><code>get_namespaces</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L20" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_namespaces</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>root_name</code></strong>:<code>str</code>=<em><code>'base'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -369,7 +369,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
+<h4 id="split_namespace_tag" class="doc_header"><code>split_namespace_tag</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_namespace_tag</code>(<strong><code>namespace_tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -458,6 +458,16 @@ nb_path: "10_xml.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">tag</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -467,7 +477,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;author&#39;, &#39;id&#39;, &#39;link&#39;, &#39;title&#39;, &#39;updated&#39;, &#39;deleted-entry&#39;]</pre>
+<pre>&#39;{http://www.w3.org/2005/Atom}feed&#39;</pre>
 </div>
 
 </div>
@@ -502,7 +512,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_entries" class="doc_header"><code>get_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -553,10 +563,10 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f1cc720dfc0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f1cc720dbc0&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f1cc720c400&gt;,
- &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f1cc720e040&gt;]</pre>
+<pre>[&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f514f8a9f00&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f514f8a9fc0&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f514f8a9e00&gt;,
+ &lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f514f8aa000&gt;]</pre>
 </div>
 
 </div>
@@ -690,7 +700,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f1cc720dfc0&gt;</pre>
+<pre>&lt;Element {http://www.w3.org/2005/Atom}entry at 0x7f514f8a9f00&gt;</pre>
 </div>
 
 </div>
@@ -767,7 +777,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_deleted_entries" class="doc_header"><code>get_deleted_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_deleted_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
+<h4 id="get_deleted_entries" class="doc_header"><code>get_deleted_entries</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L46" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_deleted_entries</code>(<strong><code>root</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -810,8 +820,8 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f1d19789700&gt;,
- &lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f1cc7216380&gt;]</pre>
+<pre>[&lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f514f8c1640&gt;,
+ &lt;Element {http://purl.org/atompub/tombstones/1.0}deleted-entry at 0x7f514f8c1580&gt;]</pre>
 </div>
 
 </div>
@@ -914,7 +924,7 @@ nb_path: "10_xml.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="deleted_to_series" class="doc_header"><code>deleted_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>deleted_to_series</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="deleted_to_series" class="doc_header"><code>deleted_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>deleted_to_series</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads and parses "deleted" entries in an XML file.</p>
 <p><strong>Parameters</strong></p>
@@ -1034,358 +1044,6 @@ Name: deleted_on, Length: 383, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Nested-tags">Nested tags<a class="anchor-link" href="#Nested-tags"> </a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When two a <em>tag</em> is nested inside other <em>tag</em> the string below is used to assemble the name of the resulting <em>column</em> from those of the original tags</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For instance, a <em>tag</em> <code>&lt;month&gt;</code> inside a <em>tag</em> <code>&lt;date&gt;</code> will yield a <em>column</em></p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sa">f</span><span class="s1">&#39;month</span><span class="si">{</span><span class="n">nested_tags_separator</span><span class="si">}</span><span class="s1">date&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;month - date&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A high-level function to do exactly that</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="assemble_name" class="doc_header"><code>assemble_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>assemble_name</code>(<strong><code>tags</code></strong>:<code>list</code>)</p>
-</blockquote>
-<p>Assemble the name of field/column in the DataFrame from a path of nested tags.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><p>tags: list</p>
-<p>List of tags.</p>
-</li>
-</ul>
-<p><strong>Returns</strong></p>
-<ul>
-<li><p>out: str</p>
-<p>A suitable name.</p>
-</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;fa&#39;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;foo - fa&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>NaN</code>s are ignored...</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;foo&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>...and so are empty strings</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;foo&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A function to generate a unique name for a field that is to be added to an <code>Iterable</code></p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="unique_name" class="doc_header"><code>unique_name</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>unique_name</code>(<strong><code>name</code></strong>:<code>str</code>, <strong><code>existing</code></strong>:<code>Iterable</code>[<code>str</code>])</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A sample <code>Iterable</code></p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;foo 1&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_name</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;foo 2&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_name</span><span class="p">(</span><span class="s1">&#39;fa&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;fa&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Parsing">Parsing<a class="anchor-link" href="#Parsing"> </a></h2>
 </div>
 </div>
@@ -1408,7 +1066,7 @@ Name: deleted_on, Length: 383, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_or_append" class="doc_header"><code>set_or_append</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L136" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_or_append</code>(<strong><code>d</code></strong>:<code>dict</code>, <strong><code>key</code></strong>:<code>str</code>, <strong><code>value</code></strong>:<code>str | dict</code>[<code>str</code>, <code>dict</code>])</p>
+<h4 id="set_or_append" class="doc_header"><code>set_or_append</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_or_append</code>(<strong><code>d</code></strong>:<code>dict</code>, <strong><code>key</code></strong>:<code>str</code>, <strong><code>value</code></strong>:<code>str | dict</code>[<code>str</code>, <code>dict</code>])</p>
 </blockquote>
 
 </div>
@@ -1593,7 +1251,7 @@ Name: deleted_on, Length: 383, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="entry_to_dict" class="doc_header"><code>entry_to_dict</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L100" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_dict</code>(<strong><code>entry</code></strong>:<code>Element</code>, <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1690,7 +1348,7 @@ Name: deleted_on, Length: 383, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span><span class="p">[</span><span class="n">assemble_name</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element_series</span><span class="p">[</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">(</span>
     <span class="p">[</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ValidNoticeInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;AdditionalPublicationStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;AdditionalPublicationDocumentReference&#39;</span><span class="p">,</span> <span class="s1">&#39;IssueDate&#39;</span><span class="p">]</span>
 <span class="p">)]</span>
 </pre></div>
@@ -1748,7 +1406,7 @@ Name: deleted_on, Length: 383, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L200" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
+<h4 id="entry_to_series" class="doc_header"><code>entry_to_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>entry_to_series</code>(<strong><code>entry</code></strong>:<code>Element</code>)</p>
 </blockquote>
 
 </div>
@@ -2089,7 +1747,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L205" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_df" class="doc_header"><code>to_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads and parses an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -2480,7 +2138,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="is_multivalued" class="doc_header"><code>is_multivalued</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L230" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>is_multivalued</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
+<h4 id="is_multivalued" class="doc_header"><code>is_multivalued</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>is_multivalued</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
 </blockquote>
 <p>Returns <code>True</code> is the given <code>pd.Series</code> has a <code>list</code> at any index.</p>
 <p><strong>Parameters</strong></p>
@@ -2520,7 +2178,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multivalued_column</span> <span class="o">=</span> <span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ValidNoticeInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;NoticeTypeCode&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multivalued_column</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ValidNoticeInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;NoticeTypeCode&#39;</span><span class="p">])</span>
 <span class="n">is_multivalued</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">multivalued_column</span><span class="p">])</span>
 </pre></div>
 
@@ -2603,7 +2261,7 @@ Name: ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode, dtype: object</pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="multivalued_columns" class="doc_header"><code>multivalued_columns</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L250" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>multivalued_columns</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="multivalued_columns" class="doc_header"><code>multivalued_columns</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>multivalued_columns</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -2787,7 +2445,7 @@ Name: ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode, dtype: object</pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L261" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="post_process" class="doc_header"><code>post_process</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_process</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
 <p><strong>Parameters</strong></p>
@@ -3103,7 +2761,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L346" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
+<h4 id="to_curated_df" class="doc_header"><code>to_curated_df</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L300" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>to_curated_df</code>(<strong><code>input_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 <p>Reads, parses and tidies up an XML file into a <code>pd.DataFrame</code>.</p>
 <p><strong>Parameters</strong></p>
@@ -3401,7 +3059,7 @@ dtype: object</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L367" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="columns_depth" class="doc_header"><code>columns_depth</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/xml.py#L321" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>columns_depth</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>

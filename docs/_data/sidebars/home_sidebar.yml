@@ -13,6 +13,9 @@ entries:
       title: core
       url: core.html
     - output: web,pdf
+      title: structure
+      url: structure.html
+    - output: web,pdf
       title: xml
       url: xml.html
     - output: web,pdf

@@ -9,6 +9,7 @@ import zipfile
 import pandas as pd
 from IPython.display import display
 
+import dlsproc.structure
 import dlsproc.xml
 
 # Cell

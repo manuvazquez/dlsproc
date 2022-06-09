@@ -10,6 +10,7 @@ import numpy as np
 from lxml import etree
 
 import dlsproc.xml
+import dlsproc.structure
 
 # Cell
 def flat_series_to_multiindexed_series(s: pd.Series) -> pd.Series:
@@ -18,7 +19,7 @@ def flat_series_to_multiindexed_series(s: pd.Series) -> pd.Series:
     values = []
 
     for i, v in s.iteritems():
-        index_paths.append(tuple(i.split(dlsproc.xml.nested_tags_separator)))
+        index_paths.append(tuple(i.split(dlsproc.structure.nested_tags_separator)))
         values.append(v)
 
     return pd.Series(values, index=pd.MultiIndex.from_tuples(index_paths))
@@ -43,7 +44,7 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
     """
 
     # every field becomes a `tuple`
-    fields = [tuple(c.split(dlsproc.xml.nested_tags_separator)) for c in input_df.columns]
+    fields = [tuple(c.split(dlsproc.structure.nested_tags_separator)) for c in input_df.columns]
 
     # the number of levels in the multindex for the columns
     n_levels = len(max(fields, key=len))
@@ -51,8 +52,6 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
     # every tuple is padded with empty string until it has `n_levels`
     fields = [e + ('',)*(n_levels-len(e)) for e in fields]
 
-    # every column name is turned into a `tuple`, and from the collection of all of them a `pd.MultiIndex` is built
-    # index_hierarchical = pd.MultiIndex.from_tuples([tuple(c.split(dlsproc.xml.nested_tags_separator)) for c in input_df.columns])
     index_hierarchical = pd.MultiIndex.from_tuples(fields)
 
     # an empty `pd.DataFrame`
@@ -62,7 +61,7 @@ def flat_df_to_multiindexed_df(input_df: pd.DataFrame) -> pd.DataFrame:
     for c in res.columns:
 
         # ...is filled in looking up the data in the input `pd.DataFrame` by means of the appropriate "merged" column name
-        res[c] = input_df[dlsproc.xml.assemble_name(c)]
+        res[c] = input_df[dlsproc.structure.assemble_name(c)]
 
     return res
 
