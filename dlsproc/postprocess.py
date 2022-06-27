@@ -5,7 +5,6 @@ __all__ = ['str_columns', 'assembled_str_columns', 'typecast_columns', 'keep_upd
 # Cell
 import pathlib
 
-# import numpy as np
 import pandas as pd
 
 import dlsproc.structure
@@ -107,4 +106,5 @@ def keep_updates_only(df: pd.DataFrame) -> pd.DataFrame:
 
     grouped = df.sort_values('updated').groupby('id')
 
-    return grouped.last()
+    return grouped.tail(1)
+    # return grouped.last()
