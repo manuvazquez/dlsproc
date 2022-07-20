@@ -71,7 +71,7 @@ def read_zip(
         return dfs
 
 # Cell
-def read_deleted_zip(input_file: str | pathlib.Path) -> list | pd.DataFrame | tuple[list, list] | tuple[pd.DataFrame, list]:
+def read_deleted_zip(input_file: str | pathlib.Path) -> pd.Series:
     """
     Reads and parses an XML file into a `pd.DataFrame`.
 

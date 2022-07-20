@@ -38,7 +38,8 @@ index = {"process_atom": "00_core.ipynb",
          "write": "40_io.ipynb",
          "read": "40_io.ipynb",
          "domain_discriminative_columns_paths": "50_parse.ipynb",
-         "domain": "50_parse.ipynb"}
+         "domain": "50_parse.ipynb",
+         "merge_deleted": "60_assemble.ipynb"}
 
 modules = ["core.py",
            "structure.py",
@@ -47,7 +48,8 @@ modules = ["core.py",
            "bundle.py",
            "hier.py",
            "io.py",
-           "parse.py"]
+           "parse.py",
+           "assemble.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 
