@@ -1300,6 +1300,120 @@ nb_path: "40_io.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Pandas</em>' <code>NA</code> are a special case</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cast_list_to_floats_or_strs</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1.0, 2.0, nan]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When nested lists are found, <em>every</em> element (either scalar or list) is converted to <code>str</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">converted</span> <span class="o">=</span> <span class="n">cast_list_to_floats_or_strs</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">converted</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;3.14&#39;, &#39;[1, 2]&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">converted</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;[1, 2]&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>For the sake of example, a <em>fake</em> <code>float</code> value is added to the first element, which until now consisted only of <code>str</code>s.</p>
 
 </div>
@@ -1525,7 +1639,7 @@ Name: ContractFolderStatus - ValidNoticeInfo - NoticeTypeCode, dtype: object</pr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="cast_multivalued_series_to_common_type" class="doc_header"><code>cast_multivalued_series_to_common_type</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/io.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cast_multivalued_series_to_common_type</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
+<h4 id="cast_multivalued_series_to_common_type" class="doc_header"><code>cast_multivalued_series_to_common_type</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/io.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cast_multivalued_series_to_common_type</code>(<strong><code>s</code></strong>:<code>Series</code>)</p>
 </blockquote>
 
 </div>

@@ -52,9 +52,15 @@ def homogenize_multivalued(df: pd.DataFrame) -> pd.DataFrame:
 
 # Cell
 def cast_list_to_floats_or_strs(l: list) -> list:
+
+    # *scalar* Pandas' `pd.NA` are turned into Numpy's `np.nan`
+    l = [np.NAN if (type(e) != list) and (pd.isna(e)) else e for e in l]
+
     try:
         return [float(e) for e in l]
-    except ValueError:
+
+    # `TypeError` most likely means there is (at least) one element that is a list
+    except (ValueError, TypeError):
         return [str(e) for e in l]
 
 # Cell
