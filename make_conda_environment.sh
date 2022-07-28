@@ -6,7 +6,7 @@ NAME=dlsproc
 
 LIBRARIES=(
     jupyterlab
-    nbdev">1.2"
+    nbdev"<2"
     colorama
     python-magic
     pyyaml
@@ -33,7 +33,7 @@ UNCOLOR="\033[0m"
 # ------------ setup
 
 # only required if "anaconda" is not in the path
-source $HOME/anaconda3/etc/profile.d/conda.sh
+source $HOME/miniconda3/etc/profile.d/conda.sh
 
 # from https://stackoverflow.com/a/9429887/3967334
 LIBRARIES_CONCATENATED=$(IFS=" " ; echo "${LIBRARIES[*]}")
