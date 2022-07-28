@@ -41,7 +41,8 @@ index = {"process_atom": "00_core.ipynb",
          "domain": "50_parse.ipynb",
          "merge_deleted": "60_assemble.ipynb",
          "flatten_columns_names": "60_assemble.ipynb",
-         "parquet_amenable": "60_assemble.ipynb"}
+         "parquet_amenable": "60_assemble.ipynb",
+         "stack": "60_assemble.ipynb"}
 
 modules = ["core.py",
            "structure.py",

@@ -38,6 +38,30 @@ nb_path: "60_assemble.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This <code>import</code>s are only meant for testing</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Directory where the zip files are stored</p>
 
 </div>
@@ -80,7 +104,7 @@ nb_path: "60_assemble.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Zip-file">Zip file<a class="anchor-link" href="#Zip-file"> </a></h3>
+<h2 id="Zip-file">Zip file<a class="anchor-link" href="#Zip-file"> </a></h2>
 </div>
 </div>
 </div>
@@ -126,6 +150,13 @@ nb_path: "60_assemble.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is parsed and turned into a <em>column-multiindexed</em> <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -437,8 +468,8 @@ nb_path: "60_assemble.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">read_deleted_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
-<span class="n">deleted_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_series</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">read_deleted_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="n">deleted_series</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -473,6 +504,13 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function to merge together a <code>pd.DataFrame</code> with the actual data and a <code>pd.Series</code> like the one shown meant to <em>flag</em> some entries as deleted. Ultimately, a new a column, <code>deleted_on</code>, is added to the former. It can either contain a date or <code>pd.NaT</code> if the corresponding entry was not deleted.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -484,7 +522,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="merge_deleted" class="doc_header"><code>merge_deleted</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge_deleted</code>(<strong><code>data_df</code></strong>:<code>DataFrame</code>, <strong><code>deleted_series</code></strong>:<code>Series</code>)</p>
+<h4 id="merge_deleted" class="doc_header"><code>merge_deleted</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge_deleted</code>(<strong><code>data_df</code></strong>:<code>DataFrame</code>, <strong><code>deleted_series</code></strong>:<code>Series</code>)</p>
 </blockquote>
 
 </div>
@@ -511,7 +549,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">merge_deleted</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">deleted_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">merge_deleted</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">deleted_series</span><span class="p">)</span>
 <span class="n">merged_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1097,7 +1135,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A convenience function to go from <em>human-readable</em> name to actual <em>multiindex</em> column</p>
+<p>A convenience function, <code>n2c</code> (as in "name to column"), to go from <em>human-readable</em> name to actual <em>multiindex</em> column</p>
 
 </div>
 </div>
@@ -1181,6 +1219,159 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># [k for k in itertools.islice(inv_data_scheme, 0, 2)]</span>
+<span class="c1"># # [k for k in inv_data_scheme]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inv_data_scheme</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">v</span><span class="p">]):</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data_scheme</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">inv_data_scheme</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<span class="c1"># [k for k in inv_data_scheme]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;ContractFolderStatusContractFolderID&#39;,
+ &#39;ContractFolderStatusContractFolderStatusCode&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">inv_data_scheme</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;id&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -1189,7 +1380,7 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flatten_columns_names" class="doc_header"><code>flatten_columns_names</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_columns_names</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>data_scheme</code></strong>:<code>dict</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="flatten_columns_names" class="doc_header"><code>flatten_columns_names</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_columns_names</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>data_scheme</code></strong>:<code>dict</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1253,23 +1444,23 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th>ContractFolderStatus - ContractFolderID</th>
-      <th>ContractFolderStatus - ContractFolderStatusCode</th>
-      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
-      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
-      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
-      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>Número de Expediente</th>
+      <th>Estado</th>
+      <th>URL perfil de contratante</th>
+      <th>Nombre</th>
+      <th>Ubicación orgánica</th>
+      <th>Objeto del Contrato</th>
       <th>...</th>
-      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate</th>
-      <th>ContractFolderStatus - LegalDocumentReference - ID</th>
-      <th>ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI</th>
-      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
-      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
-      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>Plazo de Ejecución (Comienzo)</th>
+      <th>Pliego de cláusulas administrativas</th>
+      <th>Pliego de cláusulas administrativas (URI)</th>
+      <th>Plazo de Ejecución (Fin)</th>
+      <th>Pliego de Prescripciones técnicas</th>
+      <th>Pliego de Prescripciones técnicas (URI)</th>
       <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
-      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
-      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
-      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod</th>
+      <th>Presentación de Solicitudes (Fecha)</th>
+      <th>Presentación de Solicitudes (Hora)</th>
+      <th>Presentación de Oferta</th>
     </tr>
     <tr>
       <th>file name</th>
@@ -1362,7 +1553,71 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Saving-to-parquet">Saving to parquet<a class="anchor-link" href="#Saving-to-parquet"> </a></h3>
+<p>One can now used the <em>human-readable</em> columns names, e.g.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">renamed_cols_df</span><span class="p">[</span><span class="s1">&#39;Número de Expediente&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>file name                                            entry
+PlataformasAgregadasSinMenores_20220105_030012.atom  0                  2021039438
+                                                     1                   2021_2568
+                                                     2                  12450/2021
+                                                     3            2021/14/M0400100
+                                                     4                 ICVI-2022-1
+                                                                      ...         
+PlataformasAgregadasSinMenores_20220106_030013.atom  471             2021/57-12334
+                                                     472                   32/2021
+                                                     473                 1977/2021
+                                                     474                EXI-2022-7
+                                                     475      CONTR/2021/000000137
+Name: Número de Expediente, Length: 951, dtype: string</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Saving-to-parquet">Saving to parquet<a class="anchor-link" href="#Saving-to-parquet"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to save a <code>pd.DataFrame</code> in a <em>parquet</em> file, some conditions must be met:</p>
+<ol>
+<li>if some column contains a list, then every element in that columns must also be a list (of a single element if necessary)</li>
+<li>the elements of the lists in any column must be of the same type</li>
+<li>all of the lists across a given column must have elements of the same type</li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -1377,7 +1632,7 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1670,6 +1925,1486 @@ Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: stri
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Concatenating-dataframes">Concatenating dataframes<a class="anchor-link" href="#Concatenating-dataframes"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span> <span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>MultiIndex([(     &#39;id&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;),
+            (&#39;summary&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;)],
+           )</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Concatenating <code>pd.DataFrame</code>s with the same number of levels in the columns is fine</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="17" halign="left">ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th colspan="3" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">LegalDocumentReference</th>
+      <th>ProcurementProject</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th>LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>PlannedPeriod</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>PlannedPeriod</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th>StartDate</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>EndDate</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th>URI</th>
+      <th></th>
+      <th></th>
+      <th>URI</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20220105_030012.atom</th>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021039438; Órgano de Contratac...</td>
+      <td>L'objecte és la contractació del servei de bug...</td>
+      <td>2022-01-04 12:12:09.464000+00:00</td>
+      <td>2021039438</td>
+      <td>RES</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Girona</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte és la contractació del servei de bug...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-12-13 23:59:00+00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021_2568; Órgano de Contrataci...</td>
+      <td>Servei comunicacions postals de l'Ajuntament d...</td>
+      <td>2022-01-04 12:12:09.400000+00:00</td>
+      <td>2021_2568</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Collbató</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Servei comunicacions postals de l'Ajuntament d...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-11-29 23:59:00+00:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 39 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us build a dummy <code>pd.DataFrame</code> with <em>multiindex</em>es for both rows and columns</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dummy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]),</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([(</span><span class="s1">&#39;foo.atom&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;fee.atom&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;entry&#39;</span><span class="p">]))</span>
+<span class="n">dummy_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">a</th>
+      <th colspan="2" halign="left">b</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>foo.atom</th>
+      <th>1</th>
+      <td>0.701440</td>
+      <td>0.617826</td>
+      <td>0.069819</td>
+      <td>0.077155</td>
+    </tr>
+    <tr>
+      <th>fee.atom</th>
+      <th>2</th>
+      <td>0.429429</td>
+      <td>0.381177</td>
+      <td>0.978472</td>
+      <td>0.600790</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>They cannot be stacked together as they are</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df</span><span class="p">,</span> <span class="n">dummy_df</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">dummy_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>df.columns.nlevels=6, dummy_df.columns.nlevels=2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The resulting <code>pd.DataFrame</code> must have the larger number of levels</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res_n_levels</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span><span class="p">,</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span><span class="p">)</span>
+<span class="n">res_n_levels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we need to complement the names of the columns for the <em>shallower</em> <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_names</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">new_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">res_n_levels</span> <span class="o">-</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[(&#39;a&#39;, 1, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;), (&#39;a&#39;, 2, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;), (&#39;b&#39;, 1, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;), (&#39;b&#39;, 2, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A new <em>padded</em> <code>pd.DataFrame</code> is built out of the dummy</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">padded_dummy_df</span> <span class="o">=</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">padded_dummy_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
+<span class="n">padded_dummy_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now it's fine to concatenate both <code>pd.DataFrame</code>s</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df</span><span class="p">,</span> <span class="n">padded_dummy_df</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="13" halign="left">ContractFolderStatus</th>
+      <th colspan="2" halign="left">a</th>
+      <th colspan="2" halign="left">b</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th>LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th>1</th>
+      <th>2</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th>URI</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PlataformasAgregadasSinMenores_20220106_030013.atom</th>
+      <th>475</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: CONTR/2021/000000137; Órgano de...</td>
+      <td>Servei de redacció del Projecte Executiu d'obr...</td>
+      <td>2022-01-04 12:12:09.536000+00:00</td>
+      <td>CONTR/2021/000000137</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Institut d'Assistència Sanitària (IAS)</td>
+      <td>Departaments i Sector Públic de la Generalitat</td>
+      <td>Servei de redacció del Projecte Executiu d'obr...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-11-10 18:00:00+00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>foo.atom</th>
+      <th>1</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>0.701440</td>
+      <td>0.617826</td>
+      <td>0.069819</td>
+      <td>0.077155</td>
+    </tr>
+    <tr>
+      <th>fee.atom</th>
+      <th>2</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>0.429429</td>
+      <td>0.381177</td>
+      <td>0.978472</td>
+      <td>0.600790</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 43 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="stack" class="doc_header"><code>stack</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack</code>(<strong><code>top_df</code></strong>:<code>DataFrame</code>, <strong><code>bottom_df</code></strong>:<code>DataFrame</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above <code>df</code> and the dummy one are stacked together</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stack</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">dummy_df</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="13" halign="left">ContractFolderStatus</th>
+      <th colspan="2" halign="left">a</th>
+      <th colspan="2" halign="left">b</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="3" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th>LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th>1</th>
+      <th>2</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+      <th>Party</th>
+      <th>ParentLocatedParty</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th>URI</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PlataformasAgregadasSinMenores_20220106_030013.atom</th>
+      <th>475</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: CONTR/2021/000000137; Órgano de...</td>
+      <td>Servei de redacció del Projecte Executiu d'obr...</td>
+      <td>2022-01-04 12:12:09.536000+00:00</td>
+      <td>CONTR/2021/000000137</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Institut d'Assistència Sanitària (IAS)</td>
+      <td>Departaments i Sector Públic de la Generalitat</td>
+      <td>Servei de redacció del Projecte Executiu d'obr...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-11-10 18:00:00+00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>foo.atom</th>
+      <th>1</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>0.701440</td>
+      <td>0.617826</td>
+      <td>0.069819</td>
+      <td>0.077155</td>
+    </tr>
+    <tr>
+      <th>fee.atom</th>
+      <th>2</th>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>0.429429</td>
+      <td>0.381177</td>
+      <td>0.978472</td>
+      <td>0.600790</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 43 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>...in a different order</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stack</span><span class="p">(</span><span class="n">dummy_df</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">a</th>
+      <th colspan="2" halign="left">b</th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="13" halign="left">ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th>...</th>
+      <th>ProcurementProject</th>
+      <th colspan="2" halign="left">LegalDocumentReference</th>
+      <th>ProcurementProject</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th>LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th>PlannedPeriod</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>PlannedPeriod</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th>ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th>StartDate</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>EndDate</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th>ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th>URI</th>
+      <th></th>
+      <th></th>
+      <th>URI</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>foo.atom</th>
+      <th>1</th>
+      <td>0.701440</td>
+      <td>0.617826</td>
+      <td>0.069819</td>
+      <td>0.077155</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>fee.atom</th>
+      <th>2</th>
+      <td>0.429429</td>
+      <td>0.381177</td>
+      <td>0.978472</td>
+      <td>0.600790</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>PlataformasAgregadasSinMenores_20220105_030012.atom</th>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021039438; Órgano de Contratac...</td>
+      <td>L'objecte és la contractació del servei de bug...</td>
+      <td>2022-01-04 12:12:09.464000+00:00</td>
+      <td>2021039438</td>
+      <td>RES</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-12-13 23:59:00+00:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 43 columns</p>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
