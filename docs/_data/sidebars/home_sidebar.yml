@@ -36,6 +36,9 @@ entries:
     - output: web,pdf
       title: assemble
       url: assemble.html
+    - output: web,pdf
+      title: extend
+      url: extend.html
     output: web
     title: dlsproc
   output: web

@@ -9,6 +9,7 @@
     "hier": "hierarchical.html",
     "io": "io.html",
     "parse": "parse.html",
-    "assemble": "assemble.html"
+    "assemble": "assemble.html",
+    "extend": "extend.html"
   }
 }

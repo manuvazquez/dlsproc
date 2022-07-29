@@ -52,7 +52,8 @@ modules = ["core.py",
            "hier.py",
            "io.py",
            "parse.py",
-           "assemble.py"]
+           "assemble.py",
+           "extend.py"]
 
 doc_url = "https://manuvazquez.github.io/dlsproc/"
 
