@@ -38,6 +38,19 @@ class File:
         return self.name.exists()
 
 # Cell
+def _cast_to_list_if_not_already(x) -> list | np.ndarray:
+
+    t = type(x)
+
+    if (t == list) or (t == np.ndarray):
+
+        return x
+
+    else:
+
+        return [x]
+
+# Cell
 def homogenize_multivalued(df: pd.DataFrame) -> pd.DataFrame:
 
     res = df.copy()
@@ -46,7 +59,8 @@ def homogenize_multivalued(df: pd.DataFrame) -> pd.DataFrame:
     for col_name in dlsproc.structure.multivalued_columns(res):
 
         # if the type of an element (index) is list, it's left as it is, otherwise a list is wrapped around it
-        res[col_name] = res[col_name].apply(lambda x: x if type(x) == list else [x])
+        # res[col_name] = res[col_name].apply(lambda x: x if type(x) == list else [x])
+        res[col_name] = res[col_name].apply(_cast_to_list_if_not_already)
 
     return res
 

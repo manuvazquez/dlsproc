@@ -36,6 +36,13 @@ nb_path: "70_extend.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These <code>import</code>s are not actually needed by the final <em>exported</em> code</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -43,9 +50,40 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span>
-<span class="k">assert</span> <span class="n">df_directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_directory</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Historical-data">Historical data<a class="anchor-link" href="#Historical-data"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Directory from which to read historical data</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span>
+<span class="c1"># history_directory = pathlib.Path.cwd() / &#39;reports&#39;</span>
+<span class="k">assert</span> <span class="n">history_directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history_directory</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -83,9 +121,10 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_input_file</span> <span class="o">=</span> <span class="n">df_directory</span> <span class="o">/</span> <span class="s1">&#39;2018-2021_20samples.parquet&#39;</span>
-<span class="k">assert</span> <span class="n">df_input_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_input_file</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_input_file</span> <span class="o">=</span> <span class="n">history_directory</span> <span class="o">/</span> <span class="s1">&#39;2018-2021_20samples.parquet&#39;</span>
+<span class="c1"># history_input_file = history_directory / &#39;2018-2021.parquet&#39;</span>
+<span class="k">assert</span> <span class="n">history_input_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -123,8 +162,8 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">historical_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">df_input_file</span><span class="p">)</span>
-<span class="n">historical_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">)</span>
+<span class="n">history_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -421,6 +460,12 @@ nb_path: "70_extend.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="New-data">New data<a class="anchor-link" href="#New-data"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The directory for the zip file whose data is to appended to the already existing <code>pd.DataFrame</code></p>
 
 </div>
@@ -433,7 +478,8 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_directory</span> <span class="o">=</span> <span class="n">df_directory</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_directory</span> <span class="o">=</span> <span class="n">history_directory</span>
+<span class="c1"># zip_directory = pathlib.Path.cwd() / &#39;data&#39; / &#39;agregados&#39;</span>
 <span class="k">assert</span> <span class="n">zip_directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zip_directory</span><span class="p">)</span>
 </pre></div>
@@ -474,6 +520,7 @@ nb_path: "70_extend.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">zip_directory</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_202201_05-06.zip&#39;</span>
+<span class="c1"># zip_file = zip_directory / &#39;PlataformasAgregadasSinMenores_202201.zip&#39;</span>
 <span class="k">assert</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
 </pre></div>
@@ -499,6 +546,13 @@ nb_path: "70_extend.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The file is read and processed in the usual way to get a <code>pd.DataFrame</code></p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -516,6 +570,13 @@ nb_path: "70_extend.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Multindexed</em> columns are built</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -573,23 +634,13 @@ nb_path: "70_extend.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">last_update_only_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">postprocess</span><span class="o">.</span><span class="n">keep_updates_only</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Information about deleted entries</p>
 
 </div>
-    {% endraw %}
-
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -609,351 +660,10 @@ nb_path: "70_extend.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Duplicates are removed from the above <code>pd.Series</code></p>
-
+<h2 id="Merge">Merge<a class="anchor-link" href="#Merge"> </a></h2>
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deduplicated_deleted_series</span> <span class="o">=</span> <span class="n">deleted_series</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">deduplicated_deleted_series</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>file name                                            id                                                                                 
-PlataformasAgregadasSinMenores_20220105_030012.atom  https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074   2022-01-04 00:11:56.497000+01:00
-                                                     https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921   2022-01-04 00:11:56.535000+01:00
-Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to make it easy to update the <code>deleted_on</code> column in the existing <code>pd.DataFrame</code> using the data contained in the <em>deleted</em> <code>pd.Series</code> (i.e., to get <em>automatic 
-alignment</em>), we reindex the dataframe in the same way as the series.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_new_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">])</span>
-<span class="n">reindexed_new_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>entry</th>
-      <th>summary</th>
-      <th>title</th>
-      <th>updated</th>
-      <th colspan="17" halign="left">ContractFolderStatus</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>ContractFolderID</th>
-      <th>ContractFolderStatusCode</th>
-      <th colspan="3" halign="left">LocatedContractingParty</th>
-      <th colspan="3" halign="left">ProcurementProject</th>
-      <th colspan="2" halign="left">LegalDocumentReference</th>
-      <th>ProcurementProject</th>
-      <th colspan="2" halign="left">TechnicalDocumentReference</th>
-      <th>LocatedContractingParty</th>
-      <th colspan="3" halign="left">TenderingProcess</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>BuyerProfileURIID</th>
-      <th>Party</th>
-      <th>ParentLocatedParty</th>
-      <th>Name</th>
-      <th>...</th>
-      <th>PlannedPeriod</th>
-      <th>ID</th>
-      <th>Attachment</th>
-      <th>PlannedPeriod</th>
-      <th>ID</th>
-      <th>Attachment</th>
-      <th>ParentLocatedParty</th>
-      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
-      <th>TenderSubmissionDeadlinePeriod</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>PartyName</th>
-      <th>PartyName</th>
-      <th></th>
-      <th>...</th>
-      <th>StartDate</th>
-      <th></th>
-      <th>ExternalReference</th>
-      <th>EndDate</th>
-      <th></th>
-      <th>ExternalReference</th>
-      <th>ParentLocatedParty</th>
-      <th>EndDate</th>
-      <th>EndTime</th>
-      <th></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Name</th>
-      <th>Name</th>
-      <th></th>
-      <th>...</th>
-      <th></th>
-      <th></th>
-      <th>URI</th>
-      <th></th>
-      <th></th>
-      <th>URI</th>
-      <th>PartyName</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>...</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th>file name</th>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20220105_030012.atom</th>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8769544</th>
-      <td>0</td>
-      <td>Id licitación: 2021039438; Órgano de Contratac...</td>
-      <td>L'objecte és la contractació del servei de bug...</td>
-      <td>2022-01-04 12:12:09.464000+00:00</td>
-      <td>2021039438</td>
-      <td>RES</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Girona</td>
-      <td>Entitats municipals de Catalunya</td>
-      <td>L'objecte és la contractació del servei de bug...</td>
-      <td>...</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>2021-12-13 23:59:00+00:00</td>
-    </tr>
-    <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8692029</th>
-      <td>1</td>
-      <td>Id licitación: 2021_2568; Órgano de Contrataci...</td>
-      <td>Servei comunicacions postals de l'Ajuntament d...</td>
-      <td>2022-01-04 12:12:09.400000+00:00</td>
-      <td>2021_2568</td>
-      <td>ADJ</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Collbató</td>
-      <td>Entitats municipals de Catalunya</td>
-      <td>Servei comunicacions postals de l'Ajuntament d...</td>
-      <td>...</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>2021-11-29 23:59:00+00:00</td>
-    </tr>
-  </tbody>
-</table>
-<p>2 rows × 39 columns</p>
-</div></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What is the intersection between the entries in the new <code>pd.DataFrame</code> and the series with information about deletes.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">deduplicated_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>set()</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Old and new data are stacked together</p>
@@ -968,7 +678,7 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">concatenated_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">assemble</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">historical_df</span><span class="p">,</span> <span class="n">new_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">concatenated_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">assemble</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">history_df</span><span class="p">,</span> <span class="n">new_df</span><span class="p">)</span>
 <span class="n">concatenated_df</span>
 </pre></div>
 
@@ -1487,7 +1197,10 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In order to make it easy to update the <code>deleted_on</code> column in the existing <code>pd.DataFrame</code> using the data contained in the <em>deleted</em> <code>pd.Series</code> (i.e., to get <em>automatic 
-alignment</em>), we reindex the dataframe in the same way as the series.</p>
+alignment</em>) we</p>
+<ul>
+<li>reindex the dataframe using <code>id</code></li>
+</ul>
 
 </div>
 </div>
@@ -1499,8 +1212,8 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">])</span>
-<span class="n">res</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+<span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1535,12 +1248,12 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
   <thead>
     <tr>
       <th></th>
-      <th></th>
+      <th>file name</th>
       <th>entry</th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="15" halign="left">ContractFolderStatus</th>
+      <th colspan="14" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -1554,7 +1267,7 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th colspan="2" halign="left">ProcurementProject</th>
+      <th>ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -1574,7 +1287,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
-      <th>TypeCode</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -1596,7 +1308,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
-      <th></th>
       <th></th>
       <th>...</th>
       <th>ExternalReference</th>
@@ -1621,7 +1332,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th>ID</th>
       <th>Name</th>
       <th></th>
-      <th></th>
       <th>...</th>
       <th>URI</th>
       <th></th>
@@ -1634,7 +1344,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
     </tr>
     <tr>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1670,7 +1379,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -1695,7 +1403,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -1709,7 +1416,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <th></th>
     </tr>
     <tr>
-      <th>file name</th>
       <th>id</th>
       <th></th>
       <th></th>
@@ -1736,8 +1442,8 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
       <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
       <td>453</td>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
@@ -1747,7 +1453,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
-      <td>3.0</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -1762,6 +1467,7 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
     </tr>
     <tr>
       <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
       <td>452</td>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
@@ -1771,7 +1477,6 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
-      <td>3.0</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -1786,7 +1491,7 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 42 columns</p>
+<p>2 rows × 43 columns</p>
 </div></div>
 
 </div>
@@ -1797,6 +1502,15 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>drop the first level of the series (which leaves only <code>id</code>)</li>
+</ul>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1804,7 +1518,8 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deduplicated_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_deleted_series</span> <span class="o">=</span> <span class="n">deleted_series</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1819,29 +1534,14 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&#39;PlataformasAgregadasSinMenores_20220105_030012.atom&#39;,
- &#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074&#39;)</pre>
+<pre>id
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 01:12:01.376000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-04 00:11:57.567000+01:00
+Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  &#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074&#39;)]</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -1850,7 +1550,7 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to see if something changes when updating column <code>deleted_on</code></p>
+<p>Duplicates are removed from the above <code>pd.Series</code></p>
 
 </div>
 </div>
@@ -1862,48 +1562,8 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bak_res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Update</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deduplicated_deleted_series</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bak_res</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deduplicated_reindexed_deleted_series</span> <span class="o">=</span> <span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">group_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">deduplicated_reindexed_deleted_series</span>
 </pre></div>
 
     </div>
@@ -1918,11 +1578,1427 @@ alignment</em>), we reindex the dataframe in the same way as the series.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>id
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921   2022-01-04 00:11:56.535000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074   2022-01-04 00:11:56.497000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968266   2022-01-05 00:12:11.916000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968267   2022-01-05 00:12:12.775000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968268   2022-01-05 00:12:12.731000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968269   2022-01-05 00:12:13.013000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968271   2022-01-05 00:12:12.172000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968272   2022-01-05 00:12:12.957000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968279   2022-01-05 00:12:12.039000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968280   2022-01-05 00:12:12.865000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968282   2022-01-05 00:12:13.107000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968284   2022-01-05 00:12:12.911000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968285   2022-01-05 00:12:12.819000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968286   2022-01-05 00:12:13.147000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968287   2022-01-05 00:12:11.998000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968288   2022-01-05 00:12:11.957000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968289   2022-01-05 00:12:12.129000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968290   2022-01-05 00:12:12.635000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968291   2022-01-05 00:12:13.191000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968294   2022-01-05 00:12:13.328000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968299   2022-01-05 00:12:13.236000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968301   2022-01-05 00:12:13.283000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968302   2022-01-05 00:12:12.680000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968303   2022-01-05 00:12:13.058000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968305   2022-01-05 00:12:12.076000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-04 00:11:57.567000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968317   2022-01-04 00:11:56.751000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968318   2022-01-04 00:11:57.038000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968319   2022-01-04 00:11:56.620000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968321   2022-01-04 00:11:57.323000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968324   2022-01-04 00:11:57.471000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968325   2022-01-04 00:11:56.579000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968327   2022-01-04 00:11:57.089000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968329   2022-01-04 00:11:56.850000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968331   2022-01-04 00:11:56.897000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968332   2022-01-04 00:11:56.949000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968333   2022-01-04 00:11:57.183000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968335   2022-01-04 00:11:57.275000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968337   2022-01-04 00:11:57.375000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968338   2022-01-04 00:11:56.805000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968343   2022-01-04 00:11:57.232000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968344   2022-01-04 00:11:57.426000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968345   2022-01-04 00:11:57.516000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968346   2022-01-04 00:11:56.661000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968358   2022-01-04 00:11:56.706000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968360   2022-01-04 00:11:57.141000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968361   2022-01-04 00:11:56.991000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 01:12:01.376000+01:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8892704   2022-01-04 14:13:12.670000+01:00
+Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The old and new sizes</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((49,), (49,))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No keys are lost along the way</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">))</span> <span class="o">==</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Duplicates in the old <code>pd.Series</code></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Series([], Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There should be none in the new</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span><span class="o">.</span><span class="n">empty</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is the intersection between the entries in the new <code>pd.DataFrame</code> and the series with information about deletes (only the first elements).</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A deleted entry, identified by its <code>id</code>, and also showing the source <em>ATOM</em> file</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_entry</span> <span class="o">=</span> <span class="n">deduplicated_reindexed_deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">deleted_entry</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's not actually present in the data</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">deleted_entry</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to see if something changes when updating column <code>deleted_on</code>, a backup of the old <code>pd.DataFrame</code> is made</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bak_reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The columns <code>deleted_on</code> in the <code>pd.DataFrame</code> is updated for the indexes present in the <em>deleted series</em>. Notice that we cannot do</p>
+
+<pre><code>reindexed_concatenated_df['deleted_on'] = deduplicated_reindexed_deleted_series</code></pre>
+<p>because that would effectively wipe out the values of all the entries not present in the series.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>na</em>s in the existing <code>pd.DataFrame</code> are filled in with data from the <em>deleted series</em></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The number of <em>non-NAs</em> in the old and new <code>pd.DataFrame</code>s</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_notnas_old</span><span class="p">,</span> <span class="n">n_notnas_new</span> <span class="o">=</span> <span class="n">bak_reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">n_notnas_old</span><span class="p">,</span> <span class="n">n_notnas_new</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0, 0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The latter be larger than or equal than the former</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">n_notnas_new</span> <span class="o">&gt;=</span> <span class="n">n_notnas_old</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>file name</th>
+      <th>entry</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th>deleted_on</th>
+      <th>ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th>LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th></th>
+      <th>LocatedContractingParty</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">Party</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>Attachment</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyIdentification</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th>ExternalReference</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th>URI</th>
+      <th></th>
+      <th>URI</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>453</td>
+      <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>2018-01-02 08:01:52.024000+00:00</td>
+      <td>1284/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>452</td>
+      <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>2018-01-02 08:02:24.833000+00:00</td>
+      <td>1282/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 43 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function encompassing all of the above steps in one go</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="merge" class="doc_header"><code>merge</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/extend.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge</code>(<strong><code>history_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>zip_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>output_file</code></strong>:<code>Path | None</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">)</span>
+<span class="n">merged_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>file name</th>
+      <th>entry</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th>deleted_on</th>
+      <th>ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th>LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th></th>
+      <th>LocatedContractingParty</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">Party</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>Attachment</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyIdentification</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th>ExternalReference</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th>URI</th>
+      <th></th>
+      <th>URI</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>453</td>
+      <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>2018-01-02 08:01:52.024000+00:00</td>
+      <td>1284/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>452</td>
+      <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>2018-01-02 08:02:24.833000+00:00</td>
+      <td>1282/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>NaT</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 43 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We should be getting exactly the same result as above</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">merged_df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span> <span class="o">/</span> <span class="s1">&#39;merged.parquet&#39;</span>
+<span class="n">merge</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_output_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+<span class="n">sample_output_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>file name</th>
+      <th>entry</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th>deleted_on</th>
+      <th>ContractFolderStatus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ContractFolderID</th>
+      <th>ContractFolderStatusCode</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th>ProcurementProject</th>
+      <th>...</th>
+      <th>LegalDocumentReference</th>
+      <th colspan="2" halign="left">TechnicalDocumentReference</th>
+      <th colspan="2" halign="left">LocatedContractingParty</th>
+      <th colspan="3" halign="left">TenderingProcess</th>
+      <th></th>
+      <th>LocatedContractingParty</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">Party</th>
+      <th>Name</th>
+      <th>...</th>
+      <th>Attachment</th>
+      <th>ID</th>
+      <th>Attachment</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th colspan="2" halign="left">ParticipationRequestReceptionPeriod</th>
+      <th>TenderSubmissionDeadlinePeriod</th>
+      <th></th>
+      <th>BuyerProfileURIID</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyIdentification</th>
+      <th>PartyName</th>
+      <th></th>
+      <th>...</th>
+      <th>ExternalReference</th>
+      <th></th>
+      <th>ExternalReference</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th>EndDate</th>
+      <th>EndTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+      <th>...</th>
+      <th>URI</th>
+      <th></th>
+      <th>URI</th>
+      <th colspan="2" halign="left">ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PartyName</th>
+      <th>ParentLocatedParty</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>PartyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>...</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>453</td>
+      <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>2018-01-02 08:01:52.024000+00:00</td>
+      <td>1284/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>None</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
+      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
+      <td>452</td>
+      <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>2018-01-02 08:02:24.833000+00:00</td>
+      <td>1282/17</td>
+      <td>RES</td>
+      <td>L02000047</td>
+      <td>Diputación Provincial de Valladolid</td>
+      <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2017-11-02</td>
+      <td>23:59:00</td>
+      <td>2017-11-02 23:59:00+00:00</td>
+      <td>None</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 43 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us make sure nothing was lost</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">sample_output_df</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
