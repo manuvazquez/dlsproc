@@ -2011,6 +2011,37 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The original index is reset</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;entry&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -2053,12 +2084,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   <thead>
     <tr>
       <th></th>
-      <th>file name</th>
-      <th>entry</th>
+      <th></th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th colspan="16" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2068,11 +2098,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th>ProcurementProject</th>
+      <th colspan="3" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2089,9 +2118,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
+      <th>TypeCode</th>
+      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2110,10 +2140,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
+      <th></th>
+      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2133,9 +2164,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ID</th>
       <th>Name</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th>...</th>
       <th>URI</th>
@@ -2149,6 +2181,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2184,6 +2217,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2208,6 +2242,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2221,7 +2256,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
-      <th>id</th>
+      <th>file name</th>
+      <th>entry</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2247,9 +2283,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   </thead>
   <tbody>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>453</td>
+      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
+      <th>453</th>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2258,6 +2293,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>3.0</td>
+      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2271,9 +2308,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>&lt;NA&gt;</td>
     </tr>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>452</td>
+      <th>452</th>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -2282,6 +2317,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>3.0</td>
+      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2296,7 +2333,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 43 columns</p>
+<p>2 rows × 41 columns</p>
 </div></div>
 
 </div>
@@ -2325,7 +2362,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="merge" class="doc_header"><code>merge</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/extend.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge</code>(<strong><code>history_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>zip_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>output_file</code></strong>:<code>Path | None</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>)</p>
+<h4 id="parquet_with_zip" class="doc_header"><code>parquet_with_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/extend.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_with_zip</code>(<strong><code>history_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>zip_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>output_file</code></strong>:<code>Path | None</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -2352,7 +2389,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">parquet_with_zip</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">)</span>
 <span class="n">merged_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -2388,12 +2425,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   <thead>
     <tr>
       <th></th>
-      <th>file name</th>
-      <th>entry</th>
+      <th></th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th colspan="16" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2403,11 +2439,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th>ProcurementProject</th>
+      <th colspan="3" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2424,9 +2459,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
+      <th>TypeCode</th>
+      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2445,10 +2481,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
+      <th></th>
+      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2468,9 +2505,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ID</th>
       <th>Name</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th>...</th>
       <th>URI</th>
@@ -2484,6 +2522,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2519,6 +2558,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2543,6 +2583,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2556,7 +2597,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
-      <th>id</th>
+      <th>file name</th>
+      <th>entry</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2582,9 +2624,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   </thead>
   <tbody>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>453</td>
+      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
+      <th>453</th>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2593,6 +2634,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>3.0</td>
+      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2606,9 +2649,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>&lt;NA&gt;</td>
     </tr>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>452</td>
+      <th>452</th>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -2617,6 +2658,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>3.0</td>
+      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2631,7 +2674,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 43 columns</p>
+<p>2 rows × 41 columns</p>
 </div></div>
 
 </div>
@@ -2674,7 +2717,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span> <span class="o">/</span> <span class="s1">&#39;merged.parquet&#39;</span>
-<span class="n">merge</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+<span class="n">parquet_with_zip</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2727,12 +2770,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   <thead>
     <tr>
       <th></th>
-      <th>file name</th>
-      <th>entry</th>
+      <th></th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="14" halign="left">ContractFolderStatus</th>
+      <th colspan="16" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2742,11 +2784,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th>ProcurementProject</th>
+      <th colspan="3" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2763,9 +2804,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
+      <th>TypeCode</th>
+      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2784,10 +2826,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
+      <th></th>
+      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2807,9 +2850,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
       <th>ID</th>
       <th>Name</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th>...</th>
       <th>URI</th>
@@ -2823,6 +2867,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2858,6 +2903,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2882,6 +2928,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>...</th>
       <th></th>
       <th></th>
@@ -2895,7 +2942,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
     </tr>
     <tr>
-      <th>id</th>
+      <th>file name</th>
+      <th>entry</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2921,9 +2969,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
   </thead>
   <tbody>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992428</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>453</td>
+      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
+      <th>453</th>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2932,6 +2979,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
+      <td>3.0</td>
+      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2945,9 +2994,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>&lt;NA&gt;</td>
     </tr>
     <tr>
-      <th>https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1992427</th>
-      <td>PlataformasAgregadasSinMenores_20180217_180137...</td>
-      <td>452</td>
+      <th>452</th>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -2956,6 +3003,8 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>L02000047</td>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
+      <td>3.0</td>
+      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2970,7 +3019,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 43 columns</p>
+<p>2 rows × 41 columns</p>
 </div></div>
 
 </div>
