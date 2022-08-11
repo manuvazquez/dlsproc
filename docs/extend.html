@@ -1196,6 +1196,30 @@ nb_path: "70_extend.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Only the last update is kept</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">concatenated_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">postprocess</span><span class="o">.</span><span class="n">keep_updates_only</span><span class="p">(</span><span class="n">concatenated_df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In order to make it easy to update the <code>deleted_on</code> column in the existing <code>pd.DataFrame</code> using the data contained in the <em>deleted</em> <code>pd.Series</code> (i.e., to get <em>automatic 
 alignment</em>) we</p>
 <ul>
@@ -1535,9 +1559,9 @@ alignment</em>) we</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>id
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 01:12:01.376000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-04 00:11:57.567000+01:00
-Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 00:12:01.376000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-03 23:11:57.567000+00:00
+Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 </div>
 
 </div>
@@ -1579,56 +1603,56 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>id
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921   2022-01-04 00:11:56.535000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074   2022-01-04 00:11:56.497000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968266   2022-01-05 00:12:11.916000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968267   2022-01-05 00:12:12.775000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968268   2022-01-05 00:12:12.731000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968269   2022-01-05 00:12:13.013000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968271   2022-01-05 00:12:12.172000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968272   2022-01-05 00:12:12.957000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968279   2022-01-05 00:12:12.039000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968280   2022-01-05 00:12:12.865000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968282   2022-01-05 00:12:13.107000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968284   2022-01-05 00:12:12.911000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968285   2022-01-05 00:12:12.819000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968286   2022-01-05 00:12:13.147000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968287   2022-01-05 00:12:11.998000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968288   2022-01-05 00:12:11.957000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968289   2022-01-05 00:12:12.129000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968290   2022-01-05 00:12:12.635000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968291   2022-01-05 00:12:13.191000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968294   2022-01-05 00:12:13.328000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968299   2022-01-05 00:12:13.236000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968301   2022-01-05 00:12:13.283000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968302   2022-01-05 00:12:12.680000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968303   2022-01-05 00:12:13.058000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968305   2022-01-05 00:12:12.076000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-04 00:11:57.567000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968317   2022-01-04 00:11:56.751000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968318   2022-01-04 00:11:57.038000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968319   2022-01-04 00:11:56.620000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968321   2022-01-04 00:11:57.323000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968324   2022-01-04 00:11:57.471000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968325   2022-01-04 00:11:56.579000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968327   2022-01-04 00:11:57.089000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968329   2022-01-04 00:11:56.850000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968331   2022-01-04 00:11:56.897000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968332   2022-01-04 00:11:56.949000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968333   2022-01-04 00:11:57.183000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968335   2022-01-04 00:11:57.275000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968337   2022-01-04 00:11:57.375000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968338   2022-01-04 00:11:56.805000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968343   2022-01-04 00:11:57.232000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968344   2022-01-04 00:11:57.426000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968345   2022-01-04 00:11:57.516000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968346   2022-01-04 00:11:56.661000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968358   2022-01-04 00:11:56.706000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968360   2022-01-04 00:11:57.141000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968361   2022-01-04 00:11:56.991000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 01:12:01.376000+01:00
-https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8892704   2022-01-04 14:13:12.670000+01:00
-Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1957921   2022-01-03 23:11:56.535000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1959074   2022-01-03 23:11:56.497000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968266   2022-01-04 23:12:11.916000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968267   2022-01-04 23:12:12.775000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968268   2022-01-04 23:12:12.731000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968269   2022-01-04 23:12:13.013000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968271   2022-01-04 23:12:12.172000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968272   2022-01-04 23:12:12.957000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968279   2022-01-04 23:12:12.039000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968280   2022-01-04 23:12:12.865000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968282   2022-01-04 23:12:13.107000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968284   2022-01-04 23:12:12.911000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968285   2022-01-04 23:12:12.819000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968286   2022-01-04 23:12:13.147000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968287   2022-01-04 23:12:11.998000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968288   2022-01-04 23:12:11.957000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968289   2022-01-04 23:12:12.129000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968290   2022-01-04 23:12:12.635000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968291   2022-01-04 23:12:13.191000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968294   2022-01-04 23:12:13.328000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968299   2022-01-04 23:12:13.236000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968301   2022-01-04 23:12:13.283000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968302   2022-01-04 23:12:12.680000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968303   2022-01-04 23:12:13.058000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968305   2022-01-04 23:12:12.076000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968315   2022-01-03 23:11:57.567000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968317   2022-01-03 23:11:56.751000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968318   2022-01-03 23:11:57.038000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968319   2022-01-03 23:11:56.620000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968321   2022-01-03 23:11:57.323000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968324   2022-01-03 23:11:57.471000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968325   2022-01-03 23:11:56.579000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968327   2022-01-03 23:11:57.089000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968329   2022-01-03 23:11:56.850000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968331   2022-01-03 23:11:56.897000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968332   2022-01-03 23:11:56.949000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968333   2022-01-03 23:11:57.183000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968335   2022-01-03 23:11:57.275000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968337   2022-01-03 23:11:57.375000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968338   2022-01-03 23:11:56.805000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968343   2022-01-03 23:11:57.232000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968344   2022-01-03 23:11:57.426000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968345   2022-01-03 23:11:57.516000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968346   2022-01-03 23:11:56.661000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968358   2022-01-03 23:11:56.706000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968360   2022-01-03 23:11:57.141000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1968361   2022-01-03 23:11:56.991000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/6724977   2022-01-04 00:12:01.376000+00:00
+https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/8892704   2022-01-04 13:13:12.670000+00:00
+Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 </div>
 
 </div>
@@ -1732,7 +1756,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Series([], Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)])</pre>
+<pre>Series([], Name: deleted_on, dtype: datetime64[ns, UTC])</pre>
 </div>
 
 </div>
@@ -2013,7 +2037,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The original index is reset</p>
+<p>The original index is reset (notice the <code>reset_index()</code> in the middle that avoids losing <code>id</code> columns, which is right now the index)</p>
 
 </div>
 </div>
@@ -2025,7 +2049,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;entry&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;entry&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -2085,10 +2109,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th></th>
       <th></th>
+      <th>id</th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="16" halign="left">ContractFolderStatus</th>
+      <th colspan="15" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2098,10 +2123,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th colspan="3" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2118,10 +2144,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
       <th>TypeCode</th>
-      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2140,11 +2166,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
       <th></th>
-      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2164,9 +2190,9 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ID</th>
       <th>Name</th>
-      <th></th>
       <th></th>
       <th></th>
       <th>...</th>
@@ -2285,6 +2311,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
       <th>453</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2294,7 +2321,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>3.0</td>
-      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2309,6 +2335,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
     <tr>
       <th>452</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -2318,7 +2345,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>3.0</td>
-      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2333,7 +2359,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 41 columns</p>
+<p>2 rows × 42 columns</p>
 </div></div>
 
 </div>
@@ -2362,7 +2388,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parquet_with_zip" class="doc_header"><code>parquet_with_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/extend.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_with_zip</code>(<strong><code>history_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>zip_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>output_file</code></strong>:<code>Path | None</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>)</p>
+<h4 id="parquet_with_zip" class="doc_header"><code>parquet_with_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/extend.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_with_zip</code>(<strong><code>history_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>zip_file</code></strong>:<code>Path</code>[<code>str</code>, <code>Path</code>], <strong><code>output_file</code></strong>:<code>Path | None</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -2426,10 +2452,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th></th>
       <th></th>
+      <th>id</th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="16" halign="left">ContractFolderStatus</th>
+      <th colspan="15" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2439,10 +2466,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th colspan="3" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2459,10 +2487,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
       <th>TypeCode</th>
-      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2481,11 +2509,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
       <th></th>
-      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2505,9 +2533,9 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ID</th>
       <th>Name</th>
-      <th></th>
       <th></th>
       <th></th>
       <th>...</th>
@@ -2626,6 +2654,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
       <th>453</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2635,7 +2664,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>3.0</td>
-      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2650,6 +2678,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
     <tr>
       <th>452</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -2659,7 +2688,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>3.0</td>
-      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2674,7 +2702,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 41 columns</p>
+<p>2 rows × 42 columns</p>
 </div></div>
 
 </div>
@@ -2771,10 +2799,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th></th>
       <th></th>
+      <th>id</th>
       <th>summary</th>
       <th>title</th>
       <th>updated</th>
-      <th colspan="16" halign="left">ContractFolderStatus</th>
+      <th colspan="15" halign="left">ContractFolderStatus</th>
       <th>deleted_on</th>
       <th>ContractFolderStatus</th>
     </tr>
@@ -2784,10 +2813,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ContractFolderID</th>
       <th>ContractFolderStatusCode</th>
       <th colspan="2" halign="left">LocatedContractingParty</th>
-      <th colspan="3" halign="left">ProcurementProject</th>
+      <th colspan="2" halign="left">ProcurementProject</th>
       <th>...</th>
       <th>LegalDocumentReference</th>
       <th colspan="2" halign="left">TechnicalDocumentReference</th>
@@ -2804,10 +2834,10 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th colspan="2" halign="left">Party</th>
       <th>Name</th>
       <th>TypeCode</th>
-      <th>BudgetAmount</th>
       <th>...</th>
       <th>Attachment</th>
       <th>ID</th>
@@ -2826,11 +2856,11 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>PartyIdentification</th>
       <th>PartyName</th>
       <th></th>
       <th></th>
-      <th>EstimatedOverallContractAmount</th>
       <th>...</th>
       <th>ExternalReference</th>
       <th></th>
@@ -2850,9 +2880,9 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
       <th>ID</th>
       <th>Name</th>
-      <th></th>
       <th></th>
       <th></th>
       <th>...</th>
@@ -2971,6 +3001,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     <tr>
       <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20180217_180137_1.atom</th>
       <th>453</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1284/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>2018-01-02 08:01:52.024000+00:00</td>
@@ -2980,7 +3011,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 3001 Renedo de Esgu...</td>
       <td>3.0</td>
-      <td>89917.95</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2995,6 +3025,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
     <tr>
       <th>452</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
       <td>Expediente: 1282/17, Entidad: Diputación Provi...</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>2018-01-02 08:02:24.833000+00:00</td>
@@ -3004,7 +3035,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
       <td>Diputación Provincial de Valladolid</td>
       <td>Refuerzo de Firme en la VP 6603 Mota del Marqu...</td>
       <td>3.0</td>
-      <td>175708.46</td>
       <td>...</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -3019,7 +3049,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 41 columns</p>
+<p>2 rows × 42 columns</p>
 </div></div>
 
 </div>

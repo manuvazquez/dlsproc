@@ -13,6 +13,7 @@ import dlsproc.bundle
 import dlsproc.hier
 import dlsproc.io
 import dlsproc.assemble
+import dlsproc.postprocess
 
 # Cell
 def parquet_with_zip(history_file: str | pathlib.Path, zip_file: str | pathlib.Path, output_file: str | pathlib.Path | None = None) -> None | pd.DataFrame:
@@ -36,8 +37,25 @@ def parquet_with_zip(history_file: str | pathlib.Path, zip_file: str | pathlib.P
     # we also need the information about which entries are flagged as deleted
     deleted_series = dlsproc.bundle.read_deleted_zip(zip_file)
 
+    # the time zone for the above deleted series and the column "deleted_on" in the historical data
+    history_deleted_timezone = history_df["deleted_on"].dt.tz
+    deleted_series_timezone = deleted_series.dt.tz
+
+    # if there is any actual value in the "deleted on" column...
+    if history_deleted_timezone:
+
+        # assert deleted_series.dt.tz == history_deleted_timezone, f'{deleted_series.dt.tz=}, {history_deleted_timezone=}'
+
+        if history_deleted_timezone != deleted_series_timezone:
+
+            print(f'converting time zone in zip file {deleted_series_timezone} to {history_deleted_timezone} (that in the historical file)...')
+            deleted_series = deleted_series.dt.tz_convert(history_deleted_timezone)
+
     # the two dataframes are stacked together
     concatenated_df = dlsproc.assemble.stack(history_df, new_df)
+
+    # the same contract might show up more than once due to updates...but only the last one is kept
+    concatenated_df = dlsproc.postprocess.keep_updates_only(concatenated_df)
 
     # for the sake of flagging deleted entries, the new (concatenated) dataframe and the *deleted series* are indexed the same
     reindexed_concatenated_df = concatenated_df.reset_index().set_index(['id'])
@@ -50,7 +68,7 @@ def parquet_with_zip(history_file: str | pathlib.Path, zip_file: str | pathlib.P
     reindexed_concatenated_df['deleted_on'] = reindexed_concatenated_df['deleted_on'].fillna(deduplicated_reindexed_deleted_series)
 
     # the orginal index is set back in place
-    res = reindexed_concatenated_df.set_index(['file name', 'entry'])
+    res = reindexed_concatenated_df.reset_index().set_index(['file name', 'entry'])
 
     if output_file:
 

@@ -7,12 +7,14 @@ import sys
 import argparse
 import pathlib
 
+import yaml
+
 import dlsproc.extend
 
 # Cell
 def process_atom(input_file: str | pathlib.Path):
 
-    print(input_file)
+    print('Not implemented yet...')
 
 # Cell
 def cli_process_atom() -> None:
@@ -32,7 +34,7 @@ def cli_extend_parquet_with_zip(args: list = None) -> None:
 
     parser.add_argument('history_file', type=argparse.FileType('r'), help='Parquet file')
     parser.add_argument('zip_file', type=argparse.FileType('r'), help='Zip file')
-    parser.add_argument('output_file', help='Output file')
+    parser.add_argument('output_file', help='Output (parquet) file')
 
     command_line_arguments = parser.parse_args(args)
 
@@ -40,8 +42,8 @@ def cli_extend_parquet_with_zip(args: list = None) -> None:
     zip_file = pathlib.Path(command_line_arguments.zip_file.name)
 
     output_file = pathlib.Path(command_line_arguments.output_file)
-    assert not output_file.exists()
+    # assert not output_file.exists()
+    assert output_file.suffix == '.parquet', 'a .parquet file was expected'
 
     dlsproc.extend.parquet_with_zip(history_file, zip_file, output_file)
-
-    return command_line_arguments
+    # return command_line_arguments

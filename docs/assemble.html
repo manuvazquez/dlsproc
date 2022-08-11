@@ -50,8 +50,7 @@ nb_path: "60_assemble.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
     </div>
@@ -523,7 +522,7 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="merge_deleted" class="doc_header"><code>merge_deleted</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge_deleted</code>(<strong><code>data_df</code></strong>:<code>DataFrame</code>, <strong><code>deleted_series</code></strong>:<code>Series</code>)</p>
+<h4 id="merge_deleted" class="doc_header"><code>merge_deleted</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>merge_deleted</code>(<strong><code>data_df</code></strong>:<code>DataFrame</code>, <strong><code>deleted_series</code></strong>:<code>Series</code>)</p>
 </blockquote>
 
 </div>
@@ -1053,559 +1052,6 @@ Name: deleted_on, dtype: datetime64[ns, pytz.FixedOffset(60)]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Human-readable-columns">Human-readable columns<a class="anchor-link" href="#Human-readable-columns"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A mapping between columns and <em>human-readable</em> fields can be found <a href="***REMOVED***">here</a>. The latter was processed in <code>naming.ipynb</code> to get the file below.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_scheme_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;PLACE.yaml&#39;</span>
-<span class="k">assert</span> <span class="n">data_scheme_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It provides (as a <code>dict</code>) a mapping from <em>human-readable</em> names to (maybe nested) fields in <em>Atom</em> files</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_scheme_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_data</span><span class="p">:</span>
-    <span class="n">data_scheme</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">yaml_data</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
-<span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">data_scheme</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_scheme</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;id&#39;: [&#39;id&#39;, nan, nan, nan, nan, nan, nan],
- &#39;summary&#39;: [&#39;summary&#39;, nan, nan, nan, nan, nan, nan],
- &#39;title&#39;: [&#39;title&#39;, nan, nan, nan, nan, nan, nan],
- &#39;updated&#39;: [&#39;updated&#39;, nan, nan, nan, nan, nan, nan],
- &#39;Número de Expediente&#39;: [&#39;ContractFolderStatus&#39;,
-  &#39;ContractFolderID&#39;,
-  nan,
-  nan,
-  nan,
-  nan,
-  nan]}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A convenience function, <code>n2c</code> (as in "name to column"), to go from <em>human-readable</em> name to actual <em>multiindex</em> column</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n2c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">hier</span><span class="o">.</span><span class="n">pad_col_levels</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data_scheme</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">denan</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The mapping can be exploited to access the columns of the <code>pd.DataFrame</code> using more natural names</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">n2c</span><span class="p">(</span><span class="s1">&#39;Número de Expediente&#39;</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>file name                                            entry
-PlataformasAgregadasSinMenores_20220105_030012.atom  0                  2021039438
-                                                     1                   2021_2568
-                                                     2                  12450/2021
-                                                     3            2021/14/M0400100
-                                                     4                 ICVI-2022-1
-                                                                      ...         
-PlataformasAgregadasSinMenores_20220106_030013.atom  471             2021/57-12334
-                                                     472                   32/2021
-                                                     473                 1977/2021
-                                                     474                EXI-2022-7
-                                                     475      CONTR/2021/000000137
-Name: (ContractFolderStatus, ContractFolderID, , , , ), Length: 951, dtype: string</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A hierarchical column <em>multiindex</em> is assumed.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># [k for k in itertools.islice(inv_data_scheme, 0, 2)]</span>
-<span class="c1"># # [k for k in inv_data_scheme]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inv_data_scheme</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">v</span><span class="p">]):</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data_scheme</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">inv_data_scheme</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
-<span class="c1"># [k for k in inv_data_scheme]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;ContractFolderStatusContractFolderID&#39;,
- &#39;ContractFolderStatusContractFolderStatusCode&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">inv_data_scheme</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>6</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;id&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="flatten_columns_names" class="doc_header"><code>flatten_columns_names</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_columns_names</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>data_scheme</code></strong>:<code>dict</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">renamed_cols_df</span> <span class="o">=</span> <span class="n">flatten_columns_names</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data_scheme</span><span class="p">)</span>
-<span class="n">renamed_cols_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>id</th>
-      <th>summary</th>
-      <th>title</th>
-      <th>updated</th>
-      <th>Número de Expediente</th>
-      <th>Estado</th>
-      <th>URL perfil de contratante</th>
-      <th>Nombre</th>
-      <th>Ubicación orgánica</th>
-      <th>Objeto del Contrato</th>
-      <th>...</th>
-      <th>Plazo de Ejecución (Comienzo)</th>
-      <th>Pliego de cláusulas administrativas</th>
-      <th>Pliego de cláusulas administrativas (URI)</th>
-      <th>Plazo de Ejecución (Fin)</th>
-      <th>Pliego de Prescripciones técnicas</th>
-      <th>Pliego de Prescripciones técnicas (URI)</th>
-      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
-      <th>Presentación de Solicitudes (Fecha)</th>
-      <th>Presentación de Solicitudes (Hora)</th>
-      <th>Presentación de Oferta</th>
-    </tr>
-    <tr>
-      <th>file name</th>
-      <th>entry</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20220105_030012.atom</th>
-      <th>0</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>Id licitación: 2021039438; Órgano de Contratac...</td>
-      <td>L'objecte és la contractació del servei de bug...</td>
-      <td>2022-01-04 12:12:09.464000+00:00</td>
-      <td>2021039438</td>
-      <td>RES</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Girona</td>
-      <td>Entitats municipals de Catalunya</td>
-      <td>L'objecte és la contractació del servei de bug...</td>
-      <td>...</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>2021-12-13 23:59:00+00:00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>https://contrataciondelestado.es/sindicacion/P...</td>
-      <td>Id licitación: 2021_2568; Órgano de Contrataci...</td>
-      <td>Servei comunicacions postals de l'Ajuntament d...</td>
-      <td>2022-01-04 12:12:09.400000+00:00</td>
-      <td>2021_2568</td>
-      <td>ADJ</td>
-      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
-      <td>Ajuntament de Collbató</td>
-      <td>Entitats municipals de Catalunya</td>
-      <td>Servei comunicacions postals de l'Ajuntament d...</td>
-      <td>...</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>2021-11-29 23:59:00+00:00</td>
-    </tr>
-  </tbody>
-</table>
-<p>2 rows × 39 columns</p>
-</div></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>One can now used the <em>human-readable</em> columns names, e.g.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">renamed_cols_df</span><span class="p">[</span><span class="s1">&#39;Número de Expediente&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>file name                                            entry
-PlataformasAgregadasSinMenores_20220105_030012.atom  0                  2021039438
-                                                     1                   2021_2568
-                                                     2                  12450/2021
-                                                     3            2021/14/M0400100
-                                                     4                 ICVI-2022-1
-                                                                      ...         
-PlataformasAgregadasSinMenores_20220106_030013.atom  471             2021/57-12334
-                                                     472                   32/2021
-                                                     473                 1977/2021
-                                                     474                EXI-2022-7
-                                                     475      CONTR/2021/000000137
-Name: Número de Expediente, Length: 951, dtype: string</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Saving-to-parquet">Saving to parquet<a class="anchor-link" href="#Saving-to-parquet"> </a></h2>
 </div>
 </div>
@@ -1633,7 +1079,7 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -2312,18 +1758,18 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.135251</td>
-      <td>0.472150</td>
-      <td>0.999164</td>
-      <td>0.607545</td>
+      <td>0.091111</td>
+      <td>0.537428</td>
+      <td>0.385488</td>
+      <td>0.374303</td>
     </tr>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.295225</td>
-      <td>0.104184</td>
-      <td>0.688028</td>
-      <td>0.626293</td>
+      <td>0.065013</td>
+      <td>0.888074</td>
+      <td>0.473655</td>
+      <td>0.032714</td>
     </tr>
   </tbody>
 </table>
@@ -2753,10 +2199,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.135251</td>
-      <td>0.472150</td>
-      <td>0.999164</td>
-      <td>0.607545</td>
+      <td>0.091111</td>
+      <td>0.537428</td>
+      <td>0.385488</td>
+      <td>0.374303</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -2778,10 +2224,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.295225</td>
-      <td>0.104184</td>
-      <td>0.688028</td>
-      <td>0.626293</td>
+      <td>0.065013</td>
+      <td>0.888074</td>
+      <td>0.473655</td>
+      <td>0.032714</td>
     </tr>
   </tbody>
 </table>
@@ -2807,7 +2253,7 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="stack" class="doc_header"><code>stack</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack</code>(<strong><code>top_df</code></strong>:<code>DataFrame</code>, <strong><code>bottom_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="stack" class="doc_header"><code>stack</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack</code>(<strong><code>top_df</code></strong>:<code>DataFrame</code>, <strong><code>bottom_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -3076,10 +2522,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.135251</td>
-      <td>0.472150</td>
-      <td>0.999164</td>
-      <td>0.607545</td>
+      <td>0.091111</td>
+      <td>0.537428</td>
+      <td>0.385488</td>
+      <td>0.374303</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -3101,10 +2547,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.295225</td>
-      <td>0.104184</td>
-      <td>0.688028</td>
-      <td>0.626293</td>
+      <td>0.065013</td>
+      <td>0.888074</td>
+      <td>0.473655</td>
+      <td>0.032714</td>
     </tr>
   </tbody>
 </table>
@@ -3327,10 +2773,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.135251</td>
-      <td>0.472150</td>
-      <td>0.999164</td>
-      <td>0.607545</td>
+      <td>0.091111</td>
+      <td>0.537428</td>
+      <td>0.385488</td>
+      <td>0.374303</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -3352,10 +2798,10 @@ Name: Número de Expediente, Length: 951, dtype: string</pre>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.295225</td>
-      <td>0.104184</td>
-      <td>0.688028</td>
-      <td>0.626293</td>
+      <td>0.065013</td>
+      <td>0.888074</td>
+      <td>0.473655</td>
+      <td>0.032714</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>

@@ -107,7 +107,7 @@ def read_deleted_zip(input_file: str | pathlib.Path) -> pd.Series:
                 series.append(dlsproc.xml.deleted_to_series(f))
 
     return pd.concat(series, keys=filenames, names=['file name', 'id'])
-    # return pd.concat(series, keys=filenames, names=['file name', 'entry'])
+    # return series
 
 # Cell
 def read_zips_directory(input_directory: str | pathlib.Path, concatenate: bool = False) -> list | pd.DataFrame:

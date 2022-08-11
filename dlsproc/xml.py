@@ -74,7 +74,8 @@ def deleted_to_series(input_file: str | pathlib.Path) -> pd.Series:
 
     for e in get_deleted_entries(root):
         ids.append(e.attrib['ref'])
-        dates.append(pd.to_datetime(e.attrib['when']))
+        # dates.append(pd.to_datetime(e.attrib['when']))
+        dates.append(pd.to_datetime(e.attrib['when'], utc=True))
 
     name = 'deleted_on'
 
