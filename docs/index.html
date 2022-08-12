@@ -31,7 +31,7 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One is better off checking the wiki, but this is Python code meant to process Spanish government's <a href="https://contrataciondelestado.es">Plataforma de contratación del sector público</a> data.</p>
+<p>One is better off checking the wiki, but this is Python code meant to download Spanish government's <a href="https://contrataciondelestado.es">Plataforma de contratación del sector público</a> <em>metadata</em> (right now, it does <strong>not</strong> download any document).</p>
 
 </div>
 </div>
@@ -57,7 +57,38 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The software can be exploited as a library or as a <em>standalone</em> script.</p>
+<p>The software can be exploited as a library or as <em>standalone</em> scripts.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For testing purposes one can download, e.g., <a href="https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip">Outsiders contracts for 2018</a> and then</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>dlsproc_extend_parquet_with_zip.py</code>extends an existing <a href="https://parquet.apache.org/">parquet</a> file with data extracted from a given <em>zip</em> file.</p>
 
 </div>
 </div>

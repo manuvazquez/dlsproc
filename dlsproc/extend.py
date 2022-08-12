@@ -57,12 +57,12 @@ def parquet_with_zip(history_file: str | pathlib.Path, zip_file: str | pathlib.P
     # the same contract might show up more than once due to updates...but only the last one is kept
     concatenated_df = dlsproc.postprocess.keep_updates_only(concatenated_df)
 
+    # duplicates are dropped from the deleted series
+    deduplicated_deleted_series = dlsproc.postprocess.deduplicate_deleted_series(deleted_series)
+
     # for the sake of flagging deleted entries, the new (concatenated) dataframe and the *deleted series* are indexed the same
     reindexed_concatenated_df = concatenated_df.reset_index().set_index(['id'])
-    reindexed_deleted_series = deleted_series.droplevel(0)
-
-    # duplicates are dropped from the *deleted series*
-    deduplicated_reindexed_deleted_series = reindexed_deleted_series.groupby(reindexed_deleted_series.index, group_keys=False).nsmallest(1)
+    deduplicated_reindexed_deleted_series = deduplicated_deleted_series.droplevel(level='file name')
 
     # the `deleted_on` column in the dataframe is filled in whenever appropriate
     reindexed_concatenated_df['deleted_on'] = reindexed_concatenated_df['deleted_on'].fillna(deduplicated_reindexed_deleted_series)

@@ -4,6 +4,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"process_atom": "00_core.ipynb",
          "cli_process_atom": "00_core.ipynb",
+         "cli_process_zip": "00_core.ipynb",
          "cli_extend_parquet_with_zip": "00_core.ipynb",
          "cli_rename_columns": "00_core.ipynb",
          "nested_tags_separator": "05_structure.ipynb",
@@ -26,6 +27,7 @@ index = {"process_atom": "00_core.ipynb",
          "assembled_str_columns": "15_postprocess.ipynb",
          "typecast_columns": "15_postprocess.ipynb",
          "keep_updates_only": "15_postprocess.ipynb",
+         "deduplicate_deleted_series": "15_postprocess.ipynb",
          "read_zip": "20_bundle.ipynb",
          "read_deleted_zip": "20_bundle.ipynb",
          "read_zips_directory": "20_bundle.ipynb",
@@ -45,6 +47,7 @@ index = {"process_atom": "00_core.ipynb",
          "merge_deleted": "60_assemble.ipynb",
          "parquet_amenable": "60_assemble.ipynb",
          "stack": "60_assemble.ipynb",
+         "distilled_data_from_zip": "60_assemble.ipynb",
          "parquet_with_zip": "70_extend.ipynb"}
 
 modules = ["core.py",

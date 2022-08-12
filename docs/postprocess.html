@@ -661,7 +661,7 @@ nb_path: "15_postprocess.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="typecast_columns" class="doc_header"><code>typecast_columns</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>typecast_columns</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="typecast_columns" class="doc_header"><code>typecast_columns</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L20" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>typecast_columns</code>(<strong><code>input_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>Tidy up the <code>pd.DataFrame</code> returned by <a href="/dlsproc/xml.html#to_df"><code>to_df</code></a>.</p>
 <p><strong>Parameters</strong></p>
@@ -1816,7 +1816,7 @@ dtype: bool</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="keep_updates_only" class="doc_header"><code>keep_updates_only</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>keep_updates_only</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="keep_updates_only" class="doc_header"><code>keep_updates_only</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>keep_updates_only</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -2088,6 +2088,314 @@ dtype: bool</pre>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>115</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Deleted-series">Deleted series<a class="anchor-link" href="#Deleted-series"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">dlsproc.bundle</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;yearly&#39;</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_2018.zip&#39;</span>
+<span class="k">assert</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="n">zip_file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>PosixPath(&#39;/home/manu/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_series</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">read_deleted_zip</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
+<span class="n">deleted_series</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>file name                                              id                                                                                 
+PlataformasAgregadasSinMenores_20180217_180137_1.atom  https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1985903   2018-01-04 13:11:18.021000+00:00
+                                                       https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1969197   2018-01-04 13:11:17.921000+00:00
+Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No duplicates</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We add an <em>artificial</em> one</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">deleted_series</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
+<span class="n">deleted_series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">new_data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now have a duplicate</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function to get rid of duplicates from a <em>deleted series</em>. The <strong>oldest</strong> entry is kept.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="deduplicate_deleted_series" class="doc_header"><code>deduplicate_deleted_series</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>deduplicate_deleted_series</code>(<strong><code>series</code></strong>:<code>Series</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deduplicated_series</span> <span class="o">=</span> <span class="n">deduplicate_deleted_series</span><span class="p">(</span><span class="n">deleted_series</span><span class="p">)</span>
+<span class="n">deduplicated_series</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>file name                                              id                                                                                 
+PlataformasAgregadasSinMenores_20180217_190110_1.atom  https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/1996094   2018-02-07 09:01:16.378000+00:00
+foo                                                    https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/2000163          2017-01-03 00:00:00+00:00
+Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deleted_series</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">deduplicated_series</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((52,), (51,))</pre>
 </div>
 
 </div>
