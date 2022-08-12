@@ -5,6 +5,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"process_atom": "00_core.ipynb",
          "cli_process_atom": "00_core.ipynb",
          "cli_extend_parquet_with_zip": "00_core.ipynb",
+         "cli_rename_columns": "00_core.ipynb",
          "nested_tags_separator": "05_structure.ipynb",
          "assemble_name": "05_structure.ipynb",
          "is_multivalued": "05_structure.ipynb",
