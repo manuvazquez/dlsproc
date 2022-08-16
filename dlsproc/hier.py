@@ -95,7 +95,14 @@ def columns_containing(df: pd.DataFrame, substring: str):
     return df.columns[is_contained]
 
 # Cell
+def _data_scheme_ok(data_scheme: dict) -> bool:
+
+    return len(np.unique([len(e) for e in data_scheme.values()])) == 1
+
+# Cell
 def flatten_columns_names(df: pd.DataFrame, data_scheme: dict, inplace: bool = False) -> None | pd.DataFrame:
+
+    assert _data_scheme_ok(data_scheme), f'data scheme is not OK'
 
     # the inverse of the above mapping (turning nan's into empty strings, and concatenating all the levels together)
     inv_data_scheme = {''.join([e if pd.notna(e) else '' for e in v]): k for k, v in data_scheme.items()}

@@ -25,11 +25,11 @@ Running
 ```
 dlsproc_process_zip.py PlataformasAgregadasSinMenores_2018.zip 2018.parquet
 ```
-file `2018.parquet` (the 2nd argument) is created. It can be readily loaded (in Python, through [Pandas](https://pandas.pydata.org/)' `pd.read_parquet`).
+outputs the file `2018.parquet` (the name being given by the 2nd argument), which contains a `pd.DataFrame` with all the 2018 metadata. It can be readily loaded (in Python, through [Pandas](https://pandas.pydata.org/)' `pd.read_parquet`). The columns of the `pd.DataFrame` stored inside are *multiindexed* (meaning one could get columns such as `(ContractFolderStatus','ContractFolderID)` and `(ContractFolderStatus','ContractFolderStatusCode)`.  This is very convenient when visualizing the data (see the [the documentation for the `hier`module](https://manuvazquez.github.io/dlsproc/hierarchical.html#flat_df_to_multiindexed_df)).
 
 #### From hierarchical (*multiindexed*) columns to plain ones
 
-The columns in the `pd.DataFrame` stored in the file above are *multiindexed* (meaning one could get columns such as `(ContractFolderStatus','ContractFolderID)` and `(ContractFolderStatus','ContractFolderStatusCode)`. They can be *flattened* to get `ContractFolderStatus - ContractFolderID` and `ContractFolderStatus - ContractFolderStatusCode`, respectively. Additionally, some renaming might be applied following the mapping in some YAML file
+The columns of the above `pd.DataFrame` can be *flattened* to get, in the example above, `ContractFolderStatus - ContractFolderID` and `ContractFolderStatus - ContractFolderStatusCode`, respectively. Additionally, some renaming might be applied following the mapping in some YAML file
 ```
 dlsproc_rename_cols.py 2018.parquet samples/PLACE.yaml 2018_flattened.parquet
 ```

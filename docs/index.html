@@ -88,7 +88,7 @@ nb_path: "index.ipynb"
 <p>Running</p>
 
 <pre><code>dlsproc_process_zip.py PlataformasAgregadasSinMenores_2018.zip 2018.parquet</code></pre>
-<p>file <code>2018.parquet</code> (the 2nd argument) is created. It can be readily loaded (in Python, through <a href="https://pandas.pydata.org/">Pandas</a>' <code>pd.read_parquet</code>).</p>
+<p>outputs the file <code>2018.parquet</code> (the name being given by the 2nd argument), which contains a <code>pd.DataFrame</code> with all the 2018 metadata. It can be readily loaded (in Python, through <a href="https://pandas.pydata.org/">Pandas</a>' <code>pd.read_parquet</code>). The columns of the <code>pd.DataFrame</code> stored inside are <em>multiindexed</em> (meaning one could get columns such as <code>(ContractFolderStatus','ContractFolderID)</code> and <code>(ContractFolderStatus','ContractFolderStatusCode)</code>.  This is very convenient when visualizing the data (see the <a href="https://manuvazquez.github.io/dlsproc/hierarchical.html#flat_df_to_multiindexed_df">the documentation for the <code>hier</code>module</a>).</p>
 
 </div>
 </div>
@@ -101,7 +101,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The columns in the <code>pd.DataFrame</code> stored in the file above are <em>multiindexed</em> (meaning one could get columns such as <code>(ContractFolderStatus','ContractFolderID)</code> and <code>(ContractFolderStatus','ContractFolderStatusCode)</code>. They can be <em>flattened</em> to get <code>ContractFolderStatus - ContractFolderID</code> and <code>ContractFolderStatus - ContractFolderStatusCode</code>, respectively. Additionally, some renaming might be applied following the mapping in some YAML file</p>
+<p>The columns of the above <code>pd.DataFrame</code> can be <em>flattened</em> to get, in the example above, <code>ContractFolderStatus - ContractFolderID</code> and <code>ContractFolderStatus - ContractFolderStatusCode</code>, respectively. Additionally, some renaming might be applied following the mapping in some YAML file</p>
 
 <pre><code>dlsproc_rename_cols.py 2018.parquet samples/PLACE.yaml 2018_flattened.parquet</code></pre>
 
