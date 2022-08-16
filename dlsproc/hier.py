@@ -97,7 +97,17 @@ def columns_containing(df: pd.DataFrame, substring: str):
 # Cell
 def _data_scheme_ok(data_scheme: dict) -> bool:
 
-    return len(np.unique([len(e) for e in data_scheme.values()])) == 1
+    lengths = []
+
+    for l in data_scheme.values():
+
+        lengths.append(len(l))
+
+        if not np.all([(type(e) == str) or np.isnan(e) for e in data_scheme['id']]):
+
+            return False
+
+    return np.unique(lengths).shape[0] == 1
 
 # Cell
 def flatten_columns_names(df: pd.DataFrame, data_scheme: dict, inplace: bool = False) -> None | pd.DataFrame:
