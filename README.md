@@ -2,11 +2,16 @@
 > Download Spanish procurement
 
 
-One is better off checking the wiki, but this is Python code meant to download Spanish government's [Plataforma de contratación del sector público](https://contrataciondelestado.es) *metadata* (right now, it does **not** download any document). Data can be accessed through [Ministerio de Hacienda y Función Pública](https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx).
+For the time being the name of the package is a misnomer, since this is Python code meant to *parse* Spanish government's [Plataforma de contratación del sector público](https://contrataciondelestado.es) *metadata* (right now, it does **not** download any document). It is meant to take as input a *zip* file packaging many [ATOM](https://en.wikipedia.org/wiki/Atom_(web_standard)) (a somehow cumbersome format) files, downloaded through [Ministerio de Hacienda y Función Pública](https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx), and produce [parquet](https://parquet.apache.org/) files that can be easily read in many programming languages.
+
+This project was developed with [nbdev](https://github.com/fastai/nbdev) (v1), and hence each module stems from a [Jupyter](https://jupyter.org/) notebook that contains the code, along with tests and documentation. If you are interested in the inner workings of any module you can check its corresponding notebook in the corresponding section of the [github pages](https://manuvazquez.github.io/dlsproc/) of the project.
 
 ## Install
 
-`pip install dlsproc`
+```
+pip install dlsproc
+```
+should do.
 
 ## How to use
 
@@ -14,7 +19,7 @@ The software can be exploited as a library or as *standalone* scripts.
 
 ### Scripts
 
-For testing purposes one can download *Outsiders contracts for 2018*, either directly by clicking [this link](https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip) or, if [wget](https://www.gnu.org/software/wget/) is available`, running
+For testing purposes one can download *Outsiders contracts for 2018*, either directly by clicking [this link](https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip) or, if [wget](https://www.gnu.org/software/wget/) is available, running
 ```
 wget https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip
 ```
@@ -34,7 +39,7 @@ The columns of the above `pd.DataFrame` can be *flattened* to get, in the exampl
 dlsproc_rename_cols.py 2018.parquet samples/PLACE.yaml 2018_flattened.parquet
 ```
 
-This would yield a `pd.DataFrame` with *plain* columns in file `2018_flattened.parquet`. Renaming is carried out using the mapping in [PLACE.yaml](samples/PLACE.yaml), which can be found in the `samples` directory of this repository.
+This would yield a `pd.DataFrame` with *plain* columns in file `2018_flattened.parquet`. Renaming is carried out using the mapping in [PLACE.yaml](https://github.com/manuvazquez/dlsproc/blob/master/samples/PLACE.yaml), which can be found in the `samples` directory of this repository.
 
 #### Appending new data to an existing (column-*multiindexed*) *parquet* file
 
@@ -42,7 +47,7 @@ We can append new data to an existing `pd.DataFrame`. Let us, for instance, down
 ```
 wget https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202201.zip
 ```
-and extends the existing [parquet](https://parquet.apache.org/) file with data extracted from the newly downloaded *zip* file,
+and extend the previous *parquet* file with data extracted from the newly downloaded *zip*,
 ```
 dlsproc_extend_parquet_with_zip.py 2018.parquet PlataformasAgregadasSinMenores_202201.zip 2018_202201.parquet
 ```

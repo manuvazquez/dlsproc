@@ -31,7 +31,8 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One is better off checking the wiki, but this is Python code meant to download Spanish government's <a href="https://contrataciondelestado.es">Plataforma de contratación del sector público</a> <em>metadata</em> (right now, it does <strong>not</strong> download any document). Data can be accessed through <a href="https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx">Ministerio de Hacienda y Función Pública</a>.</p>
+<p>For the time being the name of the package is a misnomer, since this is Python code meant to <em>parse</em> Spanish government's <a href="https://contrataciondelestado.es">Plataforma de contratación del sector público</a> <em>metadata</em> (right now, it does <strong>not</strong> download any document). It is meant to take as input a <em>zip</em> file packaging many <a href="https://en.wikipedia.org/wiki/Atom_(web_standard">ATOM</a>) (a somehow cumbersome format) files, downloaded through <a href="https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx">Ministerio de Hacienda y Función Pública</a>, and produce <a href="https://parquet.apache.org/">parquet</a> files that can be easily read in many programming languages.</p>
+<p>This project was developed with <a href="https://github.com/fastai/nbdev">nbdev</a> (v1), and hence each module stems from a <a href="https://jupyter.org/">Jupyter</a> notebook that contains the code, along with tests and documentation. If you are interested in the inner workings of any module you can check its corresponding notebook in the corresponding section of the <a href="https://manuvazquez.github.io/dlsproc/">github pages</a> of the project.</p>
 
 </div>
 </div>
@@ -44,7 +45,9 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install dlsproc</code></p>
+
+<pre><code>pip install dlsproc</code></pre>
+<p>should do.</p>
 
 </div>
 </div>
@@ -70,7 +73,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For testing purposes one can download <em>Outsiders contracts for 2018</em>, either directly by clicking <a href="https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip">this link</a> or, if <a href="https://www.gnu.org/software/wget/">wget</a> is available`, running</p>
+<p>For testing purposes one can download <em>Outsiders contracts for 2018</em>, either directly by clicking <a href="https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip">this link</a> or, if <a href="https://www.gnu.org/software/wget/">wget</a> is available, running</p>
 
 <pre><code>wget https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip</code></pre>
 
@@ -110,7 +113,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This would yield a <code>pd.DataFrame</code> with <em>plain</em> columns in file <code>2018_flattened.parquet</code>. Renaming is carried out using the mapping in <a href="samples/PLACE.yaml">PLACE.yaml</a>, which can be found in the <code>samples</code> directory of this repository.</p>
+<p>This would yield a <code>pd.DataFrame</code> with <em>plain</em> columns in file <code>2018_flattened.parquet</code>. Renaming is carried out using the mapping in <a href="https://github.com/manuvazquez/dlsproc/blob/master/samples/PLACE.yaml">PLACE.yaml</a>, which can be found in the <code>samples</code> directory of this repository.</p>
 
 </div>
 </div>
@@ -126,7 +129,7 @@ nb_path: "index.ipynb"
 <p>We can append new data to an existing <code>pd.DataFrame</code>. Let us, for instance, download, <a href="https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202201.zip">data from January 2022</a>,</p>
 
 <pre><code>wget https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202201.zip</code></pre>
-<p>and extends the existing <a href="https://parquet.apache.org/">parquet</a> file with data extracted from the newly downloaded <em>zip</em> file,</p>
+<p>and extend the previous <em>parquet</em> file with data extracted from the newly downloaded <em>zip</em>,</p>
 
 <pre><code>dlsproc_extend_parquet_with_zip.py 2018.parquet PlataformasAgregadasSinMenores_202201.zip 2018_202201.parquet</code></pre>
 <p>The <em>combined</em> data was saved in <code>2018_202201.parquet</code>.</p>
