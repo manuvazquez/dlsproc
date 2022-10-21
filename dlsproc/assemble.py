@@ -16,18 +16,19 @@ import dlsproc.postprocess
 # Cell
 def merge_deleted(data_df: pd.DataFrame, deleted_series: pd.Series) -> pd.DataFrame:
 
-    # duplicates are dropped; in order to do so it is convenient to turn the `pd.Series` into a `pd.DataFrame` by calling
-    # `reset_index`, which turns the *multiindex* into columns
-    # deduplicated_deleted_df = deleted_series.reset_index().drop('file name', axis=1).drop_duplicates('id').set_index(['id'])
-
     # duplicates are dropped (by means of `deduplicate_deleted_series`), so is the `file name` index, and the result turned into a dataframe
     deduplicated_deleted_df = dlsproc.postprocess.deduplicate_deleted_series(deleted_series).droplevel(level='file name').to_frame()
 
-    # in order to merge this new `pd.DataFrame` with `data_df` we need a *multiindex* for the former with the same number of levels as in the latter
-    deduplicated_deleted_df.columns = pd.MultiIndex.from_tuples([dlsproc.hier.pad_col_levels(data_df, ['deleted_on'])])
+    # set_trace()
 
-    # the `data_df` is (*left*-)joined with the new one yielding deleted entries; the result is a *stateful* `pd.DataFrame` in the sense that,
-    # for every entry, we know its state: deleted or not; notice that `data_df`'s index is reset for easying the merge (assuming every contract
+    # if this is a column-multiindexed dataframe
+    if type(data_df.columns) == pd.MultiIndex:
+
+        # in order to merge this new `pd.DataFrame` with `data_df` we need a *multiindex* for the former with the same number of levels as in the latter
+        deduplicated_deleted_df.columns = pd.MultiIndex.from_tuples([dlsproc.hier.pad_col_levels(data_df, ['deleted_on'])])
+
+    # the `data_df` is (*left*-)joined with the new one yielding deleted entries; the result is a dataframe in which a new (flag) column `deleted_on`
+    # was added; notice that `data_df`'s index is reset for easying the merge (assuming every contract
     # shows only once in `data_df`, *id* should still provide a unique index...though it probably doesn't matter anyway)
     res = data_df.reset_index().set_index(['id']).merge(deduplicated_deleted_df, how='left', on=['id'])
 

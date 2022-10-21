@@ -36,6 +36,23 @@ nb_path: "60_assemble.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.debugger</span> <span class="kn">import</span> <span class="n">set_trace</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This <code>import</code>s are only meant for testing</p>
@@ -164,7 +181,8 @@ nb_path: "60_assemble.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">hier</span><span class="o">.</span><span class="n">flat_df_to_multiindexed_df</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">read_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">concatenate</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flat_df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">read_zip</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">concatenate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">hier</span><span class="o">.</span><span class="n">flat_df_to_multiindexed_df</span><span class="p">(</span><span class="n">flat_df</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -514,74 +532,6 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># deduplicated_deleted_df.head(2)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># new.head(2)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -778,6 +728,163 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <th></th>
       <th></th>
       <th></th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th>entry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">PlataformasAgregadasSinMenores_20220105_030012.atom</th>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021039438; Órgano de Contratac...</td>
+      <td>L'objecte és la contractació del servei de bug...</td>
+      <td>2022-01-04 12:12:09.464000+00:00</td>
+      <td>2021039438</td>
+      <td>RES</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Girona</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte és la contractació del servei de bug...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-12-13 23:59:00+00:00</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021_2568; Órgano de Contrataci...</td>
+      <td>Servei comunicacions postals de l'Ajuntament d...</td>
+      <td>2022-01-04 12:12:09.400000+00:00</td>
+      <td>2021_2568</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Collbató</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Servei comunicacions postals de l'Ajuntament d...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2021-11-29 23:59:00+00:00</td>
+      <td>NaT</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 40 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For column-wise <em>flat</em> <code>pd.DataFrame</code>s</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merge_deleted</span><span class="p">(</span><span class="n">flat_df</span><span class="p">,</span> <span class="n">deleted_series</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - LegalDocumentReference - ID</th>
+      <th>ContractFolderStatus - LegalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod</th>
+      <th>deleted_on</th>
     </tr>
     <tr>
       <th>file name</th>
@@ -1147,7 +1254,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="parquet_amenable" class="doc_header"><code>parquet_amenable</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parquet_amenable</code>(<strong><code>df</code></strong>:<code>DataFrame</code>, <strong><code>inplace</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1826,18 +1933,18 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.658729</td>
-      <td>0.730251</td>
-      <td>0.466266</td>
-      <td>0.812564</td>
+      <td>0.769828</td>
+      <td>0.504304</td>
+      <td>0.515664</td>
+      <td>0.619029</td>
     </tr>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.537462</td>
-      <td>0.896028</td>
-      <td>0.171774</td>
-      <td>0.627439</td>
+      <td>0.900987</td>
+      <td>0.883442</td>
+      <td>0.280885</td>
+      <td>0.934563</td>
     </tr>
   </tbody>
 </table>
@@ -2267,10 +2374,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.658729</td>
-      <td>0.730251</td>
-      <td>0.466266</td>
-      <td>0.812564</td>
+      <td>0.769828</td>
+      <td>0.504304</td>
+      <td>0.515664</td>
+      <td>0.619029</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -2292,10 +2399,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.537462</td>
-      <td>0.896028</td>
-      <td>0.171774</td>
-      <td>0.627439</td>
+      <td>0.900987</td>
+      <td>0.883442</td>
+      <td>0.280885</td>
+      <td>0.934563</td>
     </tr>
   </tbody>
 </table>
@@ -2321,7 +2428,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="stack" class="doc_header"><code>stack</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack</code>(<strong><code>top_df</code></strong>:<code>DataFrame</code>, <strong><code>bottom_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="stack" class="doc_header"><code>stack</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack</code>(<strong><code>top_df</code></strong>:<code>DataFrame</code>, <strong><code>bottom_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -2590,10 +2697,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.658729</td>
-      <td>0.730251</td>
-      <td>0.466266</td>
-      <td>0.812564</td>
+      <td>0.769828</td>
+      <td>0.504304</td>
+      <td>0.515664</td>
+      <td>0.619029</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -2615,10 +2722,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.537462</td>
-      <td>0.896028</td>
-      <td>0.171774</td>
-      <td>0.627439</td>
+      <td>0.900987</td>
+      <td>0.883442</td>
+      <td>0.280885</td>
+      <td>0.934563</td>
     </tr>
   </tbody>
 </table>
@@ -2841,10 +2948,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.658729</td>
-      <td>0.730251</td>
-      <td>0.466266</td>
-      <td>0.812564</td>
+      <td>0.769828</td>
+      <td>0.504304</td>
+      <td>0.515664</td>
+      <td>0.619029</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2866,10 +2973,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.537462</td>
-      <td>0.896028</td>
-      <td>0.171774</td>
-      <td>0.627439</td>
+      <td>0.900987</td>
+      <td>0.883442</td>
+      <td>0.280885</td>
+      <td>0.934563</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2950,7 +3057,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="distilled_data_from_zip" class="doc_header"><code>distilled_data_from_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>distilled_data_from_zip</code>(<strong><code>zip_file</code></strong>:<code>Path | str</code>[<code>Path</code>, <code>str</code>])</p>
+<h4 id="distilled_data_from_zip" class="doc_header"><code>distilled_data_from_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/assemble.py#L94" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>distilled_data_from_zip</code>(<strong><code>zip_file</code></strong>:<code>Path | str</code>[<code>Path</code>, <code>str</code>])</p>
 </blockquote>
 
 </div>
