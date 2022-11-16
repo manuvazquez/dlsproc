@@ -147,3 +147,4 @@ wiki
 open-placsp-*
 data
 Makefile
+*.parquet

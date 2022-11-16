@@ -70,13 +70,13 @@ def typecast_columns(input_df: pd.DataFrame) -> pd.DataFrame:
 
     # ---------------------------------------- string columns ------------------------------------------
 
-    for c in assembled_str_columns:
+#     for c in assembled_str_columns:
 
-        if c in res:
+#         if c in res:
 
-            res[c] = res[c].astype(pd.StringDtype())
+#             res[c] = res[c].astype(pd.StringDtype())
 
-            processed_columns.append(c)
+#             processed_columns.append(c)
 
     # --------------------------------------- everything else ------------------------------------------
 
@@ -92,12 +92,18 @@ def typecast_columns(input_df: pd.DataFrame) -> pd.DataFrame:
 
             continue
 
+        if re_postal_zone.match(c):
+
+            res[c] = res[c].astype(pd.StringDtype())
+            # print(f'converting {c}')
+
+            continue
+
         # an attempt is made...
         try:
 
             # to interpret every column as a (float) number
             res[c] = res[c].astype(float)
-
 
         # if conversion to float is not feasible...
         except (TypeError, ValueError):

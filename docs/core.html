@@ -57,7 +57,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">'samples'</span>
 <span class="k">assert</span> <span class="n">directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">directory</span>
 </pre></div>
@@ -74,7 +74,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/manu/Sync/git/dlsproc/samples&#39;)</pre>
+<pre>Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples&#39;)</pre>
 </div>
 
 </div>
@@ -99,6 +99,7 @@ nb_path: "00_core.ipynb"
 <div class="output">
 
 <div class="output_area">
+
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -129,9 +130,9 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span><span class="s1">&#39;yearly&#39;</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_2018.zip&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span><span class="s1">'yearly'</span> <span class="o">/</span> <span class="s1">'PlataformasAgregadasSinMenores_2018.zip'</span>
 <span class="k">assert</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">zip_file</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">zip_file</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -144,7 +145,7 @@ nb_path: "00_core.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>zip_file=Path(&#39;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;)
+<pre>zip_file=Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;)
 </pre>
 </div>
 </div>
@@ -162,8 +163,8 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;year_2018.parquet&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">output_file</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'year_2018.parquet'</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">output_file</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -176,7 +177,7 @@ nb_path: "00_core.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>output_file=Path(&#39;/home/manu/Sync/git/dlsproc/samples/year_2018.parquet&#39;)
+<pre>output_file=Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/year_2018.parquet&#39;)
 </pre>
 </div>
 </div>
@@ -226,8 +227,6 @@ nb_path: "00_core.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>2018-2021_20samples.parquet
-extended_sample.parquet
-merged.parquet
 PLACE.yaml
 PlataformasAgregadasSinMenores_20220104_030016_1.atom
 PlataformasAgregadasSinMenores_20220104_030016_1_single.atom
@@ -235,6 +234,8 @@ PlataformasAgregadasSinMenores_20220104_030016_1_single.atom
 <span class="ansi-red-intense-fg ansi-bold">PlataformasAgregadasSinMenores_202201_08-11.zip</span>
 <span class="ansi-red-intense-fg ansi-bold">PlataformasAgregadasSinMenores_202201_28-29.zip</span>
 README.md
+extended_sample.parquet
+merged.parquet
 renamed_cols_extended_sample.parquet
 year_2018.parquet
 <span class="ansi-blue-intense-fg ansi-bold">yearly</span>/
@@ -573,6 +574,7 @@ year_2018.parquet
 <div class="output_area">
 
 
+
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="cli_extend_parquet_with_zip" class="doc_header"><code>cli_extend_parquet_with_zip</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/core.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cli_extend_parquet_with_zip</code>(<strong><code>args</code></strong>:<code>list</code>=<em><code>None</code></em>)</p>
 </blockquote>
@@ -608,9 +610,9 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span><span class="s1">&#39;2018-2021_20samples.parquet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span><span class="s1">'2018-2021_20samples.parquet'</span>
 <span class="k">assert</span> <span class="n">history_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">history_file</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">history_file</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -623,7 +625,7 @@ year_2018.parquet
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>history_file=Path(&#39;/home/manu/Sync/git/dlsproc/samples/2018-2021_20samples.parquet&#39;)
+<pre>history_file=Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/2018-2021_20samples.parquet&#39;)
 </pre>
 </div>
 </div>
@@ -641,9 +643,9 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_202201_28-29.zip&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'PlataformasAgregadasSinMenores_202201_28-29.zip'</span>
 <span class="k">assert</span> <span class="n">new_zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">new_zip_file</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">new_zip_file</span><span class="si">=}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -656,7 +658,7 @@ year_2018.parquet
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>new_zip_file=Path(&#39;/home/manu/Sync/git/dlsproc/samples/PlataformasAgregadasSinMenores_202201_28-29.zip&#39;)
+<pre>new_zip_file=Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/PlataformasAgregadasSinMenores_202201_28-29.zip&#39;)
 </pre>
 </div>
 </div>
@@ -674,7 +676,7 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;extended_sample.parquet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'extended_sample.parquet'</span>
 <span class="n">output_file</span>
 </pre></div>
 
@@ -690,7 +692,7 @@ year_2018.parquet
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/manu/Sync/git/dlsproc/samples/extended_sample.parquet&#39;)</pre>
+<pre>Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/extended_sample.parquet&#39;)</pre>
 </div>
 
 </div>
@@ -740,8 +742,6 @@ year_2018.parquet
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>2018-2021_20samples.parquet
-extended_sample.parquet
-merged.parquet
 PLACE.yaml
 PlataformasAgregadasSinMenores_20220104_030016_1.atom
 PlataformasAgregadasSinMenores_20220104_030016_1_single.atom
@@ -749,6 +749,8 @@ PlataformasAgregadasSinMenores_20220104_030016_1_single.atom
 <span class="ansi-red-intense-fg ansi-bold">PlataformasAgregadasSinMenores_202201_08-11.zip</span>
 <span class="ansi-red-intense-fg ansi-bold">PlataformasAgregadasSinMenores_202201_28-29.zip</span>
 README.md
+extended_sample.parquet
+merged.parquet
 renamed_cols_extended_sample.parquet
 year_2018.parquet
 <span class="ansi-blue-intense-fg ansi-bold">yearly</span>/
@@ -776,6 +778,7 @@ year_2018.parquet
 <div class="output">
 
 <div class="output_area">
+
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -806,7 +809,7 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">renamed_cols_output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;renamed_cols_extended_sample.parquet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">renamed_cols_output_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'renamed_cols_extended_sample.parquet'</span>
 <span class="n">renamed_cols_output_file</span>
 </pre></div>
 
@@ -822,7 +825,7 @@ year_2018.parquet
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/manu/Sync/git/dlsproc/samples/renamed_cols_extended_sample.parquet&#39;)</pre>
+<pre>Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/renamed_cols_extended_sample.parquet&#39;)</pre>
 </div>
 
 </div>
@@ -840,7 +843,7 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;PLACE.yaml&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'PLACE.yaml'</span>
 <span class="k">assert</span> <span class="n">mapping_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">mapping_file</span>
 </pre></div>
@@ -857,7 +860,7 @@ year_2018.parquet
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Path(&#39;/home/manu/Sync/git/dlsproc/samples/PLACE.yaml&#39;)</pre>
+<pre>Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/PLACE.yaml&#39;)</pre>
 </div>
 
 </div>
@@ -1044,7 +1047,7 @@ year_2018.parquet
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It receives a <code>list</code> of <em>zip</em> files and returns a <code>pd.DataFrame</code> encompassing all the data</p>
+<p>It receives a <code>list</code> of <em>zip</em> files and returns a (column-hierarchical) <code>pd.DataFrame</code> encompassing all the data</p>
 
 </div>
 </div>
@@ -1057,6 +1060,7 @@ year_2018.parquet
 <div class="output">
 
 <div class="output_area">
+
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -1094,8 +1098,8 @@ year_2018.parquet
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PlataformasAgregadasSinMenores_2018.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_2019.zip&#39;</span><span class="p">]</span>
-<span class="n">zip_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">directory</span><span class="o">/</span> <span class="s1">&#39;yearly&#39;</span> <span class="o">/</span> <span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">zip_files</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'PlataformasAgregadasSinMenores_2018.zip'</span><span class="p">,</span> <span class="s1">'PlataformasAgregadasSinMenores_2019.zip'</span><span class="p">]</span>
+<span class="n">zip_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">directory</span><span class="o">/</span> <span class="s1">'yearly'</span> <span class="o">/</span> <span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">zip_files</span><span class="p">]</span>
 <span class="n">zip_files</span>
 </pre></div>
 
@@ -1111,8 +1115,8 @@ year_2018.parquet
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Path(&#39;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;),
- Path(&#39;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2019.zip&#39;)]</pre>
+<pre>[Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;),
+ Path(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2019.zip&#39;)]</pre>
 </div>
 
 </div>
@@ -1144,8 +1148,8 @@ year_2018.parquet
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Processing &#34;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#34;
-Processing &#34;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2019.zip&#34;
+<pre>Processing &#34;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#34;
+Processing &#34;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2019.zip&#34;
 </pre>
 </div>
 </div>
@@ -1507,6 +1511,84 @@ Processing &#34;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasS
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="CLI">CLI<a class="anchor-link" href="#CLI"> </a></h3>
 </div>
- 
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A companion function to allow using the above from the command-line.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="cli_read_zips" class="doc_header"><code>cli_read_zips</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/core.py#L144" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cli_read_zips</code>(<strong><code>args</code></strong>:<code>list</code>=<em><code>None</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cli_read_zips</span><span class="p">([</span><span class="n">e</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">zip_files</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'-o o.parquet'</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processing &#34;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#34;
+Processing &#34;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2019.zip&#34;
+writing o.parquet...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+</div>
+
 
