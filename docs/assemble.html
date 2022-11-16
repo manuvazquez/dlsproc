@@ -108,7 +108,7 @@ nb_path: "60_assemble.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/home/manu/dlsproc/samples&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/Sync/git/dlsproc/samples&#39;)</pre>
 </div>
 
 </div>
@@ -156,7 +156,7 @@ nb_path: "60_assemble.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/home/manu/dlsproc/samples/PlataformasAgregadasSinMenores_202201_05-06.zip&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/Sync/git/dlsproc/samples/PlataformasAgregadasSinMenores_202201_05-06.zip&#39;)</pre>
 </div>
 
 </div>
@@ -1203,30 +1203,6 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some examples</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Saving-to-parquet">Saving to parquet<a class="anchor-link" href="#Saving-to-parquet"> </a></h2>
 </div>
 </div>
@@ -1531,69 +1507,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some checks:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Concatenating-dataframes">Concatenating dataframes<a class="anchor-link" href="#Concatenating-dataframes"> </a></h2>
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span> <span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MultiIndex([(     &#39;id&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;),
-            (&#39;summary&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;)],
-           )</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Concatenating <code>pd.DataFrame</code>s with the same number of levels in the columns is fine</p>
@@ -1933,18 +1850,18 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.769828</td>
-      <td>0.504304</td>
-      <td>0.515664</td>
-      <td>0.619029</td>
+      <td>0.312343</td>
+      <td>0.434363</td>
+      <td>0.694439</td>
+      <td>0.297396</td>
     </tr>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.900987</td>
-      <td>0.883442</td>
-      <td>0.280885</td>
-      <td>0.934563</td>
+      <td>0.695612</td>
+      <td>0.070326</td>
+      <td>0.515487</td>
+      <td>0.246830</td>
     </tr>
   </tbody>
 </table>
@@ -1960,7 +1877,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>They cannot be stacked together as they are</p>
+<p>This new dummy <code>pd.DataFrame</code> and the one above cannot be stacked together as they are because they have different number of levels in the columns</p>
 
 </div>
 </div>
@@ -2374,10 +2291,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.769828</td>
-      <td>0.504304</td>
-      <td>0.515664</td>
-      <td>0.619029</td>
+      <td>0.312343</td>
+      <td>0.434363</td>
+      <td>0.694439</td>
+      <td>0.297396</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -2399,10 +2316,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.900987</td>
-      <td>0.883442</td>
-      <td>0.280885</td>
-      <td>0.934563</td>
+      <td>0.695612</td>
+      <td>0.070326</td>
+      <td>0.515487</td>
+      <td>0.246830</td>
     </tr>
   </tbody>
 </table>
@@ -2697,10 +2614,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.769828</td>
-      <td>0.504304</td>
-      <td>0.515664</td>
-      <td>0.619029</td>
+      <td>0.312343</td>
+      <td>0.434363</td>
+      <td>0.694439</td>
+      <td>0.297396</td>
     </tr>
     <tr>
       <th>fee.atom</th>
@@ -2722,10 +2639,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaT</td>
-      <td>0.900987</td>
-      <td>0.883442</td>
-      <td>0.280885</td>
-      <td>0.934563</td>
+      <td>0.695612</td>
+      <td>0.070326</td>
+      <td>0.515487</td>
+      <td>0.246830</td>
     </tr>
   </tbody>
 </table>
@@ -2948,10 +2865,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>foo.atom</th>
       <th>1</th>
-      <td>0.769828</td>
-      <td>0.504304</td>
-      <td>0.515664</td>
-      <td>0.619029</td>
+      <td>0.312343</td>
+      <td>0.434363</td>
+      <td>0.694439</td>
+      <td>0.297396</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -2973,10 +2890,10 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     <tr>
       <th>fee.atom</th>
       <th>2</th>
-      <td>0.900987</td>
-      <td>0.883442</td>
-      <td>0.280885</td>
-      <td>0.934563</td>
+      <td>0.695612</td>
+      <td>0.070326</td>
+      <td>0.515487</td>
+      <td>0.246830</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
@@ -3041,7 +2958,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A convenience function to streamline a common procedure to process data in <em>zip</em> files (<strong>not</strong> exported, for the time being)</p>
+<p>A convenience function to streamline a common procedure to process data in <em>zip</em> files</p>
 
 </div>
 </div>

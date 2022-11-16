@@ -33,7 +33,7 @@ UNCOLOR="\033[0m"
 # ------------ setup
 
 # only required if "anaconda" is not in the path
-source $HOME/miniconda3/etc/profile.d/conda.sh
+source $HOME/$MY_CONDA_INSTALLATION/etc/profile.d/conda.sh
 
 # from https://stackoverflow.com/a/9429887/3967334
 LIBRARIES_CONCATENATED=$(IFS=" " ; echo "${LIBRARIES[*]}")
