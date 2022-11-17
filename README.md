@@ -24,7 +24,7 @@ For testing purposes one can download *Outsiders contracts for 2018*, either dir
 wget https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_2018.zip
 ```
 
-#### Processing zip files
+#### Processing a single zip file
 
 Running
 ```
@@ -40,6 +40,16 @@ dlsproc_rename_cols.py 2018.parquet samples/PLACE.yaml 2018_flattened.parquet
 ```
 
 This would yield a `pd.DataFrame` with *plain* columns in file `2018_flattened.parquet`. Renaming is carried out using the mapping in [PLACE.yaml](https://github.com/manuvazquez/dlsproc/blob/master/samples/PLACE.yaml), which can be found in the `samples` directory of this repository.
+
+#### Processing a list of zip files
+
+Command `dlsproc_read_zips.py` can be used to *batch*-process a sequence of files, e.g.,
+
+```
+dlsproc_read_zips.py contratosMenoresPerfilesContratantes_2018.zip contratosMenoresPerfilesContratantes_2019.zip
+```
+
+If no output file is specified (through the `-o` option), an `out.parquet` file (in which all the entries of all the zip files are stitched together) is produced.
 
 #### Appending new data to an existing (column-*multiindexed*) *parquet* file
 

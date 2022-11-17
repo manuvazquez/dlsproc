@@ -15,6 +15,10 @@ FILES=(
     PlataformasAgregadasSinMenores_202204.zip
     PlataformasAgregadasSinMenores_202205.zip
     PlataformasAgregadasSinMenores_202206.zip
+    PlataformasAgregadasSinMenores_202207.zip
+    PlataformasAgregadasSinMenores_202208.zip
+    PlataformasAgregadasSinMenores_202209.zip
+    PlataformasAgregadasSinMenores_202210.zip
 )
 
 mkdir -p $OUTPUT_DIR
@@ -42,3 +46,9 @@ do
     fi
     
 done
+
+# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_2018.zip
+# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_202201.zip
+
+# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2018.zip
+# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202201.zip

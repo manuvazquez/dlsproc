@@ -80,8 +80,8 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span>
-<span class="c1"># history_directory = pathlib.Path.cwd() / &#39;reports&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">'samples'</span>
+<span class="c1"># history_directory = pathlib.Path.cwd() / 'reports'</span>
 <span class="k">assert</span> <span class="n">history_directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">history_directory</span><span class="p">)</span>
 </pre></div>
@@ -121,8 +121,8 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_input_file</span> <span class="o">=</span> <span class="n">history_directory</span> <span class="o">/</span> <span class="s1">&#39;2018-2021_20samples.parquet&#39;</span>
-<span class="c1"># history_input_file = history_directory / &#39;2018-2021.parquet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history_input_file</span> <span class="o">=</span> <span class="n">history_directory</span> <span class="o">/</span> <span class="s1">'2018-2021_20samples.parquet'</span>
+<span class="c1"># history_input_file = history_directory / '2018-2021.parquet'</span>
 <span class="k">assert</span> <span class="n">history_input_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">)</span>
 </pre></div>
@@ -479,7 +479,7 @@ nb_path: "70_extend.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_directory</span> <span class="o">=</span> <span class="n">history_directory</span>
-<span class="c1"># zip_directory = pathlib.Path.cwd() / &#39;data&#39; / &#39;agregados&#39;</span>
+<span class="c1"># zip_directory = pathlib.Path.cwd() / 'data' / 'agregados'</span>
 <span class="k">assert</span> <span class="n">zip_directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zip_directory</span><span class="p">)</span>
 </pre></div>
@@ -519,8 +519,8 @@ nb_path: "70_extend.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">zip_directory</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_202201_05-06.zip&#39;</span>
-<span class="c1"># zip_file = zip_directory / &#39;PlataformasAgregadasSinMenores_202201.zip&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">zip_directory</span> <span class="o">/</span> <span class="s1">'PlataformasAgregadasSinMenores_202201_05-06.zip'</span>
+<span class="c1"># zip_file = zip_directory / 'PlataformasAgregadasSinMenores_202201.zip'</span>
 <span class="k">assert</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
 </pre></div>
@@ -1236,7 +1236,7 @@ alignment</em>) we</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">'id'</span><span class="p">])</span>
 <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1886,7 +1886,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">deleted_entry</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="n">deleted_entry</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1960,7 +1960,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">'deleted_on'</span><span class="p">]</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">'deleted_on'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">deduplicated_reindexed_deleted_series</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1984,7 +1984,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_notnas_old</span><span class="p">,</span> <span class="n">n_notnas_new</span> <span class="o">=</span> <span class="n">bak_reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">&#39;deleted_on&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_notnas_old</span><span class="p">,</span> <span class="n">n_notnas_new</span> <span class="o">=</span> <span class="n">bak_reindexed_concatenated_df</span><span class="p">[</span><span class="s1">'deleted_on'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">reindexed_concatenated_df</span><span class="p">[</span><span class="s1">'deleted_on'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">n_notnas_old</span><span class="p">,</span> <span class="n">n_notnas_new</span>
 </pre></div>
 
@@ -2049,7 +2049,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;entry&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reindexed_concatenated_df</span> <span class="o">=</span> <span class="n">reindexed_concatenated_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">'file name'</span><span class="p">,</span> <span class="s1">'entry'</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -2385,6 +2385,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 <div class="output">
 
 <div class="output_area">
+
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -2744,7 +2745,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span> <span class="o">/</span> <span class="s1">&#39;merged.parquet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">'samples'</span> <span class="o">/</span> <span class="s1">'merged.parquet'</span>
 <span class="n">parquet_with_zip</span><span class="p">(</span><span class="n">history_input_file</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
 </pre></div>
 
@@ -3085,5 +3086,5 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
     {% endraw %}
 
 </div>
- 
+
 

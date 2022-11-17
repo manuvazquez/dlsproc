@@ -54,7 +54,9 @@ def is_multivalued(s: pd.Series) -> bool:
         `True` if the input contains some `list`.
 
     """
-    return s.apply(lambda x: type(x) == list).any()
+
+    # return s.apply(lambda x: type(x) == list).any()
+    return s.apply(lambda x: (type(x) == list) or (type(x) == np.ndarray)).any()
 
 # Cell
 def multivalued_columns(df: pd.DataFrame) -> list:

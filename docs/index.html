@@ -82,7 +82,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Processing-zip-files">Processing zip files<a class="anchor-link" href="#Processing-zip-files"> </a></h4>
+<h4 id="Processing-a-single-zip-file">Processing a single zip file<a class="anchor-link" href="#Processing-a-single-zip-file"> </a></h4>
 </div>
 </div>
 </div>
@@ -120,6 +120,34 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Processing-a-list-of-zip-files">Processing a list of zip files<a class="anchor-link" href="#Processing-a-list-of-zip-files"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Command <code>dlsproc_read_zips.py</code> can be used to <em>batch</em>-process a sequence of files, e.g.,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>dlsproc_read_zips.py contratosMenoresPerfilesContratantes_2018.zip contratosMenoresPerfilesContratantes_2019.zip</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If no output file is specified (through the <code>-o</code> option), an <code>out.parquet</code> file (in which all the entries of all the zip files are stitched together) is produced.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Appending-new-data-to-an-existing-(column-multiindexed)-parquet-file">Appending new data to an existing (column-<em>multiindexed</em>) <em>parquet</em> file<a class="anchor-link" href="#Appending-new-data-to-an-existing-(column-multiindexed)-parquet-file"> </a></h4>
 </div>
 </div>
@@ -138,5 +166,5 @@ nb_path: "index.ipynb"
 </div>
 </div>
 </div>
- 
+
 

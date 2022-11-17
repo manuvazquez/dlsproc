@@ -16,7 +16,8 @@ re_postal_zone = re.compile(dlsproc.structure.assemble_name(['.*', 'PostalZone$'
 re_postal_zone
 
 # Cell
-str_columns = [['ContractFolderStatus', 'LocatedContractingParty', 'Party', 'PostalAddress', 'PostalZone']]
+# str_columns = [['ContractFolderStatus', 'LocatedContractingParty', 'Party', 'PostalAddress', 'PostalZone']]
+str_columns = []
 
 # Cell
 assembled_str_columns = [dlsproc.structure.assemble_name(c) for c in str_columns]
@@ -46,19 +47,21 @@ def typecast_columns(input_df: pd.DataFrame) -> pd.DataFrame:
 
     # ------------ ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod ------------
 
-    new_column = dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess', 'TenderSubmissionDeadlinePeriod'])
+    # columns containing the end date and time
+    date_col = dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndDate'])
+    time_col = dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndTime'])
 
-    # we don't want to inadvertently overwrite an existing column
-    assert new_column not in res
+    # only if they are present in the `pd.DataFrame`...
+    if (date_col in res) and (time_col in res):
 
-    res[new_column] = pd.to_datetime(
-        input_df[dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndDate'])]
-        + 'T' +
-        input_df[dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess','TenderSubmissionDeadlinePeriod','EndTime'])],
-        format='%Y-%m-%dT%H:%M:%S', utc=True, errors='coerce'
-    )
+        new_column = dlsproc.structure.assemble_name(['ContractFolderStatus', 'TenderingProcess', 'TenderSubmissionDeadlinePeriod'])
 
-    processed_columns.append(new_column)
+        # we don't want to inadvertently overwrite an existing column
+        assert new_column not in res
+
+        res[new_column] = pd.to_datetime(input_df[date_col] + 'T' + input_df[time_col], format='%Y-%m-%dT%H:%M:%S', utc=True, errors='coerce')
+
+        processed_columns.append(new_column)
 
     # NOTE: one could also delete the original columns being parsed, but they might be useful if errors happen during conversion (`errors=coerce`)
 
