@@ -49,6 +49,7 @@ index = {"cli_process_zip": "00_core.ipynb",
          "parquet_amenable": "60_assemble.ipynb",
          "stack": "60_assemble.ipynb",
          "distilled_data_from_zip": "60_assemble.ipynb",
+         "sparsity": "60_assemble.ipynb",
          "parquet_with_zip": "70_extend.ipynb"}
 
 modules = ["core.py",

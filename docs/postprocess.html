@@ -80,7 +80,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">'samples'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;samples&#39;</span>
 <span class="k">assert</span> <span class="n">directory</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">directory</span>
 </pre></div>
@@ -97,7 +97,7 @@ nb_path: "15_postprocess.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/Sync/git/dlsproc/samples&#39;)</pre>
 </div>
 
 </div>
@@ -122,7 +122,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xml_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'PlataformasAgregadasSinMenores_20220104_030016_1.atom'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xml_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_20220104_030016_1.atom&#39;</span>
 <span class="k">assert</span> <span class="n">xml_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">xml_file</span>
 </pre></div>
@@ -139,7 +139,7 @@ nb_path: "15_postprocess.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/PlataformasAgregadasSinMenores_20220104_030016_1.atom&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/Sync/git/dlsproc/samples/PlataformasAgregadasSinMenores_20220104_030016_1.atom&#39;)</pre>
 </div>
 
 </div>
@@ -589,7 +589,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">'foo - PostalZone'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;foo - PostalZone&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -629,7 +629,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">'Address - Number'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;Address - Number&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -653,8 +653,8 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'ProcurementProject'</span><span class="p">,</span> <span class="s1">'RealizedLocation'</span><span class="p">,</span> <span class="s1">'Address'</span><span class="p">,</span> <span class="s1">'PostalZone'</span><span class="p">]))</span>
-<span class="k">assert</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'LocatedContractingParty'</span><span class="p">,</span> <span class="s1">'Party'</span><span class="p">,</span> <span class="s1">'PostalAddress'</span><span class="p">,</span> <span class="s1">'PostalZone'</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;ProcurementProject&#39;</span><span class="p">,</span> <span class="s1">&#39;RealizedLocation&#39;</span><span class="p">,</span> <span class="s1">&#39;Address&#39;</span><span class="p">,</span> <span class="s1">&#39;PostalZone&#39;</span><span class="p">]))</span>
+<span class="k">assert</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;LocatedContractingParty&#39;</span><span class="p">,</span> <span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;PostalAddress&#39;</span><span class="p">,</span> <span class="s1">&#39;PostalZone&#39;</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -678,7 +678,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="ow">not</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'Wap'</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="ow">not</span> <span class="n">re_postal_zone</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;Wap&#39;</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -724,11 +724,7 @@ nb_path: "15_postprocess.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[[&#39;ContractFolderStatus&#39;,
-  &#39;LocatedContractingParty&#39;,
-  &#39;Party&#39;,
-  &#39;PostalAddress&#39;,
-  &#39;PostalZone&#39;]]</pre>
+<pre>[]</pre>
 </div>
 
 </div>
@@ -775,7 +771,7 @@ nb_path: "15_postprocess.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;ContractFolderStatus - LocatedContractingParty - Party - PostalAddress - PostalZone&#39;]</pre>
+<pre>[]</pre>
 </div>
 
 </div>
@@ -800,8 +796,8 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deadline_date_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'TenderingProcess'</span><span class="p">,</span><span class="s1">'TenderSubmissionDeadlinePeriod'</span><span class="p">,</span><span class="s1">'EndDate'</span><span class="p">])</span>
-<span class="n">deadline_time_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'TenderingProcess'</span><span class="p">,</span><span class="s1">'TenderSubmissionDeadlinePeriod'</span><span class="p">,</span><span class="s1">'EndTime'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deadline_date_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;TenderingProcess&#39;</span><span class="p">,</span><span class="s1">&#39;TenderSubmissionDeadlinePeriod&#39;</span><span class="p">,</span><span class="s1">&#39;EndDate&#39;</span><span class="p">])</span>
+<span class="n">deadline_time_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;TenderingProcess&#39;</span><span class="p">,</span><span class="s1">&#39;TenderSubmissionDeadlinePeriod&#39;</span><span class="p">,</span><span class="s1">&#39;EndTime&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -825,7 +821,7 @@ nb_path: "15_postprocess.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deadline_datetime_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">'ContractFolderStatus'</span><span class="p">,</span> <span class="s1">'TenderingProcess'</span><span class="p">,</span> <span class="s1">'TenderSubmissionDeadlinePeriod'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deadline_datetime_col</span> <span class="o">=</span> <span class="n">dlsproc</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">assemble_name</span><span class="p">([</span><span class="s1">&#39;ContractFolderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;TenderingProcess&#39;</span><span class="p">,</span> <span class="s1">&#39;TenderSubmissionDeadlinePeriod&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -850,7 +846,6 @@ nb_path: "15_postprocess.ipynb"
 <div class="output">
 
 <div class="output_area">
-
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -1172,7 +1167,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span><span class="p">[</span><span class="s1">'updated'</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span><span class="p">[</span><span class="s1">&#39;updated&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
 
     </div>
@@ -1212,7 +1207,7 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">post_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'updated'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">post_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;updated&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2008,7 +2003,6 @@ dtype: bool</pre>
 <div class="output_area">
 
 
-
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="keep_updates_only" class="doc_header"><code>keep_updates_only</code><a href="https://github.com/manuvazquez/dlsproc/tree/master/dlsproc/postprocess.py#L120" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>keep_updates_only</code>(<strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
@@ -2322,7 +2316,7 @@ dtype: bool</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">'yearly'</span> <span class="o">/</span> <span class="s1">'PlataformasAgregadasSinMenores_2018.zip'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zip_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s1">&#39;yearly&#39;</span> <span class="o">/</span> <span class="s1">&#39;PlataformasAgregadasSinMenores_2018.zip&#39;</span>
 <span class="k">assert</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="n">zip_file</span>
 </pre></div>
@@ -2339,7 +2333,7 @@ dtype: bool</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PosixPath(&#39;/export/usuarios01/mvazquez/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;)</pre>
+<pre>PosixPath(&#39;/home/manu/Sync/git/dlsproc/samples/yearly/PlataformasAgregadasSinMenores_2018.zip&#39;)</pre>
 </div>
 
 </div>
@@ -2442,7 +2436,7 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">deleted_series</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>
-<span class="n">deleted_series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">new_data</span>
+<span class="n">deleted_series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">deleted_series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">new_data</span>
 </pre></div>
 
     </div>
@@ -2507,7 +2501,6 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 <div class="output">
 
 <div class="output_area">
-
 
 
 <div class="output_markdown rendered_html output_subarea ">
@@ -2601,6 +2594,351 @@ Name: deleted_on, dtype: datetime64[ns, UTC]</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Completeness">Completeness<a class="anchor-link" href="#Completeness"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_df</span>
+</pre></div>
+
+    </div>
+</div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>summary</th>
+      <th>title</th>
+      <th>updated</th>
+      <th>ContractFolderStatus - ContractFolderID</th>
+      <th>ContractFolderStatus - ContractFolderStatusCode</th>
+      <th>ContractFolderStatus - LocatedContractingParty - BuyerProfileURIID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyName - Name</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - ProcurementProject - Name</th>
+      <th>...</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - ID</th>
+      <th>ContractFolderStatus - TechnicalDocumentReference - Attachment - ExternalReference - URI</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - StartDate</th>
+      <th>ContractFolderStatus - ProcurementProject - PlannedPeriod - EndDate</th>
+      <th>ContractFolderStatus - LocatedContractingParty - Party - PartyIdentification - ID</th>
+      <th>ContractFolderStatus - LocatedContractingParty - ParentLocatedParty - ParentLocatedParty - PartyName - Name</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndDate</th>
+      <th>ContractFolderStatus - TenderingProcess - ParticipationRequestReceptionPeriod - EndTime</th>
+      <th>ContractFolderStatus - TenderResult - AwardedTenderedProject - ProcurementProjectLotID</th>
+      <th>ContractFolderStatus - TenderingProcess - TenderSubmissionDeadlinePeriod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: C. 2-2021; Órgano de Contrataci...</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>2022-01-03 00:11:41.826000+00:00</td>
+      <td>C. 2-2021</td>
+      <td>ADJ</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Sant Ramon</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>L'objecte del contracte és la renovació de tot...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2021-12-17 14:00:00+00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8128_3/2021; Órgano de Contrata...</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>2022-01-03 00:00:11.194000+00:00</td>
+      <td>8128_3/2021</td>
+      <td>PUB</td>
+      <td>&lt;NA&gt;</td>
+      <td>Pleno del Ayuntamiento</td>
+      <td>AYUNTAMIENTO DE MONREAL</td>
+      <td>Obras de restauración hidromorfológica del río...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2022-01-22 23:30:00+00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1000_0005-CP01-2021-000063; Órg...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>2022-01-03 00:00:10.399000+00:00</td>
+      <td>1000_0005-CP01-2021-000063</td>
+      <td>EV</td>
+      <td>&lt;NA&gt;</td>
+      <td>El Director General de Comunicación y Relacion...</td>
+      <td>Departamento de Presidencia, Igualdad, Función...</td>
+      <td>Contrato del servicio de realización de labore...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1379/2020 4738; Órgano de Contr...</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>2022-01-02 23:11:40.740000+00:00</td>
+      <td>1379/2020 4738</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Canet de Mar</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Obres de renovació de l'enllumenat públic a la...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00+00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 2021-44; Órgano de Contratación...</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>2022-01-02 23:11:40.696000+00:00</td>
+      <td>2021-44</td>
+      <td>EV</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>Ajuntament de Valls</td>
+      <td>Entitats municipals de Catalunya</td>
+      <td>Subministre i la instal·lació fotovoltaica en ...</td>
+      <td>...</td>
+      <td>Enllac plec clausules tecniques.doc</td>
+      <td>https://contractaciopublica.gencat.cat/ecofin_...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2022-01-02 23:59:00+00:00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 1005_391-2021; Órgano de Contra...</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>2021-12-31 00:00:14.946000+00:00</td>
+      <td>1005_391-2021</td>
+      <td>PUB</td>
+      <td>&lt;NA&gt;</td>
+      <td>Dirección General de Cultura-Institución Prínc...</td>
+      <td>Departamento de Cultura, Deporte y Juventud</td>
+      <td>Apoyo a la gestión del patrimonio filmográfico...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2022-01-14 23:59:00+00:00</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8165_3/2021; Órgano de Contrata...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>2021-12-31 00:00:14.393000+00:00</td>
+      <td>8165_3/2021</td>
+      <td>EV</td>
+      <td>&lt;NA&gt;</td>
+      <td>Mancomunidad de Servicios Sociales de Base de ...</td>
+      <td>MANCOMUNIDAD DE SERVICIOS DE HUARTE Y DE ESTER...</td>
+      <td>Asistencia técnica para la prestación del serv...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_3/2021; Órgano de Contrata...</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>2021-12-31 00:00:13.594000+00:00</td>
+      <td>8113_3/2021</td>
+      <td>EV</td>
+      <td>&lt;NA&gt;</td>
+      <td>Subdirector de Gestión y Recursos</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato de servicios de desinfección, desinse...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>2022-01-01</td>
+      <td>2022-12-31</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 8113_01 2021; Órgano de Contrat...</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>2021-12-31 00:00:12.604000+00:00</td>
+      <td>8113_01 2021</td>
+      <td>EV</td>
+      <td>&lt;NA&gt;</td>
+      <td>Agencia Navarra de Autonomía y Desarrollo de l...</td>
+      <td>Agencia Navarra para la Dependencia</td>
+      <td>Contrato del Servicio de Teleasistencia para l...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>https://contrataciondelestado.es/sindicacion/P...</td>
+      <td>Id licitación: 0001264/2021; Órgano de contrat...</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>2021-12-30 23:14:15.739000+00:00</td>
+      <td>0001264/2021</td>
+      <td>RES</td>
+      <td>&lt;NA&gt;</td>
+      <td>Agencia Pública Empresarial Sanitaria Bajo Gua...</td>
+      <td>Junta de Andalucía</td>
+      <td>2021/pa-44-4 servicio de mantenimiento integra...</td>
+      <td>...</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>2021-11-11 15:00:00+00:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 39 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+</div>
+ 
 
