@@ -9,7 +9,7 @@ This project was developed with [nbdev](https://github.com/fastai/nbdev) (v1), a
 ## Install
 
 ```
-pip install dlsproc
+pip install git+https://github.com/manuvazquez/dlsproc@master
 ```
 should do.
 

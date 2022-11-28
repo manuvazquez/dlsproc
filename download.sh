@@ -1,8 +1,6 @@
 #!/bin/bash
 
-OUTPUT_DIR=data/agregados
-
-FILES=( 
+AGREGADOS_FILES=( 
     # yearly
     PlataformasAgregadasSinMenores_2018.zip
     PlataformasAgregadasSinMenores_2019.zip
@@ -21,34 +19,85 @@ FILES=(
     PlataformasAgregadasSinMenores_202210.zip
 )
 
-mkdir -p $OUTPUT_DIR
-pushd $OUTPUT_DIR
+MENORES_FILES=( 
+    # yearly
+    contratosMenoresPerfilesContratantes_2018.zip
+    contratosMenoresPerfilesContratantes_2019.zip
+    contratosMenoresPerfilesContratantes_2020.zip
+    contratosMenoresPerfilesContratantes_2021.zip
+    # monthly
+    contratosMenoresPerfilesContratantes_202201.zip
+    contratosMenoresPerfilesContratantes_202202.zip
+    contratosMenoresPerfilesContratantes_202203.zip
+    contratosMenoresPerfilesContratantes_202204.zip
+    contratosMenoresPerfilesContratantes_202205.zip
+    contratosMenoresPerfilesContratantes_202206.zip
+    contratosMenoresPerfilesContratantes_202207.zip
+    contratosMenoresPerfilesContratantes_202208.zip
+    contratosMenoresPerfilesContratantes_202209.zip
+    contratosMenoresPerfilesContratantes_202210.zip
+)
 
-for f in "${FILES[@]}"
-do
+PERFILES_PLATAFORMA_FILES=( 
+    # yearly
+    licitacionesPerfilesContratanteCompleto3_2018.zip
+    licitacionesPerfilesContratanteCompleto3_2019.zip
+    licitacionesPerfilesContratanteCompleto3_2020.zip
+    licitacionesPerfilesContratanteCompleto3_2021.zip
+    # monthly
+    licitacionesPerfilesContratanteCompleto3_202201.zip
+    licitacionesPerfilesContratanteCompleto3_202202.zip
+    licitacionesPerfilesContratanteCompleto3_202203.zip
+    licitacionesPerfilesContratanteCompleto3_202204.zip
+    licitacionesPerfilesContratanteCompleto3_202205.zip
+    licitacionesPerfilesContratanteCompleto3_202206.zip
+    licitacionesPerfilesContratanteCompleto3_202207.zip
+    licitacionesPerfilesContratanteCompleto3_202208.zip
+    licitacionesPerfilesContratanteCompleto3_202209.zip
+    licitacionesPerfilesContratanteCompleto3_202210.zip
+)
+
+download () {
+
+    # arguments are processed:
     
-    # if it already exists...
-    if test -f "$f"; then
+    # - output directory, where the files will be downloaded
+    OUTPUT_DIR=$1
     
-        echo skipping \""$f"\"...it already exists
+    # - base URL, where the files are hosted in the remote server
+    URL_BASE=$2
     
-    # if the directory does NOT exist...
-    else
+    # - list of files
+    local -n FILES=$3
     
-        FULL_URL=https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/$f
+    mkdir -p $OUTPUT_DIR
     
-        echo =================== downloading \""$f"\"  ===================
+    pushd $OUTPUT_DIR
+  
+    for f in "${FILES[@]}"
+    do
         
-#         echo wget $FULL_URL
+        # if it already exists...
+        if test -f "$f"; then
         
-        wget $FULL_URL
+            echo skipping \""$f"\"...it already exists
+        
+        # if the directory does NOT exist...
+        else
+        
+            FULL_URL=$URL_BASE/$f
+        
+            echo =================== downloading \""$f"\"  ===================
+            
+            wget $FULL_URL
+        
+        fi
+        
+    done
     
-    fi
-    
-done
+    popd
+}
 
-# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_2018.zip
-# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_202201.zip
-
-# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_2018.zip
-# https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202201.zip
+download data/agregados https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044 AGREGADOS_FILES
+download data/menores https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143 MENORES_FILES
+download data/perfiles_plataforma https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643 PERFILES_PLATAFORMA_FILES
