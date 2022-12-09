@@ -1,3 +1,5 @@
+<font color='red'>**This repository is no longer maintained**</font> but has evolved into [sproc](https://github.com/manuvazquez/sproc).
+
 # dlsproc
 > Download Spanish procurement
 
